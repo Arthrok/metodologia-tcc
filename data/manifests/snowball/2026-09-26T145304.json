@@ -1,0 +1,48 @@
+{
+  "source": "snowball",
+  "backend": "scopus",
+  "executed_at": "2026-09-26T14:53:04+00:00",
+  "finished_at": "2026-09-26T14:53:05+00:00",
+  "directions": [
+    "backward"
+  ],
+  "method": {
+    "backward": "Abstract Retrieval view=REF",
+    "forward": "Scopus Search REFEID()"
+  },
+  "seed_selection": {
+    "source": "human_validated",
+    "criteria": [
+      "decision=include"
+    ],
+    "origin_filter": "acl",
+    "eligible_before_origin_filter": 19,
+    "eligible_after_origin_filter": 6
+  },
+  "seeds_available": 6,
+  "seed_ids_selected": [
+    "P-f728b0a66bc2",
+    "P-75487430ddb8"
+  ],
+  "search_strings_applied": false,
+  "temporal_filter": null,
+  "seeds": 2,
+  "unresolved_seeds": [
+    "P-f728b0a66bc2",
+    "P-75487430ddb8"
+  ],
+  "references": 0,
+  "citing": 0,
+  "metadata_fetched": 0,
+  "metadata_cached": 0,
+  "errors": [],
+  "requests_made": 2,
+  "seeds_pending": 0,
+  "candidates_total": 438,
+  "rate_limit": {
+    "limit": "20000",
+    "remaining": "19964",
+    "reset": "1790755274"
+  },
+  "proxy": null
+}

@@ -1,0 +1,97 @@
+{
+  "round_id": "r007",
+  "candidates": [
+    {
+      "paper_id": "P-a8f88bcec4d4",
+      "rank": 1,
+      "justification": "Apresenta um fluxo amplo para construção de grafos de conhecimento em RAG, cobrindo parsing, metadados, chunking, embeddings e banco vetorial; amplia a rodada além de estudos restritos a chunking.",
+      "related_validated": [
+        "P-b459a2bcbc50",
+        "P-dfb0b35f7ecb"
+      ]
+    },
+    {
+      "paper_id": "P-299060156a3f",
+      "rank": 2,
+      "justification": "Propõe seleção adaptativa da estratégia de chunking por documento e cinco métricas intrínsecas, oferecendo práticas concretas de qualidade antes da avaliação downstream.",
+      "related_validated": [
+        "P-206019f44c15",
+        "P-73bb4c428170"
+      ]
+    },
+    {
+      "paper_id": "P-e23ce458fc89",
+      "rank": 3,
+      "justification": "Avaliação sistemática em cenário industrial que explicita trade-offs entre qualidade, custo de indexação, sobreposição e tamanho de contexto, com recomendações operacionais acionáveis.",
+      "related_validated": [
+        "P-206019f44c15",
+        "P-73bb4c428170"
+      ]
+    },
+    {
+      "paper_id": "P-2d2e9347bc16",
+      "rank": 4,
+      "justification": "Combina estrutura hierárquica, injeção de metadados e recuperação pai-filho para preservar contexto legal, cobrindo enriquecimento, segmentação e recuperação de forma integrada.",
+      "related_validated": [
+        "P-73bb4c428170",
+        "P-dfb0b35f7ecb"
+      ]
+    },
+    {
+      "paper_id": "P-f8d3b57a047f",
+      "rank": 5,
+      "justification": "Trata documentos tabulares complexos, articulando qualidade de extração e chunking estrutural para evitar fragmentação semântica; representa um tipo documental distinto dos estudos textuais gerais.",
+      "related_validated": [
+        "P-73bb4c428170"
+      ]
+    },
+    {
+      "paper_id": "P-f69a6cb391b5",
+      "rank": 6,
+      "justification": "Descreve pipeline multiestágio sobre 225 mil páginas, incluindo extração de PDFs escaneados, segmentação, modelos de embedding e infraestrutura de recuperação sob restrição de recursos.",
+      "related_validated": [
+        "P-b459a2bcbc50"
+      ]
+    },
+    {
+      "paper_id": "P-31cd48d6f371",
+      "rank": 7,
+      "justification": "Introduz métricas diretas de qualidade de chunking e um mecanismo sensível à granularidade, contribuindo tanto para avaliação quanto para automação da etapa de preparação.",
+      "related_validated": [
+        "P-206019f44c15",
+        "P-73bb4c428170"
+      ]
+    },
+    {
+      "paper_id": "P-c0f0730ff7d4",
+      "rank": 8,
+      "justification": "Usa aprendizado por reforço para adaptar chunking por consulta e balancear qualidade, tokens e custo computacional, trazendo uma perspectiva automatizada de otimização contínua.",
+      "related_validated": [
+        "P-7ca287ada16c",
+        "P-206019f44c15"
+      ]
+    },
+    {
+      "paper_id": "P-d8cc78b6db88",
+      "rank": 9,
+      "justification": "Identifica limitações de benchmarks existentes, propõe um benchmark específico e avalia chunking hierárquico em toda a pipeline, reforçando a dimensão de avaliação e qualidade.",
+      "related_validated": [
+        "P-206019f44c15",
+        "P-73bb4c428170"
+      ]
+    },
+    {
+      "paper_id": "P-9cedd7067698",
+      "rank": 10,
+      "justification": "Adapta pré-processamento e recuperação à estrutura documental e utiliza avaliação multimétrica, conectando decisões de segmentação, busca e qualidade da resposta em uma pipeline completa.",
+      "related_validated": [
+        "P-206019f44c15",
+        "P-b459a2bcbc50"
+      ]
+    }
+  ],
+  "model": "codex-gpt-5",
+  "model_version": null,
+  "prompt_version": "mlr-ranking-v1",
+  "decided_at": "2026-09-26T19:12:00Z"
+}

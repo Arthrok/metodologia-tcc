@@ -1,0 +1,7 @@
+acl-anthology
+requests[socks]
+python-dotenv
+pydantic
+tenacity
+PyYAML
+pytest

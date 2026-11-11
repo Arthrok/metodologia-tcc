@@ -1,0 +1,70 @@
+{
+  "source": "snowball",
+  "backend": "scopus",
+  "executed_at": "2026-09-26T01:24:37+00:00",
+  "finished_at": "2026-09-26T01:24:37+00:00",
+  "directions": [
+    "backward",
+    "forward"
+  ],
+  "method": {
+    "backward": "Abstract Retrieval view=REF",
+    "forward": "Scopus Search REFEID()"
+  },
+  "seed_selection": {
+    "source": "provisional_ai_pretriage",
+    "criteria": [
+      "suggestion=include",
+      "priority=alta",
+      "temporal_status=in_scope"
+    ],
+    "ordering": "greedy coverage of lifecycle stages and transverse dimensions, then paper_id",
+    "models": [
+      "claude-opus-5-5",
+      "codex-gpt-5"
+    ]
+  },
+  "seeds_available": 310,
+  "seed_ids_selected": [
+    "P-0cf023a42d68",
+    "P-654aad75db60",
+    "P-6b5456a85900",
+    "P-1034dcb2f56f",
+    "P-715d6d5d09b8",
+    "P-88aba9c469a8",
+    "P-ded4e8f653d4",
+    "P-4621ec8565a2",
+    "P-76e965d4892d",
+    "P-94bcf903a3d4",
+    "P-d6853919fbd1",
+    "P-ddb275ff612c",
+    "P-dfb0b35f7ecb",
+    "P-03e6892eb75d",
+    "P-05a3624efee5",
+    "P-08641889c341",
+    "P-08e837d000b3",
+    "P-150a52599e1c",
+    "P-154156636f2c",
+    "P-2a65146cd243"
+  ],
+  "search_strings_applied": false,
+  "temporal_filter": null,
+  "seeds": 1,
+  "unresolved_seeds": [],
+  "references": 0,
+  "citing": 0,
+  "metadata_fetched": 0,
+  "metadata_cached": 0,
+  "errors": [
+    "P-0cf023a42d68: ScopusAuthError: HTTP 401 — AUTHORIZATION_ERROR: The requestor is not authorized to access the requested view or fields of the resource"
+  ],
+  "requests_made": 1,
+  "seeds_pending": 310,
+  "candidates_total": 0,
+  "rate_limit": {
+    "limit": "10000",
+    "remaining": "6849",
+    "reset": "1790755274"
+  },
+  "proxy": null
+}

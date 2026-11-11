@@ -1,0 +1,109 @@
+{
+  "round_id": "r005",
+  "candidates": [
+    {
+      "paper_id": "P-a650e273556d",
+      "rank": 1,
+      "justification": "É o candidato mais diretamente alinhado ao tema do TCC: apresenta uma arquitetura empresarial que combina RAG e Engenharia de Dados, inclui otimização dinâmica de contexto, feedback recursivo, análise de falhas, custo, escala, latência e disponibilidade em produção.",
+      "related_validated": [
+        "P-aee8c0ff3256",
+        "P-f742a6093683",
+        "P-1034dcb2f56f"
+      ]
+    },
+    {
+      "paper_id": "P-8ec420ab749e",
+      "rank": 2,
+      "justification": "Integra análise do corpus, escolha de chunking, arquitetura do índice, recuperação híbrida e calibração de confiança em um processo repetível para milhões de documentos, ampliando a evidência de operação e otimização contínua.",
+      "related_validated": [
+        "P-03e822172085",
+        "P-e33ade1826ad",
+        "P-f742a6093683"
+      ]
+    },
+    {
+      "paper_id": "P-a2f0f78ba880",
+      "rank": 3,
+      "justification": "Acrescenta extração, normalização e deduplicação contínuas de triplas regulatórias, com segmentos-fonte, metadados e proveniência vinculados no índice; é especialmente útil para rastreabilidade e atualização da base.",
+      "related_validated": [
+        "P-05f05d2ab481",
+        "P-019eda761174",
+        "P-db3d0d4c1caa"
+      ]
+    },
+    {
+      "paper_id": "P-34502433a68a",
+      "rank": 4,
+      "justification": "Mapeia 157 estudos e evidencia lacunas concretas na avaliação por camada, verificação de evidências, segurança, artefatos intermediários e cenários de implantação, fortalecendo S6 e a discussão de observabilidade e avaliação operacional.",
+      "related_validated": [
+        "P-3f5242546ea6",
+        "P-aee8c0ff3256",
+        "P-f742a6093683"
+      ]
+    },
+    {
+      "paper_id": "P-291a967540dd",
+      "rank": 5,
+      "justification": "Combina documentos empresariais heterogêneos, chunking multigranular, ACL por chunk, recuperação híbrida, reranqueamento e avaliação em corpus real, trazendo controle de acesso diretamente para a preparação e recuperação.",
+      "related_validated": [
+        "P-2a7e331ac123",
+        "P-43a81bdd7933",
+        "P-578a6ed00cea"
+      ]
+    },
+    {
+      "paper_id": "P-5c065363cb63",
+      "rank": 6,
+      "justification": "Propõe uma prática distinta de segurança: codificar permissões como dimensões dos embeddings para aplicar autorização durante a recuperação, avaliando vazamento, acurácia e custo de construção da base.",
+      "related_validated": [
+        "P-ee5a47f71db6",
+        "P-2a7e331ac123",
+        "P-43a81bdd7933"
+      ]
+    },
+    {
+      "paper_id": "P-25a321add9c5",
+      "rank": 7,
+      "justification": "Introduz monitoramento em tempo de execução para detectar extração indevida da base proprietária mediante tokens-canário, acrescentando uma defesa operacional e mensurável à camada transversal de segurança.",
+      "related_validated": [
+        "P-95747e099ab8",
+        "P-6cb9d57988e6",
+        "P-12ff196f7de4"
+      ]
+    },
+    {
+      "paper_id": "P-7432101fd4f7",
+      "rank": 8,
+      "justification": "Avalia decisões operacionais concretas para índices vetoriais em disco — I/O paralelo, ordenação de inserções, localidade, cache e tempo de construção — complementando as novas fontes sobre atualização e hardware sem se limitar a uma comparação genérica.",
+      "related_validated": [
+        "P-79b99916d8ad",
+        "P-dafca2ca704a",
+        "P-6108a118d511"
+      ]
+    },
+    {
+      "paper_id": "P-180d3ae726c2",
+      "rank": 9,
+      "justification": "Apresenta uma pipeline ponta a ponta sobre documentos empresariais heterogêneos, com ingestão semântica, chunking estrutural, embeddings, recuperação, reranqueamento, empacotamento e rastreabilidade do conteúdo gerado às fontes.",
+      "related_validated": [
+        "P-a00af99127ff",
+        "P-1034dcb2f56f",
+        "P-05f05d2ab481"
+      ]
+    },
+    {
+      "paper_id": "P-0f7eddcb8eb2",
+      "rank": 10,
+      "justification": "Modela a seleção de chunks sob limite explícito de tokens e redundância como problema de otimização, oferecendo uma decisão técnica reproduzível para qualidade e eficiência na disponibilização do contexto.",
+      "related_validated": [
+        "P-aad39554e020",
+        "P-03e822172085",
+        "P-75487430ddb8"
+      ]
+    }
+  ],
+  "model": "codex-gpt-5",
+  "model_version": null,
+  "prompt_version": "mlr-ranking-v1",
+  "decided_at": "2026-09-26T18:13:00Z"
+}

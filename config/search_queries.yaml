@@ -1,0 +1,107 @@
+# Fonte única das famílias de busca S1–S8 (Tabela 2 do TCC).
+#
+# As queries canônicas, as queries Scopus (TITLE-ABS-KEY) e o matcher local
+# do ACL Anthology são todos gerados a partir deste arquivo. Não duplicar
+# strings de busca nos coletores.
+#
+# Estrutura de cada família:
+#   (domain.terms[0] OR domain.terms[1] ...) AND (terms[0] OR terms[1] ...)
+#
+# Convenções dos termos:
+#   - termos com espaço ou hífen são frases (aspas na query);
+#   - "*" final indica wildcard de sufixo (prefix matching).
+
+version: 1
+
+domain:
+  terms:
+    - "retrieval augmented generation"
+    - "retrieval-augmented generation"
+
+families:
+
+  S1:
+    stage: sources
+    label: Fontes
+    terms:
+      - "data source*"
+      - "knowledge source*"
+      - "source selection"
+      - "source curation"
+      - "corpus curation"
+
+  S2:
+    stage: ingestion
+    label: Ingestão
+    terms:
+      - "data ingestion"
+      - "document ingestion"
+      - "data extraction"
+      - "document parsing"
+      - "OCR"
+      - "crawl*"
+
+  S3:
+    stage: storage
+    label: Armazenamento
+    terms:
+      - "vector database*"
+      - "vector store*"
+      - "vector index*"
+      - "document store*"
+      - "embedding store*"
+
+  S4:
+    stage: preparation
+    label: Preparação
+    terms:
+      - "chunk*"
+      - "text segment*"
+      - "document split*"
+      - "text preprocessing"
+      - "document preprocessing"
+      - "text normalization"
+      - "embedding generation"
+
+  S5:
+    stage: serving
+    label: Disponibilização
+    terms:
+      - "retrieval strateg*"
+      - "hybrid search"
+      - "rerank*"
+      - "metadata filter*"
+      - "context compression"
+
+  S6:
+    stage: usage_feedback
+    label: Uso e feedback
+    terms:
+      - "RAG evaluation"
+      - "retrieval evaluation"
+      - "observab*"
+      - "tracing"
+      - "user feedback"
+
+  S7:
+    stage: maintenance
+    label: Manutenção
+    terms:
+      - "freshness"
+      - "reindex*"
+      - "document update*"
+      - "corpus update*"
+      - "incremental update*"
+      - "version*"
+
+  S8:
+    stage: disposal
+    label: Descarte
+    terms:
+      - "data deletion"
+      - "document deletion"
+      - "deindex*"
+      - "erasure"
+      - "retention"
+      - "purge"
+      - "expiration"

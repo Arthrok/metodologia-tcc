@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-09-28T00:34:52+00:00",
+  "validated_total": 60,
+  "foundational_included": 0,
+  "by_lifecycle_stage": {
+    "S1": {
+      "label": "Fontes",
+      "validated": 10,
+      "retrieved_by_family": 13
+    },
+    "S2": {
+      "label": "Ingestão",
+      "validated": 17,
+      "retrieved_by_family": 5
+    },
+    "S3": {
+      "label": "Armazenamento",
+      "validated": 27,
+      "retrieved_by_family": 18
+    },
+    "S4": {
+      "label": "Preparação",
+      "validated": 27,
+      "retrieved_by_family": 29
+    },
+    "S5": {
+      "label": "Disponibilização",
+      "validated": 18,
+      "retrieved_by_family": 9
+    },
+    "S6": {
+      "label": "Uso e feedback",
+      "validated": 13,
+      "retrieved_by_family": 5
+    },
+    "S7": {
+      "label": "Manutenção",
+      "validated": 4,
+      "retrieved_by_family": 1
+    },
+    "S8": {
+      "label": "Descarte",
+      "validated": 3,
+      "retrieved_by_family": 2
+    }
+  },
+  "by_transverse_dimension": {
+    "qualidade": 24,
+    "governança": 11,
+    "rastreabilidade": 11,
+    "segurança": 16
+  },
+  "by_year": {
+    "2024": 1,
+    "2025": 19,
+    "2026": 38,
+    "2027": 2
+  },
+  "by_source": {
+    "scopus": 55,
+    "acl": 13
+  },
+  "by_origin": {
+    "search": 58,
+    "snowball": 6
+  },
+  "top_venues": [
+    [
+      "Lecture Notes in Computer Science",
+      5
+    ],
+    [
+      "2026 International Conference on Integrated Intelligence and Cognitive Engineering, ICIICE 2026",
+      3
+    ],
+    [
+      "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      2
+    ],
+    [
+      "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      2
+    ],
+    [
+      "IEEE Access",
+      2
+    ],
+    [
+      "Proceedings of the VLDB Endowment",
+      2
+    ],
+    [
+      "ICASSP, IEEE International Conference on Acoustics, Speech and Signal Processing - Proceedings",
+      1
+    ],
+    [
+      "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 5: Industry Track)",
+      1
+    ],
+    [
+      "17th International Conference on Computational Processing of Portuguese, PROPOR 2026",
+      1
+    ],
+    [
+      "2025 7th International Conference on Applied Computational Intelligence in Information Systems: Intelligent and Resilient Digital Innovations for Sustainable Living, ACIIS 2025 - Proceedings",
+      1
+    ]
+  ],
+  "gaps": {
+    "stages_below_minimum": [],
+    "dimensions_without_evidence": []
+  },
+  "decisions": {
+    "include": 60,
+    "exclude_by_criterion": {
+      "E3": 19,
+      "E4": 1
+    },
+    "full_text_pending": 0
+  }
+}

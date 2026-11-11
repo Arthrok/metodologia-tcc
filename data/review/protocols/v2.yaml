@@ -1,0 +1,68 @@
+# Protocolo operacional da revisão (fonte: metodologia.tex).
+# Alterações aqui devem incrementar `version`.
+
+version: 2
+
+scope:
+  sources: [acl, scopus]
+  literature_type: academic
+  # I1/E2: a partir de 2025; anteriores são preservados como potencialmente
+  # fundacionais e decididos pelos pesquisadores (nunca excluídos automaticamente).
+  temporal_start_year: 2025
+
+research_questions:
+  QP1: Quais práticas de engenharia de dados são relatadas em sistemas RAG e como podem ser classificadas como transferidas, adaptadas ou novas?
+  QP2: Quais desafios estão associados à aplicação dessas práticas ao longo do ciclo de vida dos dados em sistemas RAG?
+  QP3: Quais convergências, divergências e lacunas são observadas entre a literatura acadêmica e a literatura cinzenta quanto às práticas e aos desafios de engenharia de dados em sistemas RAG?
+
+picoc:
+  population: Sistemas RAG.
+  interest: Práticas de engenharia de dados aplicadas à construção, operação, manutenção e governança de sistemas RAG.
+  comparison: Práticas voltadas ao consumo humano de dados em BI e Analytics em contraste com o consumo por modelos em sistemas RAG.
+  outcomes: Práticas transferidas, adaptadas ou novas, desafios associados e efeitos observados no ciclo de vida dos dados.
+  context: Desenvolvimento e operação de sistemas RAG em contextos acadêmicos e industriais.
+
+lifecycle_stages:
+  S1: Fontes
+  S2: Ingestão
+  S3: Armazenamento
+  S4: Preparação
+  S5: Disponibilização
+  S6: Uso e feedback
+  S7: Manutenção
+  S8: Descarte
+
+transverse_dimensions: [qualidade, governança, rastreabilidade, segurança]
+
+eligibility:
+  inclusion:
+    I1: "Recorte temporal: publicada a partir de 2025. Excepcionalmente, fontes anteriores podem ser incluídas quando apresentarem contribuição fundacional para RAG ou conceitos diretamente relacionados ao escopo (origem, definição ou consolidação de conceitos, arquiteturas ou práticas centrais de RAG), com justificativa registrada."
+    I2: "Aderência ao escopo: aborda RAG de forma substantiva e tem relação com Engenharia de Dados, envolvendo ao menos uma etapa do ciclo de vida ou dimensão transversal."
+    I3: "Contribuição analisável: apresenta ao menos uma prática, desafio, decisão técnica, arquitetura ou efeito relacionado às questões de pesquisa, com conteúdo suficiente para identificação e extração."
+  exclusion:
+    E1: "Duplicata ou versão redundante (republicação ou versão menos completa de fonte já considerada)."
+    E2: "Fora do recorte temporal: anterior a 2025 sem contribuição fundacional conforme I1."
+    E3: "Fora do escopo: RAG apenas incidental ou sem relação substantiva com Engenharia de Dados, o ciclo de vida dos dados ou suas dimensões transversais."
+    E4: "Conteúdo insuficiente: predominantemente introdutório, genérico, promocional ou sem detalhamento para identificar evidências."
+    E5: "Conteúdo integral indisponível ou fonte derivada (agregadores, resumos, republicações quando a original puder ser identificada)."
+
+screening:
+  # Decisões humanas por candidato: incluir, excluir (com critério principal)
+  # ou necessidade de análise do texto completo.
+  human_decisions: [include, exclude, full_text]
+  ai_suggestions: [include, exclude, ambiguous]
+  ai_priorities: [alta, media, baixa]
+  evidence_must_be_verbatim: true
+  automatic_exclusions: [E1]      # E2 nunca é automático (exceção fundacional)
+  round_size: 10                  # exatamente dez candidatos por rodada
+  shortlist_size: 30              # candidatos re-ranqueados pela IA por rodada
+  pretriage_batch_size: 50
+  audit_sample_size: 20           # auditoria amostral das classificações da IA
+  random_seed: 20260924
+
+stopping:
+  # Indicadores; a decisão de parar é dos pesquisadores.
+  window_rounds: 3                # janela das últimas rodadas avaliadas
+  max_includes_in_window: 1       # baixa entrada de novos artigos relevantes
+  min_rounds_since_query_change: 3  # estabilização das strings
+  min_includes_per_stage: 3       # cobertura mínima por etapa S1–S8

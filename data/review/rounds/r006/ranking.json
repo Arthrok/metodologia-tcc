@@ -1,0 +1,109 @@
+{
+  "round_id": "r006",
+  "candidates": [
+    {
+      "paper_id": "P-7ca287ada16c",
+      "rank": 1,
+      "justification": "É a contribuição mais direta para S7: apresenta um data flywheel em produção com ciclo MAPE, monitoramento de falhas, feedback humano, coleta de amostras negativas, ajustes direcionados e implantação gradual em um sistema RAG usado por mais de 30 mil funcionários.",
+      "related_validated": [
+        "P-a650e273556d",
+        "P-32ac448357e4",
+        "P-0d46d780075c"
+      ]
+    },
+    {
+      "paper_id": "P-b459a2bcbc50",
+      "rank": 2,
+      "justification": "Amplia diretamente S8 ao integrar memória em camadas, políticas de leitura e escrita, proveniência verificável e controles de retenção, além de avaliar acesso não autorizado, qualidade de recuperação e latência.",
+      "related_validated": [
+        "P-db3d0d4c1caa",
+        "P-578a6ed00cea",
+        "P-12ff196f7de4"
+      ]
+    },
+    {
+      "paper_id": "P-189236c84c1f",
+      "rank": 3,
+      "justification": "Integra dados estruturados e narrativas não estruturadas mediante Neo4j Text2Cypher e recuperação vetorial, oferecendo uma prática concreta de federação e consulta sobre uma jornada de dados longitudinal.",
+      "related_validated": [
+        "P-578a6ed00cea",
+        "P-05f05d2ab481",
+        "P-a00af99127ff"
+      ]
+    },
+    {
+      "paper_id": "P-dfb0b35f7ecb",
+      "rank": 4,
+      "justification": "Constrói um grafo semântico explícito sobre 97 documentos regulatórios, preservando referências cruzadas, hierarquia e similaridade, e compara recuperação local, global e híbrida em implantação privada.",
+      "related_validated": [
+        "P-a2f0f78ba880",
+        "P-db3d0d4c1caa",
+        "P-2a7e331ac123"
+      ]
+    },
+    {
+      "paper_id": "P-206019f44c15",
+      "rank": 5,
+      "justification": "Traz evidência negativa importante ao mostrar que o custo computacional do chunking semântico não produz ganhos consistentes sobre divisão fixa, ajudando a evitar recomendações técnicas assumidas sem avaliação.",
+      "related_validated": [
+        "P-5075f7fb2528",
+        "P-d4938f96d8ae",
+        "P-b069d8f0e835"
+      ]
+    },
+    {
+      "paper_id": "P-472e6ccaab6b",
+      "rank": 6,
+      "justification": "Expande a discussão de qualidade e segurança para fontes estruturadas, demonstrando como pequenas alterações em triplas podem criar cadeias de inferência enganosas em KG-RAG.",
+      "related_validated": [
+        "P-6cb9d57988e6",
+        "P-95747e099ab8",
+        "P-12ff196f7de4"
+      ]
+    },
+    {
+      "paper_id": "P-dea325672c41",
+      "rank": 7,
+      "justification": "Apresenta recuperação em duas trilhas para regulamentos dinâmicos, combinando consulta e resposta preliminar para melhorar a seleção documental e oferecendo um caso aplicado de conhecimento sujeito a mudanças.",
+      "related_validated": [
+        "P-a2f0f78ba880",
+        "P-f742a6093683",
+        "P-019eda761174"
+      ]
+    },
+    {
+      "paper_id": "P-73bb4c428170",
+      "rank": 8,
+      "justification": "Trata granularidade da recuperação como projeto de evidência e separa limitações de recuperação, geração e avaliação, relacionando contexto, orçamento, completude de evidências e auditabilidade.",
+      "related_validated": [
+        "P-0f7eddcb8eb2",
+        "P-75487430ddb8",
+        "P-03e822172085"
+      ]
+    },
+    {
+      "paper_id": "P-42a519d48fc0",
+      "rank": 9,
+      "justification": "Sintetiza desafios de ingestão de PDFs empresariais complexos, incluindo layout, tabelas, imagens, ruído de OCR, metadados e fidelidade semântica, além de apontar limitações dos benchmarks atuais.",
+      "related_validated": [
+        "P-5075f7fb2528",
+        "P-f728b0a66bc2",
+        "P-03119b691be0"
+      ]
+    },
+    {
+      "paper_id": "P-bc83b99935bb",
+      "rank": 10,
+      "justification": "Usa ontologia RDF/OWL e grafo de conhecimento para estruturar semântica clínica e grounding verificável, acrescentando uma perspectiva de modelagem dos dados anterior à recuperação.",
+      "related_validated": [
+        "P-a00af99127ff",
+        "P-03119b691be0",
+        "P-578a6ed00cea"
+      ]
+    }
+  ],
+  "model": "codex-gpt-5",
+  "model_version": null,
+  "prompt_version": "mlr-ranking-v1",
+  "decided_at": "2026-09-26T18:45:00Z"
+}

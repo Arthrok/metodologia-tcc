@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-09-26T16:04:24+00:00",
+  "validated_total": 27,
+  "foundational_included": 0,
+  "by_lifecycle_stage": {
+    "S1": {
+      "label": "Fontes",
+      "validated": 8,
+      "retrieved_by_family": 8
+    },
+    "S2": {
+      "label": "Ingestão",
+      "validated": 12,
+      "retrieved_by_family": 4
+    },
+    "S3": {
+      "label": "Armazenamento",
+      "validated": 11,
+      "retrieved_by_family": 7
+    },
+    "S4": {
+      "label": "Preparação",
+      "validated": 10,
+      "retrieved_by_family": 10
+    },
+    "S5": {
+      "label": "Disponibilização",
+      "validated": 8,
+      "retrieved_by_family": 4
+    },
+    "S6": {
+      "label": "Uso e feedback",
+      "validated": 6,
+      "retrieved_by_family": 3
+    },
+    "S7": {
+      "label": "Manutenção",
+      "validated": 2,
+      "retrieved_by_family": 1
+    },
+    "S8": {
+      "label": "Descarte",
+      "validated": 0,
+      "retrieved_by_family": 0
+    }
+  },
+  "by_transverse_dimension": {
+    "qualidade": 10,
+    "governança": 4,
+    "rastreabilidade": 6,
+    "segurança": 10
+  },
+  "by_year": {
+    "2025": 10,
+    "2026": 17
+  },
+  "by_source": {
+    "scopus": 25,
+    "acl": 6
+  },
+  "by_origin": {
+    "search": 27
+  },
+  "top_venues": [
+    [
+      "2026 International Conference on Integrated Intelligence and Cognitive Engineering, ICIICE 2026",
+      3
+    ],
+    [
+      "ICASSP, IEEE International Conference on Acoustics, Speech and Signal Processing - Proceedings",
+      1
+    ],
+    [
+      "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+      1
+    ],
+    [
+      "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 5: Industry Track)",
+      1
+    ],
+    [
+      "17th International Conference on Computational Processing of Portuguese, PROPOR 2026",
+      1
+    ],
+    [
+      "2025 7th International Conference on Applied Computational Intelligence in Information Systems: Intelligent and Resilient Digital Innovations for Sustainable Living, ACIIS 2025 - Proceedings",
+      1
+    ],
+    [
+      "Proceeding - ISIBER 2026: International Seminar on Intelligent Business and Edge-Computing Research",
+      1
+    ],
+    [
+      "Proceedings - 2025 Annual Computer Security Applications Conference Workshops, ACSACW 2025",
+      1
+    ],
+    [
+      "SIGHUM 2026 - 10th Joint SIGHUM Workshop on Computational Linguistics for Cultural Heritage, Social Sciences, Humanities and Literature, Proceedings of the Workshop",
+      1
+    ],
+    [
+      "International Conference Automatics, Robotics and Artificial Intelligence, ICARAI 2026 - Proceedings",
+      1
+    ]
+  ],
+  "gaps": {
+    "stages_below_minimum": [
+      "S7",
+      "S8"
+    ],
+    "dimensions_without_evidence": []
+  },
+  "decisions": {
+    "include": 27,
+    "exclude_by_criterion": {
+      "E3": 3
+    },
+    "full_text_pending": 0
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "round_id": "r008",
+  "candidates": [
+    {
+      "paper_id": "P-866f5da77480",
+      "rank": 1,
+      "justification": "Integra RAG a um lakehouse governado, com contratos de dados, evolução de esquema, linhagem e planejamento de recuperação por políticas; contribui diretamente para S3, S7, governança e rastreabilidade.",
+      "related_validated": [
+        "P-b459a2bcbc50",
+        "P-423200bdcd80"
+      ]
+    },
+    {
+      "paper_id": "P-d00a47981859",
+      "rank": 2,
+      "justification": "Compara estratégias concretas de incorporação de metadados ao índice e à consulta, incluindo prefixos, embeddings unificados e fusão tardia, com implicações de manutenção e desambiguação.",
+      "related_validated": [
+        "P-2d2e9347bc16",
+        "P-dfb0b35f7ecb"
+      ]
+    },
+    {
+      "paper_id": "P-d13261c68ef9",
+      "rank": 3,
+      "justification": "Apresenta pipeline de parsing de alta fidelidade para PDFs acadêmicos com texto, tabelas, fórmulas e figuras, seguida de segmentação, busca híbrida, reranqueamento e validação entre configurações.",
+      "related_validated": [
+        "P-5075f7fb2528",
+        "P-f728b0a66bc2"
+      ]
+    },
+    {
+      "paper_id": "P-7b38ae1783b2",
+      "rank": 4,
+      "justification": "Usa árvores sintáticas para gerar chunks de código semanticamente autocontidos, trazendo um tipo de dado e uma técnica estrutural distintos dos documentos textuais já predominantes.",
+      "related_validated": [
+        "P-73bb4c428170",
+        "P-2d2e9347bc16"
+      ]
+    },
+    {
+      "paper_id": "P-e9ddb338deae",
+      "rank": 5,
+      "justification": "Substitui fronteiras fixas por recuperação de combinações arbitrárias de sentenças, oferecendo uma abordagem de granularidade cruzada com possíveis ganhos de flexibilidade e eficiência.",
+      "related_validated": [
+        "P-73bb4c428170",
+        "P-299060156a3f"
+      ]
+    },
+    {
+      "paper_id": "P-639236fd0700",
+      "rank": 6,
+      "justification": "Compara late chunking e contextual retrieval, explicitando o trade-off entre preservação da coerência global, relevância, completude e custo computacional.",
+      "related_validated": [
+        "P-206019f44c15",
+        "P-e23ce458fc89"
+      ]
+    },
+    {
+      "paper_id": "P-2a5d6591fd34",
+      "rank": 7,
+      "justification": "Agrupa sentenças tematicamente relacionadas, inclusive não adjacentes, por fatoração matricial e avalia escalabilidade de indexação com aceleração em GPU.",
+      "related_validated": [
+        "P-206019f44c15",
+        "P-299060156a3f"
+      ]
+    },
+    {
+      "paper_id": "P-40c6230b1522",
+      "rank": 8,
+      "justification": "Propõe múltiplas visões do mesmo documento por sobreposições diferentes, combinadas a OCR e particionamento por layout, para aumentar a chance de recuperar evidência autocontida.",
+      "related_validated": [
+        "P-e23ce458fc89",
+        "P-73bb4c428170"
+      ]
+    },
+    {
+      "paper_id": "P-05a08832a6d9",
+      "rank": 9,
+      "justification": "Propõe chunking baseado em entropia para detectar regiões de maior conteúdo informacional e avalia coerência, recuperação e alucinação com modelos pequenos.",
+      "related_validated": [
+        "P-299060156a3f",
+        "P-e23ce458fc89"
+      ]
+    },
+    {
+      "paper_id": "P-36595286e5b0",
+      "rank": 10,
+      "justification": "Revisão sistemática de estratégias de chunking para documentos financeiros semiestruturados, útil para verificar se a síntese oferece padrões arquiteturais além das fontes empíricas já aceitas.",
+      "related_validated": [
+        "P-206019f44c15",
+        "P-e23ce458fc89"
+      ]
+    }
+  ],
+  "model": "codex-gpt-5",
+  "model_version": null,
+  "prompt_version": "mlr-ranking-v1",
+  "decided_at": "2026-09-26T19:27:00Z"
+}

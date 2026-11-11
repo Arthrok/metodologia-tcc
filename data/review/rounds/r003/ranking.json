@@ -1,0 +1,102 @@
+{
+  "round_id": "r003",
+  "candidates": [
+    {
+      "paper_id": "P-aee8c0ff3256",
+      "rank": 1,
+      "justification": "Estudo com profissionais da indústria que documenta requisitos, desafios de pré-processamento e práticas reais de avaliação de RAG, ampliando a cobertura operacional (S6) e aproximando a revisão das decisões de Engenharia de Dados em produção.",
+      "related_validated": [
+        "P-3f5242546ea6",
+        "P-1034dcb2f56f"
+      ]
+    },
+    {
+      "paper_id": "P-32ac448357e4",
+      "rank": 2,
+      "justification": "Integra ingestão automatizada, OCR, metadados, armazenamento vetorial e SQL, acrescentando um ciclo explícito de feedback de usuários e ajuste supervisionado que cobre a principal lacuna de manutenção e melhoria contínua (S7).",
+      "related_validated": [
+        "P-a00af99127ff",
+        "P-0d46d780075c"
+      ]
+    },
+    {
+      "paper_id": "P-4fbb491e1d3c",
+      "rank": 3,
+      "justification": "Apresenta arquitetura policy-first com controle de acesso antes da recuperação, mitigação de prompt injection e poisoning, pacote de evidências, citações obrigatórias e métricas de auditoria, aproximando segurança e rastreabilidade da avaliação operacional ainda pouco coberta.",
+      "related_validated": [
+        "P-2a7e331ac123",
+        "P-12ff196f7de4",
+        "P-423200bdcd80"
+      ]
+    },
+    {
+      "paper_id": "P-95747e099ab8",
+      "rank": 4,
+      "justification": "Propõe funções-canário como mecanismo concreto para detectar envenenamento do document store, complementando os trabalhos já validados de rastreamento de ataques com uma prática de monitoramento preventivo da qualidade e segurança da base.",
+      "related_validated": [
+        "P-6cb9d57988e6",
+        "P-0d46d780075c"
+      ]
+    },
+    {
+      "paper_id": "P-ee5a47f71db6",
+      "rank": 5,
+      "justification": "Trata governança de acesso em RAG multifonte por validação em tempo real nos IAMs nativos, preservando fronteiras de políticas sem fundir modelos heterogêneos e avaliando o impacto das permissões sobre a qualidade das respostas.",
+      "related_validated": [
+        "P-2a7e331ac123",
+        "P-12ff196f7de4"
+      ]
+    },
+    {
+      "paper_id": "P-80bed81db83c",
+      "rank": 6,
+      "justification": "Amplia a dimensão de governança ao relacionar particionamento geográfico de embeddings, soberania de dados, replicação e desempenho de busca vetorial em escala, oferecendo práticas específicas para a camada de armazenamento (S3).",
+      "related_validated": [
+        "P-09dff3480b65",
+        "P-2a7e331ac123"
+      ]
+    },
+    {
+      "paper_id": "P-e33ade1826ad",
+      "rank": 7,
+      "justification": "Contribui para armazenamento e serving ao avaliar um banco vetorial distribuído sob leituras e escritas concorrentes, abordando escalabilidade, atualização do índice, contenção e manutenção de recall em condições operacionais.",
+      "related_validated": [
+        "P-09dff3480b65",
+        "P-423200bdcd80"
+      ]
+    },
+    {
+      "paper_id": "P-5075f7fb2528",
+      "rank": 8,
+      "justification": "Compara empiricamente 21 configurações de conversão PDF-Markdown, limpeza, splitting e enriquecimento de metadados em documentos administrativos portugueses, isolando o efeito das práticas de preparação sobre a qualidade final do RAG.",
+      "related_validated": [
+        "P-b069d8f0e835",
+        "P-03119b691be0",
+        "P-a00af99127ff"
+      ]
+    },
+    {
+      "paper_id": "P-414837969c44",
+      "rank": 9,
+      "justification": "Acrescenta preparação multimodal ao converter tabelas e gráficos em Markdown, integrar representações textuais e combinar bancos vetorial e de grafos, cobrindo enriquecimento de documentos complexos sem repetir apenas estratégias textuais de chunking.",
+      "related_validated": [
+        "P-a00af99127ff",
+        "P-f728b0a66bc2"
+      ]
+    },
+    {
+      "paper_id": "P-d4938f96d8ae",
+      "rank": 10,
+      "justification": "Integra, em uma mesma solução institucional, documentos não estruturados e bancos relacionais por pipelines RAG e NL2SQL, com privacidade local, chunking semântico e ciclo automático de geração, validação, execução e correção.",
+      "related_validated": [
+        "P-05f05d2ab481",
+        "P-a00af99127ff",
+        "P-3f5242546ea6"
+      ]
+    }
+  ],
+  "model": "codex-gpt-5",
+  "model_version": null,
+  "prompt_version": "mlr-ranking-v1",
+  "decided_at": "2026-09-26T15:08:00Z"
+}

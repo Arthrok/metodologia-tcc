@@ -1,0 +1,81 @@
+{
+  "source": "snowball",
+  "backend": "scopus",
+  "executed_at": "2026-09-26T03:18:47+00:00",
+  "finished_at": "2026-09-26T03:20:55+00:00",
+  "directions": [
+    "backward"
+  ],
+  "method": {
+    "backward": "Abstract Retrieval view=REF",
+    "forward": "Scopus Search REFEID()"
+  },
+  "seed_selection": {
+    "source": "provisional_ai_pretriage",
+    "criteria": [
+      "suggestion=include",
+      "priority=alta",
+      "temporal_status=in_scope"
+    ],
+    "ordering": "greedy coverage of lifecycle stages and transverse dimensions, then paper_id",
+    "models": [
+      "claude-opus-5-5",
+      "codex-gpt-5"
+    ],
+    "origin_filter": "acl",
+    "eligible_before_origin_filter": 310,
+    "eligible_after_origin_filter": 50
+  },
+  "seeds_available": 50,
+  "seed_ids_selected": [
+    "P-cbe07dce3144",
+    "P-019eda761174",
+    "P-0cd6ed3dd6a5",
+    "P-ce0890cbf647",
+    "P-03119b691be0",
+    "P-25a321add9c5",
+    "P-2bff5bb9937e",
+    "P-31d716040708",
+    "P-38debf43debc",
+    "P-3ed0a918e9f1",
+    "P-59523c99d193",
+    "P-7ca287ada16c",
+    "P-abeeacb553fe",
+    "P-c967b89b137c",
+    "P-d58318d9c239",
+    "P-d8cc78b6db88",
+    "P-e649c3923170",
+    "P-f9500260857e",
+    "P-03e822172085",
+    "P-0f5dd0d81c0d"
+  ],
+  "search_strings_applied": false,
+  "temporal_filter": null,
+  "seeds": 20,
+  "unresolved_seeds": [
+    "P-cbe07dce3144",
+    "P-ce0890cbf647",
+    "P-25a321add9c5",
+    "P-2bff5bb9937e",
+    "P-38debf43debc",
+    "P-abeeacb553fe",
+    "P-c967b89b137c",
+    "P-d58318d9c239",
+    "P-d8cc78b6db88",
+    "P-e649c3923170"
+  ],
+  "references": 317,
+  "citing": 0,
+  "metadata_fetched": 261,
+  "metadata_cached": 31,
+  "errors": [],
+  "requests_made": 292,
+  "seeds_pending": 30,
+  "candidates_total": 389,
+  "rate_limit": {
+    "limit": "10000",
+    "remaining": "6418",
+    "reset": "1790755274"
+  },
+  "proxy": "socks5h://127.0.0.1:1080"
+}

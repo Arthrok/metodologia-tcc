@@ -1,0 +1,69 @@
+{
+  "round_id": "r001",
+  "candidates": [
+    {
+      "paper_id": "P-1034dcb2f56f",
+      "rank": 1,
+      "justification": "Descreve uma cadeia de dados RAG ampla e avaliada, da preparação estrutural e indexação vetorial até recuperação, geração e métricas; amplia simultaneamente S2–S6, qualidade e rastreabilidade.",
+      "related_validated": []
+    },
+    {
+      "paper_id": "P-0d46d780075c",
+      "rank": 2,
+      "justification": "Trata manutenção contínua da base de conhecimento por aprendizado ativo diante de mudanças nos logs, oferecendo evidência concreta para S1 e para a etapa pouco coberta S7.",
+      "related_validated": []
+    },
+    {
+      "paper_id": "P-05f05d2ab481",
+      "rank": 3,
+      "justification": "Foca integração e harmonização de fontes corporativas heterogêneas, diretamente aderente às decisões de aquisição e preparação de dados em S1–S2.",
+      "related_validated": []
+    },
+    {
+      "paper_id": "P-03119b691be0",
+      "rank": 4,
+      "justification": "Apresenta parsing orientado à estrutura, chunking multivisão e armazenamento combinado relacional-vetorial, cobrindo decisões concretas de S2–S4.",
+      "related_validated": []
+    },
+    {
+      "paper_id": "P-03e822172085",
+      "rank": 5,
+      "justification": "Avalia embeddings, fusão de rankings, reranking e chunking em um chatbot implantado, oferecendo recomendações práticas de recuperação e entrega em S4–S5.",
+      "related_validated": []
+    },
+    {
+      "paper_id": "P-019eda761174",
+      "rank": 6,
+      "justification": "Traz telemetria de produção e auditoria pós-geração de referências com normalização, verificação e reescrita, cobrindo S5–S6, qualidade e rastreabilidade.",
+      "related_validated": []
+    },
+    {
+      "paper_id": "P-08641889c341",
+      "rank": 7,
+      "justification": "Relata um RAG universitário on-premise e explicita decisões de governança e segurança ao longo de aquisição, recuperação e disponibilização.",
+      "related_validated": []
+    },
+    {
+      "paper_id": "P-09dff3480b65",
+      "rank": 8,
+      "justification": "Discute arquitetura distribuída, residência e governança de dados em RAG empresarial, acrescentando desafios operacionais e de segurança na indexação S3.",
+      "related_validated": []
+    },
+    {
+      "paper_id": "P-12ff196f7de4",
+      "rank": 9,
+      "justification": "Propõe índices vetoriais autenticados e proveniência criptográfica contra envenenamento do corpus, cobrindo segurança e rastreabilidade em S3.",
+      "related_validated": []
+    },
+    {
+      "paper_id": "P-0cd6ed3dd6a5",
+      "rank": 10,
+      "justification": "Avalia pré-seleção de corpus histórico ruidoso antes da indexação, conectando curadoria, OCR e qualidade de dados nas etapas S1–S3.",
+      "related_validated": []
+    }
+  ],
+  "model": "codex-gpt-5",
+  "model_version": null,
+  "prompt_version": "mlr-ranking-v1",
+  "decided_at": "2026-09-26T01:27:16Z"
+}

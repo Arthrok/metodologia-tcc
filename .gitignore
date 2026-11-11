@@ -1,0 +1,42 @@
+# --- Segredos -------------------------------------------------------------
+# Chaves de API ficam só no .env local. Use .env.example como modelo.
+.env
+.env.*
+!.env.example
+
+# --- Ambiente e caches ------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Permissões locais do Claude Code (específicas de cada máquina)
+.claude/settings.local.json
+
+# --- Texto do TCC ----------------------------------------------------------
+# O texto vive no repositório do Overleaf (git.overleaf.com), não aqui.
+6a32a5e76ab16dbe04e1696a/
+/metodologia.tex
+*.pdf
+
+# --- Dados com conteúdo licenciado -----------------------------------------
+# Resumos e metadados completos obtidos pelas APIs da Elsevier/Scopus não
+# podem ser redistribuídos. Eles são regenerados pelos coletores (ver README).
+# Os manifestos e a trilha de decisões (sem resumos) continuam versionados.
+data/raw/
+data/review/pool.jsonl
+data/review/pretriage/batches/
+data/review/rounds/*/shortlist.jsonl
+data/review/rounds/*/ranking.input.json
+data/review/rounds/*/review.csv
+data/review/rounds/*/validated_references.jsonl
+data/review/analysis/packet_*.json
+data/review/refinement/packet_*.json
+
+# --- Artefatos locais ------------------------------------------------------
+outputs/revisao_rag/
+outputs/diagrama_metodologia_lablivre*
+*.orig
+# Depende de um runtime local do Codex com caminhos absolutos
+scripts/build_review_workbook.mjs
