@@ -20,7 +20,7 @@ arquitetura interativa da revisão, resultados e as 80 decisões da triagem. O s
 
 ## Estado atual
 
-O corpus final reuniu **88 fontes (51 acadêmicas e 37 cinzentas)** e **244 evidências válidas (179 acadêmicas e 65 cinzentas)**. A auditoria dirigida das adaptações da QP2 e dos casos próximos ao corte foi concluída. O material suplementar do artigo, com as decisões finais, a execução da literatura cinzenta, a base documental da auditoria humana e o vínculo de cada evidência com as tabelas QP1–QP3, está em [`suplemento/`](suplemento/MATERIAL_SUPLEMENTAR.md). A descoberta acadêmica havia sido encerrada por decisão humana em 27/09/2026, após a rodada r008.
+O corpus final reuniu **88 fontes (51 acadêmicas e 37 cinzentas)** e **244 evidências válidas (179 acadêmicas e 65 cinzentas)**. A auditoria dirigida das adaptações da QP2 e dos casos próximos ao corte foi concluída. Os registros finais do estudo (decisões finais das fontes, execução da literatura cinzenta, base documental da auditoria humana e vínculo de cada evidência com as tabelas QP1–QP3) estão consolidados em [`suplemento/MATERIAL_SUPLEMENTAR.md`](suplemento/MATERIAL_SUPLEMENTAR.md) e na planilha [`suplemento/Registros_MLR.xlsx`](suplemento/Registros_MLR.xlsx). Os arquivos em `config/review_protocol.yaml` e `data/review/` preservam o protocolo operacional histórico e os dados da triagem acadêmica (encerrada por decisão humana em 27/09/2026, após a rodada r008), distintos dos resultados finais da MLR.
 
 ### Registro histórico da triagem acadêmica
 

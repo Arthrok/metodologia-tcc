@@ -333,6 +333,8 @@ a.lk{text-decoration:none;color:inherit}
   <nav class="crumbs" id="crumbs" aria-label="Onde você está"></nav>
   <div class="tools">
     <a class="btn" href="material.html" style="text-decoration:none" title="Tabelas, figuras, as 80 decisões da triagem e como reproduzir">Material complementar</a>
+    <a class="btn" href="https://github.com/Arthrok/metodologia-tcc/blob/main/suplemento/MATERIAL_SUPLEMENTAR.md" style="text-decoration:none" title="Documento suplementar completo">Suplemento</a>
+    <a class="btn" href="https://github.com/Arthrok/metodologia-tcc/blob/main/suplemento/Registros_MLR.xlsx" style="text-decoration:none" title="Planilha consolidada de registros">Registros (.xlsx)</a>
     <a class="btn" href="https://github.com/Arthrok/metodologia-tcc" style="text-decoration:none" title="Código e trilha de auditoria">GitHub</a>
     <button class="btn" id="bGloss" type="button">Glossário</button>
     <button class="btn" id="bDecs" type="button">Decisões</button>
@@ -402,7 +404,7 @@ home: {
      d:{faz:'Preenchem a planilha de cada rodada com decisão, critério de exclusão e justificativa; aprovam ou recusam propostas de novas strings; avaliam os indicadores de parada; conferem as notas de qualidade e a extração sugeridas pelo modelo.',
         pq:['A decisão de inclusão ou exclusão cabe sempre aos pesquisadores; o modelo só ordena e sugere.','Nos 80 candidatos apresentados, todos com sugestão de inclusão e prioridade alta, os pesquisadores divergiram do modelo em 20 casos (25%).'],
         cod:['data/review/decisions.jsonl','data/review/workspace.json']}},
-    {id:'h-ia',k:'node',area:'ia',pill:'Apoio · modelo de linguagem',ico:'ia',t:'Modelo de linguagem',s:'Pré-tria registros, escolhe os dez candidatos de cada rodada, propõe ajustes nas strings e prepara notas de qualidade e a extração inicial. Nunca decide: toda saída é validada pelo código e revisada por pessoas.',badge:['llm','IA · sugere'],tags:['claude-opus-5-5','codex-gpt-5','mlr-screening-v2','mlr-ranking-v1'],
+    {id:'h-ia',k:'node',area:'ia',pill:'Apoio · modelo de linguagem',ico:'ia',t:'Modelo de linguagem',s:'Pré-tria registros, escolhe os dez candidatos de cada rodada, propõe ajustes nas strings e prepara notas de qualidade e a extração inicial. Nunca decide: toda saída é validada estruturalmente pelo código e a seleção e a auditoria dirigida passam por revisão humana (sem revisão individual de todas as sugestões não priorizadas).',badge:['llm','IA · sugere'],tags:['claude-opus-5-5','codex-gpt-5','mlr-screening-v2','mlr-ranking-v1'],
      d:{tbl:[['Pré-triagem acadêmica','claude-opus-5-5 em 1.647 registros e codex-gpt-5 em 585, com a mesma instrução mlr-screening-v2'],['Ranqueamento das rodadas','codex-gpt-5, instrução mlr-ranking-v1'],['Refinamento das strings','proposta q2, não aprovada pelos pesquisadores'],['Pré-triagem cinzenta, notas QA e QG, extração','claude-opus-5-5, sujeito à conferência dos pesquisadores']],
         pq:['As instruções são skills em Markdown versionadas no repositório; entradas e saídas de cada lote ficam registradas.'],
         cod:['.claude/skills/','data/review/pretriage/pretriage.jsonl']}},
@@ -579,15 +581,15 @@ ext: {
     {id:'x-inc',k:'store',area:'inc',pill:'De 2',t:'Inclusões preliminares',s:'Oito rodadas de decisão humana.',tags:['60'],go:'acad'},
     {id:'x-full',k:'node',area:'full',pill:'4.1 · Texto integral',t:'Obter o texto completo',s:'Pelo acesso da UnB ao Portal de Periódicos da CAPES e por repositórios de acesso aberto.',badge:['det','Busca'],tags:['55 obtidos','5 por E5'],
      d:{fora:['A exclusão por E5 restringe o corpus ao material acessível pelo acesso institucional e por repositórios abertos.']}},
-    {id:'x-qa',k:'node',area:'qa',pill:'4.2 · Qualidade',t:'QA1–QA6',s:'Clareza do objetivo, transparência metodológica, fundamentação das evidências, especificidade, limitações e rastreabilidade técnica.',badge:['llm','IA · notas conferidas'],tags:['51 acadêmicas adequadas','4 desconsideradas na QA, incluindo A57'],
+    {id:'x-qa',k:'node',area:'qa',pill:'4.2 · Qualidade',t:'QA1–QA6',s:'Clareza do objetivo, transparência metodológica, fundamentação das evidências, especificidade, limitações e rastreabilidade técnica.',badge:['llm','IA · auditoria dirigida'],tags:['51 acadêmicas adequadas','4 desconsideradas na QA, incluindo A57'],
      d:{faz:'Escala 0 / 0,5 / 1 por critério, máximo 6,0, mínimo 4,0. QA2 e QA3 são centrais: zero nos dois ao mesmo tempo desclassifica a fonte, qualquer que seja a soma.',
         num:['55 avaliadas, 51 adequadas após a auditoria dirigida','4 desconsideradas na qualidade, incluindo A57 (QA abaixo de 4,0)'],
         pq:['Métricas bibliométricas (fator de impacto, citações, prestígio) não entram na qualidade metodológica.','A aderência temática não é repontuada como qualidade: ela já foi decidida na elegibilidade.']}},
     {id:'x-gin',k:'store',area:'gin',pill:'De 3',t:'Fontes cinzentas incluídas',s:'Já avaliadas em QG1–QG6 durante a seleção.',tags:['37'],go:'gray'},
-    {id:'x-ficha',k:'node',area:'ficha',pill:'4.3 · Extração',ico:'table-cells',t:'Ficha por fonte',s:'Prática, finalidade, contexto, etapas e dimensões, artefatos, variações, adaptações e suas bases de comparação, desafios e efeitos, cada um com o excerto e a página ou seção.',badge:['llm','IA · conferida'],tags:['244 evidências válidas','179 acadêmicas · 65 cinzentas'],
+    {id:'x-ficha',k:'node',area:'ficha',pill:'4.3 · Extração',ico:'table-cells',t:'Ficha por fonte',s:'Prática, finalidade, contexto, etapas e dimensões, artefatos, variações, adaptações e suas bases de comparação, desafios e efeitos, cada um com o excerto e a página ou seção.',badge:['llm','IA · auditoria dirigida'],tags:['244 evidências válidas','179 acadêmicas · 65 cinzentas'],
      d:{tbl:Object.entries(ST).map(([k,v]) => [`${k} · ${v.n}`, `${v.c[7]} acadêmicas · ${v.c[8]} cinzentas`]),
         pq:['Uma adaptação só é registrada quando a fonte descreve uma mudança identificável em relação a um princípio ou contexto anterior, ou oferece base para uma comparação explícita.','A diferença em relação à triagem vem de a extração usar o texto integral, e não só título e resumo.'],
-        fora:['Uma evidência pôde ser associada a mais de uma etapa; a soma das associações S1–S8 excede 244.']}},
+        fora:['As 179 evidências acadêmicas puderam receber até três etapas (261 associações S1–S8), enquanto as 65 evidências cinzentas receberam uma única etapa cada.']}},
     {id:'x-syn',k:'node',area:'syn',pill:'Síntese',ico:'chart-bar',t:'QP1, QP2 e QP3',s:'Por etapa do ciclo de vida, cada achado é situado como acadêmico, cinzento ou de ambos.',li:['práticas, finalidades e contextos','adaptações, requisitos e desafios','distribuição entre os dois tipos de literatura']},
   ],
   edges:[
