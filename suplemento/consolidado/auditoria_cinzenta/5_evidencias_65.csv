@@ -1,0 +1,66 @@
+Cxx,ID,Evidência,Etapa,Seção,Prefixo 120 car. no texto,Excerto inteiro no texto,Excerto (início)
+C01,CD002,1,S8,Introdução,sim,sim,"Why delete_all(user_id=...) breaks GDPR compliance in practice — and how length-prefixed salted Merkle documents, two-tier AES-256-GCM crypt"
+C01,CD002,2,S8,Seção de operação,sim,sim,Separate your keys from ledger backups: Crypto-shredding only protects pre-existing snapshots if key_dir (or your KMS/HSM KeyStore) was neve
+C02,CD007,1,S4,Deduplicate before you embed,sim,sim,"The standard fix is **MinHash + LSH (locality-sensitive hashing)**: hash each document into a signature, bucket similar signatures, and coll"
+C02,CD007,2,S4,Deduplicate before you embed,sim,sim,"Whether you *need* it, and how aggressive to be, depends on how duplicated your corpus actually is — measure your near-duplicate rate first,"
+C02,CD007,3,S4,Chunk with structure,sim,sim,"The fix that actually moves numbers is **contextual retrieval**: before embedding each chunk, prepend a short, machine-generated sentence th"
+C03,CD019,1,S3,TL;DR,sim,sim,At this size you can run exact search and skip the infrastructure.
+C03,CD019,2,S6,TL;DR,sim,sim,"Build a small eval set first, because without one you're guessing."
+C04,CD021,1,S1,3. Source manifests,sim,sim,A source manifest is a small metadata record that describes what a source is and how it should be trusted.
+C04,CD021,2,S5,Introdução,sim,sim,- Use explicit source manifests instead of hardcoded collection names.
+C05,CD024,1,S3,What we actually asked it,sim,sim,"> Find the chunks most similar to this question — **among documents this user is allowed to see, that are published, in their workspace, not"
+C05,CD024,2,S5,The detail nobody tells you: iterative scan,sim,sim,"**pgvector 0.8.0, October 2024**, added *iterative index scans*: when a filtered search comes up short, the index keeps walking the graph an"
+C06,CD025,1,S2,4. Make Ingestion Idempotent and Resumable,sim,sim,Check whether the current `content_hash` or `version` is already indexed.
+C06,CD025,2,S7,Introdução,sim,sim,"The goal is not just “make it answer.” The goal is to make it operable: idempotent ingestion, access-controlled retrieval, retry-safe automa"
+C07,CD029,1,S4,Chunking: the sweet spot isn't obvious,sim,sim,"I tested 256, 512, and 1024 token chunks against the same corpus, fixed `k=5`."
+C07,CD029,2,S5,Hybrid retrieval: the reversal,sim,sim,"`chunk_512` with plain vector, no rerank, is still the best single configuration on this corpus: 100% source, page, and phrase recall, in 1."
+C08,CD033,1,S4,Finding #1,sim,sim,"The noise filter flagged 0 of this paper's 27 chunks, which makes sense: a short academic paper doesn't have the kind of heavy front matter "
+C08,CD033,2,S5,Finding #2,sim,sim,"**If you're not familiar with the term, this is called indirect prompt injection.** Normally when people talk about ""prompt injection,"" they"
+C09,CD035,1,S4,The Chunking Problem,sim,sim,We saw recall jump from 45% to 78% on a legal documents project.
+C09,CD035,2,S4,Introdução,sim,sim,Cost spirals because they're embedding everything multiple times.
+C10,CD036,1,S8,Key takeaways,sim,sim,"Default to **7–30 days** for operational traces, **0–7 days** for raw prompts, and **90–365 days** for compliance audit events that contain "
+C10,CD036,2,S8,GDPR/CCPA deletion in a vector database,sim,sim,"**Tombstones + async purge**: mark embeddings deleted, exclude at query time, purge later."
+C10,CD036,3,S2,Ingestion-time redaction,sim,sim,"In healthcare or finance, it’s common to keep raw docs in a separate evidence vault with a different retention policy."
+C11,CD051,1,S7,Primary Key Table + Stream Load,sim,sim,"This is the core reason we chose a Primary Key table over a Duplicate Key table: not for row-level upserts, since this workload is full-tabl"
+C11,CD051,2,S5,Embedding Cache for Predictable Cost,sim,sim,"A local SQLite cache, keyed by query text and task_type (since RETRIEVAL_QUERY and RETRIEVAL_DOCUMENT produce different vectors), eliminates"
+C12,CD060,1,S7,Summary,sim,sim,"**Content hash tracking is the mechanism** — RecordManager stores a hash for each document; unchanged → skip, modified → delete old + insert"
+C12,CD060,2,S8,Summary,sim,sim,"**`cleanup=""full""` prevents ghost documents** — without it, deleted documents stay in the vector store indefinitely and keep appearing in re"
+C13,CD064,1,S6,Eval Design: The Answerable/Unanswerable Split,sim,sim,An unanswerable question where the system correctly refuses should not contribute `Hit@1 = 0` to your retrieval average.
+C14,CD065,1,S6,The retrieval layer,sim,sim,"If vector search degrades from 30 ms to 300 ms, that change should be visible in isolation rather than diluted in an aggregate latency that "
+C14,CD065,2,S6,The orchestration layer,sim,sim,"Hash of the prompt always stored, full text only on errors and cost outliers, PII redaction at the collector."
+C15,CD070,1,S5,Decision 5: Field Boosts,sim,sim,A word in the title is a stronger signal than a word buried in the body:
+C16,CD081,1,S7,TL;DR,sim,sim,"But if you update your query embeddings without re-embedding your documents, your RAG pipeline will silently break."
+C16,CD081,2,S7,What You Actually Need,sim,sim,- Embedding provenance: Which model version produced each vector?
+C17,CD086,1,S1,Retrievals degrade silently,sim,sim,Your RAG system has been confidently generating responses based on deprecated regulatory guidance for 21 days.
+C17,CD086,2,S7,How to build,sim,sim,"The system runs continuously, checking your defined sources every 6-24 hours, and alerts you to quality issues before they cascade into hall"
+C18,CD110,1,S5,Online A/B testing,sim,sim,"We ran a two-arm, 1.5M-conversation A/B test, resulting in no change in latency (P50 ≈150 ms), but a statistically significant improvement i"
+C19,CD120,1,S5,RAG in Copilot: Keeping Source Diversity,sim,sim,"To fix this, Copilot retrieves by type, scores within type, then merges using heuristic rules that keep source diversity near the top of the"
+C19,CD120,2,S5,Introdução,sim,sim,In this post we share how we deployed an LLM-based reranker and the engineering needed to make it 5x faster while staying reliable on produc
+C20,CD121,1,S4,OCR & RAG over tables,sim,sim,"I discuss some of the challenges of performing OCR with Vision-language (VLMs) foundational models today, and show how adding the context to"
+C20,CD121,2,S2,Where VLMs struggle today with OCR,sim,sim,"However, there is no established way of associating a caption or label of a table to a specific table."
+C21,CD131,1,S2,Introdução,sim,sim,OCR quality creates an invisible ceiling that limits the performance of even the most advanced RAG systems.
+C22,CD133,1,S3,The Big Idea,sim,sim,"However, if you are looking for answers in a relatively small set of well-organized documents, then a hierarchical directory might still be "
+C23,CD136,1,S6,Experimental results,sim,sim,We found that different LLMs are often not in agreement.
+C24,CD149,1,S4,Results,sim,sim,"For this dataset, a simpler token chunker outperforms more complex algorithms."
+C25,CD159,1,S5,Introdução,sim,sim,"The point is that this knowledge is simply impossible for any pre-trained re-ranker to have since without fine-tuning, the model has no way "
+C26,CD161,1,S4,Separation of Concerns and Prompt Engineering,sim,sim,- Deduplicate entities with existing entities
+C27,CD178,1,S4,Chunking strategies,sim,sim,"In general, though, Schwaber-Cohen recommends smaller chunks: ""What we found for the most part is that you would have better luck if you're "
+C27,CD178,2,S5,Why is chunking important?,sim,sim,"“You can reduce the search space significantly if you're just looking for a particular subset of the data, and you could use that metadata t"
+C28,CD179,1,S7,Syncing documents across stores,sim,sim,"Out-of-sync document stores could lead to subtle bugs, such as a document being present in one store but not another."
+C28,CD179,2,S5,The problem with vector-only search,sim,sim,"We use Retrieval Augmented Generation (RAG) for much of this pipeline because it's quicker to iterate on than fine-tuning, doesn’t require t"
+C29,PT01,1,S1,Gather test queries,sim,sim,"In this step, you gather test queries that you use to evaluate your chunks, your search solution, and your prompt engineering."
+C29,PT01,2,S4,Augment your chunks,sim,sim,The extra metadata fields are all stored in the same row as your embeddings and can be used in the search solution either as filters or as p
+C30,PT04,1,S7,RAG usage overview,sim,sim,"First, vector databases only sync periodically, meaning permission changes in the source data aren’t immediately reflected."
+C31,PT06,1,S2,Data ingestion subsystem,sim,sim,"- The function parses the raw data, formats it as required, and then divides"
+C32,PT07,1,S4,Key components of the data pipeline,sim,sim,- Deduplication: Analyze the documents to identify and eliminate duplicates or near-duplicate documents.
+C32,PT07,2,S3,Indexing and storage,sim,sim,Storing metadata alongside embeddings in the same Delta table enables efficient filtering during retrieval.
+C33,PT08,1,S4,AI-Generated Summary,sim,sim,- Page-level chunking achieved the highest average end-to-end RAG accuracy of 0.648 with the lowest standard deviation of 0.107 across all t
+C33,PT08,2,S4,AI-Generated Summary,sim,sim,"- Query characteristics strongly influenced optimal chunk size, as factoid queries in DigitalCorpora767 and Earnings favored smaller chunks "
+C34,PT09,1,S2,PyPDFLoader vs PyMuPDF,sim,sim,"Using the following two functions on 50.6 MB data set, it took 0.131 seconds for PyMuPDF vs 0.366 seconds for PypdfLoader from LangChain."
+C35,PT10,1,S2,Challenges,sim,sim,"To address this challenge, we transitioned from PDFs to Google Docs, using HTML formatting for more accurate text extraction."
+C35,PT10,2,S4,Challenges,sim,sim,"Additionally, we enriched the metadata with identifiers to distinguish table-containing text chunks, ensuring they remain intact during chun"
+C35,PT10,3,S5,Challenges,sim,sim,Access control metadata can be indexed and used during answer generation to prevent unauthorized access to restricted information.
+C36,PT11,1,S4,Initialize Chunker,sim,sim,"To reduce noise (aka useless documents), we will discard any documents smaller than 50 tokens in length."
+C36,PT11,2,S5,Works on token input,sim,sim,"Since the chunk text itself is by far the richest, I assign a weighting of 70%."
+C37,PT12,1,S5,Post-processing chunks with chunk expansion,sim,sim,"Chunk expansion is an easy way to post-process chunked data from a database, by retrieving neighboring chunks within a window for each chunk"
+C37,PT12,2,S4,Figuring out the best chunking strategy,sim,sim,"Start by exploring a variety of chunk sizes, including smaller chunks (e.g., 128 or 256 tokens) for capturing more granular semantic informa"

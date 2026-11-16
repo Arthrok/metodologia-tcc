@@ -1,0 +1,62 @@
+ID,Cxx,Mecanismo,Título,Decisão final (planilha),QG (planilha),Texto local,Via Wayback,Download (triagem)
+CD001,,DEV.to,CocoIndex for Fresh RAG Data: A Step-by-Step Guide,"Excluída — E4 — tutorial promocional de ferramenta (CocoIndex), sem relato de uso",3,sim,não,ok (cache)
+CD002,C01,DEV.to,Solving the Erasure / Receipt Trilemma in AI Memory and RAG,Incluída (C01),4,sim,não,ok (cache)
+CD003,,DEV.to,Search Results Retain a Deleted Document — 4 Vector Erasure Checks,Excluída — QG1 = 0 — conta pseudônima; conteúdo promocional (Infrai),3,sim,não,ok (cache)
+CD007,C02,DEV.to,How to Make RAG Show Its Evidence: Claim Verification at 15M-Document Scale,Incluída (C02),5,sim,não,ok (cache)
+CD014,,DEV.to,GDPR Right to Erasure with Vector Search API Delete by ID,Excluída — QG1 = 0 — conta pseudônima; conteúdo promocional (Infrai),3,sim,não,ok (cache)
+CD019,C03,DEV.to,RAG Retrieval Strategies on a 50k-Document Dataset: BM25 vs Dense vs Hybrid,Incluída (C03),4,sim,não,ok (cache)
+CD021,C04,DEV.to,RAG Has a Routing Problem: Knowing Which Knowledge Source to Trust,Incluída (C04),4,sim,não,ok (cache)
+CD023,,DEV.to,Your LLM Trace Is Green. Why Is the RAG Answer Still Wrong?,Excluída — QG < 4 — conteúdo de fornecedor (Cloudsway) sem evidência de uso,3.5,sim,não,ok (cache)
+CD024,C05,DEV.to,We Deleted Our Vector Database. Postgres Was Faster.,Incluída (C05),5,sim,não,ok (cache)
+CD025,C06,DEV.to,"Building a Production RAG Pipeline with n8n, Qdrant, and Gemini: A Step-by-Step Walkthrough",Incluída (C06),4.5,sim,não,ok (cache)
+CD029,C07,DEV.to,Building a Production-Grade Hybrid RAG System,Incluída (C07),5.5,sim,não,ok (cache)
+CD033,C08,DEV.to,My RAG Pipeline Got Hijacked by Retrieved Text: An Accidental Prompt Injection,Incluída (C08),5,sim,não,ok (cache)
+CD035,C09,HN/Algolia,We cut RAG costs 5x without losing quality,Incluída (C09),4.5,sim,não,ok (cache)
+CD036,C10,DEV.to,Data Privacy in RAG Redaction and Retention [2026 Playbook],Incluída (C10),4,sim,não,ok (cache)
+CD037,,DEV.to,RAG Chunking Strategies That Survive Production: Beyond the 512-Token Default,Excluída — QG < 4 — síntese genérica de estratégias de chunking,3.5,sim,não,ok (cache)
+CD039,,DEV.to,Your RAG Index Might Be Lying to You: Data Freshness Is the Missing Signal for AI Systems,Excluída — QG < 4 — proposta de padrão de telemetria sem uso relatado,3.5,sim,não,ok (cache)
+CD042,,DEV.to,Documents Aren't Bags of Chunks,"Excluída — E4 — ensaio opinativo curto, sem prática analisável",,sim,não,ok (cache)
+CD045,,DEV.to,You can't debug a RAG you didn't instrument,"Excluída — QG < 4 — relato curto, pouco verificável",3.5,sim,não,ok (cache)
+CD051,C11,HN/Algolia,Lessons We Learned Building a RAG Assistant Without a Separate Vector Database,Incluída (C11),5.5,sim,não,ok 14875
+CD060,C12,DEV.to,RAG Series (19): Incremental Updates — Keeping the Knowledge Base Fresh,Incluída (C12),5,sim,não,ok (cache)
+CD064,C13,DEV.to,Building a RAG Evaluation Harness That Actually Catches Problems,Incluída (C13),5.5,sim,não,ok (cache)
+CD065,C14,DEV.to,Observability for AI Systems with OpenTelemetry,Incluída (C14),4.5,sim,não,ok (cache)
+CD068,,HN/Algolia,"RAG pipelines, leaking PII into vector databases and nobody's talking about it",Excluída — E4 — conteúdo promocional (ComplyTech) curto,3,sim,não,ok (cache)
+CD070,C15,DEV.to,15 Engineering Decisions Behind RAG Hybrid Search,Incluída (C15),4,sim,não,ok (cache)
+CD081,C16,HN/Algolia,I Updated My Embedding Model and My RAG Broke: A Post-Mortem,Incluída (C16),4.5,sim,não,ok (cache)
+CD086,C17,DEV.to,Monitor RAG Data Source Quality,Incluída (C17),5,sim,não,ok (cache)
+CD093,,HN/Algolia,"Show HN: RAG chunk size ""best practices"" failed on legal text – I benchmarked it","Excluída — E5 — texto integral indisponível (Medium bloqueou o acesso, HTTP 403)",,não,não,falha: HTTP Error 403: Forbidden
+CD110,C18,HN/Algolia,We built a world‑class reranker for RAG,Incluída (C18),5.5,sim,não,ok (cache)
+CD113,,HN/Algolia,"RAG Is Set Consumption, Not Ranking: A Metric Designed for RAG Evaluation",Excluída — QG < 4 — proposta de métrica sem uso relatado,3.5,sim,não,ok (cache)
+CD120,C19,HN/Algolia,LLM Rerankers for RAG: A Practical Guide,Incluída (C19),5.5,sim,não,ok (cache)
+CD121,C20,HN/Algolia,OCR and RAG for Tables,Incluída (C20),5,sim,não,ok (cache)
+CD128,,HN/Algolia,"RAG chunking isn't one problem, it's three",Excluída — QG6 = 0 — argumentação conceitual sem dados ou referências,,sim,não,ok (cache)
+CD131,C21,HN/Algolia,The Ceiling: How OCR Quality Limits RAG Performance,Incluída (C21),5,sim,não,ok (cache)
+CD133,C22,HN/Algolia,Roaming RAG – RAG without the vector DB,Incluída (C22),4.5,sim,não,ok (cache)
+CD136,C23,HN/Algolia,Evaluating the evaluators: know your RAG metrics,Incluída (C23),5.5,sim,não,ok (cache)
+CD144,,HN/Algolia,Late Chunking and better RAG chunking,Excluída — I1 indeterminado — página sem data verificável,,sim,não,ok (cache)
+CD146,,HN/Algolia,New RAG evaluation and LLM-as-a-judge capabilities in Amazon Bedrock,Excluída — QG < 4 — anúncio de produto (Amazon Bedrock),3.5,sim,não,ok (cache)
+CD148,,HN/Algolia,What Infrastructure Capabilities Does RAG Need Beyond Hybrid Search?,Excluída — E4 — promoção de produto (Infinity/RAGFlow),3.5,sim,não,ok (cache)
+CD149,C24,HN/Algolia,Exploring Semantic Chunking for RAG,Incluída (C24),5.5,sim,sim,falha: <urlopen error [Errno -2] Name or service not known>
+CD158,,HN/Algolia,A new semantic chunking approach for RAG,Excluída — E4 — texto curto sem detalhamento,,sim,não,ok (cache)
+CD159,C25,HN/Algolia,Is your RAG Reranker not helping? This might be why,Incluída (C25),4,sim,não,ok (cache)
+CD161,C26,HN/Algolia,"Scaling LLM Data Extraction: Challenges, Design Decisions, and Solutions",Incluída (C26),4.5,sim,não,ok (cache)
+CD170,,HN/Algolia,Solving the out-of-context chunk problem for RAG,Excluída — E5 — página renderizada só por JavaScript; nem o arquivo do Wayback tem o texto,,não,não,falha: HTTP Error 404: Not Found
+CD178,C27,HN/Algolia,Breaking up is hard to do: Chunking in RAG applications,Incluída (C27),4,sim,não,ok (cache)
+CD179,C28,HN/Algolia,Better RAG Results with Reciprocal Rank Fusion and Hybrid Search,Incluída (C28),5,sim,não,ok (cache)
+CD182,,HN/Algolia,RAG Evaluation Guide,Excluída — QG < 4 — tutorial genérico de métricas,3.5,sim,não,ok (cache)
+CD183,,HN/Algolia,An Evaluation of RAG Retrieval Chunking Methods,Excluída — E5 — URL redireciona para o índice do blog; artigo indisponível,,sim,não,ok (cache)
+CD187,,HN/Algolia,RAG Vector Database Traps and How to Avoid Them,Excluída — QG < 4 — conteúdo promocional (Vectorize),3,sim,não,ok (cache)
+CD196,,HN/Algolia,Rerankers and Two-Stage Retrieval,Excluída — I1 indeterminado — página sem data verificável,,sim,não,ok (cache)
+PT01,C29,Portal: Microsoft Azure Architecture Center,Design and develop a RAG solution (série: preparation / chunking / enrichment / embedding / information retrieval / LLM evaluation),Incluída (C29),5,sim,não,ok 153033
+PT02,,Portal: AWS Prescriptive Guidance,Data lifecycle in generative AI,"Excluída — QG < 4 — orientação genérica, sem data verificável na página",3,sim,não,ok 17043
+PT03,,Portal: AWS Prescriptive Guidance,Retrieval Augmented Generation options and architectures on AWS,"Excluída — E4 — catálogo de serviços de recuperação, sem prática analisável",3.5,sim,não,ok 17630
+PT04,C30,Portal: AWS Security Blog,Authorizing access to data with RAG implementations,Incluída (C30),5.5,sim,não,ok 24946
+PT05,,Portal: AWS Documentation (Amazon Bedrock),Sync your data with your Amazon Bedrock knowledge base,Excluída — I1 indeterminado — documentação sem data de publicação/atualização,,sim,não,ok 8726
+PT06,C31,Portal: Google Cloud Architecture Center,RAG-capable generative AI application using Vertex AI,Incluída (C31),5,sim,não,ok 30630
+PT07,C32,Portal: Databricks AI Cookbook,RAG data pipeline (fundamentals + build an unstructured data pipeline),Incluída (C32),5,sim,não,ok 23751
+PT08,C33,Portal: NVIDIA Technical Blog,Finding the Best Chunking Strategy for Accurate AI Responses,Incluída (C33),6,sim,não,ok 21950
+PT09,C34,Portal: IBM RAG Cookbook,RAG Cookbook — chunking and data ingestion,Incluída (C34),4.5,sim,não,ok 40221
+PT10,C35,Portal: Uber Engineering Blog,Enhanced Agentic-RAG: What If Chatbots Could Deliver Near-Human Precision?,Incluída (C35),5.5,sim,sim,falha: HTTP Error 406: Not Acceptable
+PT11,C36,Portal: Elastic Search Labs,Advanced RAG techniques part 1: data processing,Incluída (C36),5,sim,não,ok 32027
+PT12,C37,Portal: Pinecone Learn,Chunking Strategies for LLM Applications,Incluída (C37),5,sim,não,ok 16840

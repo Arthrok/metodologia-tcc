@@ -1,0 +1,15 @@
+tema_id,tema,definicao_operacional,presenca,n_fontes_acad,n_fontes_cinz,n_evidencias,fontes_acad,fontes_cinz,tipos_acad,tipos_cinz
+T01,Medallion para documentos RAG,Camadas Bronze/Silver/Gold aplicadas a artefatos documentais do pipeline RAG,Acadêmica,1,0,1,A23,,EE 1,
+T02,Índices federados por domínio,"Índices e documentos mantidos por domínio ou instituição, com roteamento federado",Acadêmica,2,0,3,"A02, A33",,EE 2,
+T03,Pré/pós-filtro na busca vetorial,"Decisão sobre onde e como aplicar filtros de atributos na busca vetorial (pré/pós-filtro, pushdown, varredura iterativa, seletividade)",Ambas,6,1,7,"A12, A32, A34, A36, A40, A58",C05,EE 5/EP 1,EP 1
+T04,Autorização antes da geração,"Controle de acesso aplicado na recuperação ou antes do prompt (ACL, RBAC/ABAC/PBAC, IAM da fonte, finalidade)",Ambas,7,4,14,"A22, A25, A31, A33, A40, A45, A58","C05, C06, C30, C35",EE 6/PC 1,EP 2/GP 2
+T05,Linhagem e traces por resposta,"Registro de proveniência ou trace que liga fonte, trecho, rota e resposta",Ambas,6,1,8,"A02, A04, A22, A43, A45, A58",C14,EE 3/EP 2/PC 1,GP 1
+T06,Chunking estrutural e contexto,"Preservação de estrutura, tabelas e hierarquia ou inclusão de contexto e metadados do documento no chunk",Ambas,15,5,25,"A06, A09, A10, A12, A15, A18, A23, A40, A42, A44, A51, A52, A55, A59, A60","C02, C20, C29, C33, C35",EE 15,EL 3/EP 1/GP 1
+T07,Retenção por artefato e mascaramento de PII,"Minimização, redação ou mascaramento de dados pessoais e prazos de retenção por artefato ou camada",Ambas,4,2,8,"A02, A04, A43, A45","C10, C14",EP 2/EE 1/PC 1,GP 2
+T08,"Índices ANN, WAL e latência filtrada","Mecanismos internos de construção, atualização, compactação e manutenção de índices ANN",Acadêmica,6,0,14,"A24, A29, A32, A34, A35, A36",,EE 5/EP 1,
+T09,Métricas intrínsecas de chunk,Medidas da qualidade do fragmento independentes da resposta final,Acadêmica,3,0,3,"A30, A49, A53",,EE 3,
+T10,Orçamento formal de contexto,Seleção ou dimensionamento do contexto sob orçamento explícito de tokens,Acadêmica,4,0,4,"A15, A42, A47, A48",,EE 4,
+T11,"Defasagem de estado entre índices, fontes e permissões","Divergência entre o estado do índice e o da fonte ou das permissões, e sua ressincronização",Ambas,3,2,7,"A16, A22, A25","C28, C30",EE 3,EP 1/GP 1
+T12,Exclusão em índices e derivados,"Remoção de documentos ou dados de índices e derivados (tombstone, purge, compactação, eliminação criptográfica, verificação)",Ambas,7,3,11,"A19, A24, A25, A32, A34, A35, A58","C01, C10, C12",EE 6/EP 1,EL 2/GP 1
+T13,Ingestão idempotente e retomável,"Ingestão ou reprocessamento controlado por hash de conteúdo, checkpoints e filas de falha",Cinzenta,0,2,2,,"C06, C12",,EL 1/GP 1
+T14,Migração de embedding e troca de versão,"Troca de modelo de embedding, índice ou configuração com validação, versão e rollback",Ambas,4,2,7,"A08, A22, A40, A43","C11, C16",EE 3/EP 1,EP 1/MI 1

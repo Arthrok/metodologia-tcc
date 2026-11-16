@@ -1,0 +1,36 @@
+linha_tabela18,evid,fonte,etapas,classificacao_extracao,pratica,localizacao
+Medallion documental,A23-e03,A23,S2/S3,Adaptada,Arquitetura em camadas Bronze/Silver/Gold para artefatos do pipeline RAG,p.4
+Lakehouse versionado,A58-e01,A58,S3,Adaptada,"Integrar o RAG ao lakehouse governado (tabelas Iceberg, catálogo, contratos de dados, evolução de esquema)",p.1 (Resumo/Introdução)
+Lakehouse versionado,A58-e02,A58,S5/S8,—,Planejamento de recuperação guiado por linhagem: seleção de snapshot válido e exclusão de partições expiradas ou sem acesso antes da busca vetorial,p.3 (Planejador)
+Lakehouse versionado,A58-e04,A58,S7,—,Usar metadados de governança como sinal ativo de recuperação (remove versões obsoletas e duplicadas),p.6 (Discussão)
+Propriedade por domínio,A02-e01,A02,S3,Adaptada,Propriedade e armazenamento locais de documentos e índices por domínio (federação),p.1 (Resumo/Introdução)
+Propriedade por domínio,A33-e01,A33,S3,Adaptada,"Particionar índices de modo a refletir a proveniência (instituição, departamento) em recuperação federada",p.4
+Partição e integração vetorial,A32-e01,A32,S3,Adaptada,Armazenamento vetorial integrado ao banco operacional (multimodelo) em vez de banco vetorial isolado,p.1 e p.4 (3.1)
+Partição e integração vetorial,A32-e03,A32,S3/S7,Adaptada,Particionamento temporal de tabelas vetoriais com metadados de índice compartilhados,p.9 (4.6.1)
+Partição e integração vetorial,A35-e01,A35,S3/S7,Adaptada,Considerar o custo de log/replicação das atualizações do índice vetorial em bancos relacionais,p.1 (Introdução)
+Partição e integração vetorial,A35-e02,A35,S7,Adaptada,Desacoplar a visibilidade dos novos vetores da atualização da estrutura do índice,p.3
+Partição e integração vetorial,C05-e01,C05,S3,—,Recuperação vetorial filtrada por metadados de permissão e ciclo de vida,What we actually asked it
+Partição e integração vetorial,C28-e01,C28,S7,—,Sincronização de documentos entre múltiplos índices,Syncing documents across stores
+Metadado mutável separado,A25-e02,A25,S2/S8,Adaptada,"Identificador persistente por recurso ligando chunks à origem e ao IAM, para atualização e exclusão",p.4–5 (Ingestão)
+Metadado mutável separado,A25-e03,A25,S3/S7,—,Separar o armazenamento de vetores (estáveis) do de metadados (voláteis),p.6
+Metadado mutável separado,A60-e02,A60,S7,—,Embeddings de metadados separados e fundidos (unified) para evitar reindexação quando os metadados mudam,p.3 e p.5
+Índice progressivo,A29-e01,A29,S3,Adaptada,Decidir quando e como indexar cada dataset conforme o uso esperado,p.1 (Introdução)
+Índice progressivo,A29-e02,A29,S3/S5,—,"Escolher a estratégia de índice pelo volume de consultas (força bruta, índice pequeno, índice grande)",p.9
+Otimização de filtros,A32-e04,A32,S5,—,"Busca vetorial filtrada por atributos (pré/pós-filtro, pushdown)",p.12 (5.5.2)
+Otimização de filtros,A34-e03,A34,S5,—,Otimizador de consulta híbrida que escolhe pré ou pós-filtro pela seletividade estimada,p.7 e p.10
+Otimização de filtros,C05-e02,C05,S5,—,Varredura iterativa do índice em busca filtrada,The detail nobody tells you: iterative scan
+Autorização antes da geração,A22-e01,A22,S5,Adaptada,Controle de acesso antes da recuperação (policy-first) e refiltragem após a fusão,p.1 e p.4 (Algoritmo 1)
+Autorização antes da geração,A25-e01,A25,S5,Adaptada,"Delegar a autorização ao IAM nativo de cada fonte, validando cada documento em tempo real",p.1–3 (Introdução)
+Autorização antes da geração,A33-e02,A33,S5,Adaptada,"Controle de acesso por políticas (PBAC) em cada recuperador, com sobre-busca para compensar documentos negados",p.5
+Autorização antes da geração,C30-e01,C30,S7,—,Autorização na consulta em vez de só metadados sincronizados,RAG usage overview
+Contexto sob orçamento,A15-e04,A15,S5,—,"Empacotamento do contexto sob orçamento de tokens, com expansão por grafo e poda intermodal",p.1 (Resumo) e p.6
+Contexto sob orçamento,A42-e01,A42,S5,—,Seleção de contexto como otimização sob orçamento de tokens (mochila/ILP) em vez de top-k,p.1 (Resumo) e p.3
+Curadoria por incerteza,A03-e03,A03,S6/S7,Adaptada,"Atualização incremental da base guiada pela incerteza do LLM, com rotulação humana seletiva (humano no laço)",p.3
+Qualidade intrínseca do fragmento,A49-e01,A49,S4,—,Métricas intrínsecas de qualidade de chunk e seleção da estratégia por documento,p.1 (Resumo)
+Qualidade intrínseca do fragmento,A49-e02,A49,S4,Adaptada,Pós-processamento de chunks: dividir os grandes e fundir os minúsculos,p.6 e p.17 (Tabela 7)
+Qualidade intrínseca do fragmento,A53-e01,A53,S4/S6,—,"Métricas diretas de qualidade do chunking (clareza de fronteira, independência entre chunks)",p.1 (Resumo) e p.3
+Traces e feedback,A43-e01,A43,S6,Adaptada,"Trace por resposta com fonte, rota, latências, consulta reescrita, resultados de recuperação, prompts e guardrails","p.10–11 (Apêndice, Fig. 3)"
+Traces e feedback,A43-e02,A43,S6/S7,—,Pipeline batch agendado (cron + PySpark + data lake) para dados de feedback e traces,p.11
+Traces e feedback,A43-e03,A43,S6,Adaptada,Tratar o viés e a escassez do feedback e remover PII antes de reutilizar os dados,p.3
+Traces e feedback,A45-e03,A45,S6,—,Linhagem padronizada (W3C PROV) por operação e pacote de evidências assinado por resposta,p.3 e p.5
+Traces e feedback,C14-e01,C14,S6,—,Spans próprios para a etapa de recuperação,The retrieval layer

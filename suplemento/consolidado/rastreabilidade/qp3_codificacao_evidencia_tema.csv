@@ -1,0 +1,115 @@
+tema_id,tema,evid,fonte,literatura,etapas,pratica
+T01,Medallion para documentos RAG,A23-e03,A23,Acadêmica,S2/S3,Arquitetura em camadas Bronze/Silver/Gold para artefatos do pipeline RAG
+T02,Índices federados por domínio,A02-e01,A02,Acadêmica,S3,Propriedade e armazenamento locais de documentos e índices por domínio (federação)
+T02,Índices federados por domínio,A02-e02,A02,Acadêmica,S3/S5,"Catálogo de metadados dos índices (domínio, modelo de embedding, latência) e aplicação local de políticas"
+T02,Índices federados por domínio,A33-e01,A33,Acadêmica,S3,"Particionar índices de modo a refletir a proveniência (instituição, departamento) em recuperação federada"
+T03,Pré/pós-filtro na busca vetorial,A12-e03,A12,Acadêmica,S5,"Filtragem por etiquetas de proveniência (seção, página) após a busca top-k"
+T03,Pré/pós-filtro na busca vetorial,A32-e04,A32,Acadêmica,S5,"Busca vetorial filtrada por atributos (pré/pós-filtro, pushdown)"
+T03,Pré/pós-filtro na busca vetorial,A34-e03,A34,Acadêmica,S5,Otimizador de consulta híbrida que escolhe pré ou pós-filtro pela seletividade estimada
+T03,Pré/pós-filtro na busca vetorial,A36-e02,A36,Acadêmica,S5,Monitorar a seletividade dos filtros de metadados e permissão
+T03,Pré/pós-filtro na busca vetorial,A40-e03,A40,Acadêmica,S3/S5,Escolher o índice pela frequência de atualização; pré-filtro por metadados como isolamento entre inquilinos
+T03,Pré/pós-filtro na busca vetorial,A58-e02,A58,Acadêmica,S5/S8,Planejamento de recuperação guiado por linhagem: seleção de snapshot válido e exclusão de partições expiradas ou sem acesso antes da busca vetorial
+T03,Pré/pós-filtro na busca vetorial,C05-e02,C05,Cinzenta,S5,Varredura iterativa do índice em busca filtrada
+T04,Autorização antes da geração,A22-e01,A22,Acadêmica,S5,Controle de acesso antes da recuperação (policy-first) e refiltragem após a fusão
+T04,Autorização antes da geração,A22-e04,A22,Acadêmica,S5/S7,Desempate por atualidade e manutenção da qualidade dos metadados de permissão
+T04,Autorização antes da geração,A25-e01,A25,Acadêmica,S5,"Delegar a autorização ao IAM nativo de cada fonte, validando cada documento em tempo real"
+T04,Autorização antes da geração,A25-e04,A25,Acadêmica,S3/S7,Evitar índices separados por papel (filtragem estática)
+T04,Autorização antes da geração,A31-e01,A31,Acadêmica,S5,Filtrar documentos recuperados conforme as permissões do usuário antes da geração
+T04,Autorização antes da geração,A31-e02,A31,Acadêmica,S6,Resposta orientada quando a informação é restrita (encaminhar a quem tem permissão)
+T04,Autorização antes da geração,A33-e02,A33,Acadêmica,S5,"Controle de acesso por políticas (PBAC) em cada recuperador, com sobre-busca para compensar documentos negados"
+T04,Autorização antes da geração,A40-e03,A40,Acadêmica,S3/S5,Escolher o índice pela frequência de atualização; pré-filtro por metadados como isolamento entre inquilinos
+T04,Autorização antes da geração,A45-e01,A45,Acadêmica,S2/S5/S8,"Minimização e mascaramento na escrita, TTL de retenção e consentimento por item, filtro por finalidade na leitura"
+T04,Autorização antes da geração,A58-e02,A58,Acadêmica,S5/S8,Planejamento de recuperação guiado por linhagem: seleção de snapshot válido e exclusão de partições expiradas ou sem acesso antes da busca vetorial
+T04,Autorização antes da geração,C05-e01,C05,Cinzenta,S3,Recuperação vetorial filtrada por metadados de permissão e ciclo de vida
+T04,Autorização antes da geração,C06-e02,C06,Cinzenta,S7,Coleção desenhada para controle de acesso e atualidade
+T04,Autorização antes da geração,C30-e01,C30,Cinzenta,S7,Autorização na consulta em vez de só metadados sincronizados
+T04,Autorização antes da geração,C35-e03,C35,Cinzenta,S5,Metadados de controle de acesso indexados
+T05,Linhagem e traces por resposta,A02-e04,A02,Acadêmica,S5/S6,Propagar proveniência e metadados com os trechos; mascaramento pós-geração; logs para monitoramento
+T05,Linhagem e traces por resposta,A04-e04,A04,Acadêmica,S6,Trilhas de auditoria por resposta e mascaramento de dados pessoais (LGPD)
+T05,Linhagem e traces por resposta,A22-e03,A22,Acadêmica,S6,"Trace imutável por requisição ligando política, evidências, versões e saída"
+T05,Linhagem e traces por resposta,A43-e01,A43,Acadêmica,S6,"Trace por resposta com fonte, rota, latências, consulta reescrita, resultados de recuperação, prompts e guardrails"
+T05,Linhagem e traces por resposta,A43-e02,A43,Acadêmica,S6/S7,Pipeline batch agendado (cron + PySpark + data lake) para dados de feedback e traces
+T05,Linhagem e traces por resposta,A45-e03,A45,Acadêmica,S6,Linhagem padronizada (W3C PROV) por operação e pacote de evidências assinado por resposta
+T05,Linhagem e traces por resposta,A58-e03,A58,Acadêmica,S4/S6,"Metadados de linhagem por chunk (tabela, partição, versão do esquema, política) propagados até a resposta"
+T05,Linhagem e traces por resposta,C14-e01,C14,Cinzenta,S6,Spans próprios para a etapa de recuperação
+T06,Chunking estrutural e contexto,A06-e01,A06,Acadêmica,S4,"Chunking multivisão (página, seção, tamanho fixo) + elementos paratextuais"
+T06,Chunking estrutural e contexto,A09-e02,A09,Acadêmica,S2/S4,Chunking com consciência de layout e escolha de tamanho de chunk por experimento
+T06,Chunking estrutural e contexto,A10-e02,A10,Acadêmica,S2/S4,Preservar a hierarquia do documento e converter tabelas para Markdown
+T06,Chunking estrutural e contexto,A12-e01,A12,Acadêmica,S2/S4,"Normalização de codificação, chunking com sobreposição e resumo por documento com metadados indexado junto aos chunks"
+T06,Chunking estrutural e contexto,A12-e02,A12,Acadêmica,S2/S4,Extração de imagens e tabelas por prompts de domínio com saída em esquema estruturado
+T06,Chunking estrutural e contexto,A15-e01,A15,Acadêmica,S3/S4,"Metadados estruturais por unidade de evidência (documento, página, modalidade, título pai, tabela, parte)"
+T06,Chunking estrutural e contexto,A15-e02,A15,Acadêmica,S4,"Chunking de tabelas por linha com ID estável, faixa de linhas e contexto (título e texto anterior)"
+T06,Chunking estrutural e contexto,A18-e02,A18,Acadêmica,S4,Enriquecer cada chunk com resumo do documento de origem (metadado sintético)
+T06,Chunking estrutural e contexto,A23-e02,A23,Acadêmica,S4,Divisão hierárquica com caminho da seção (breadcrumb) prefixado ao chunk
+T06,Chunking estrutural e contexto,A40-e02,A40,Acadêmica,S4,"Chunking por estrutura (títulos, tabelas, itens numerados) com lógica por tipo de elemento"
+T06,Chunking estrutural e contexto,A42-e02,A42,Acadêmica,S2/S4,Extração com preservação de estrutura (Markdown) + chunking por estrutura
+T06,Chunking estrutural e contexto,A44-e01,A44,Acadêmica,S2/S4,Limpeza estrutural de PDFs normativos e metadados por cláusula para rastreabilidade
+T06,Chunking estrutural e contexto,A51-e02,A51,Acadêmica,S4/S5,Estruturação hierárquica do documento + recuperação que funde filhos no pai (Auto-Merge)
+T06,Chunking estrutural e contexto,A52-e01,A52,Acadêmica,S4,"Chunking por delimitadores do domínio com injeção de metadados hierárquicos (Lei, Capítulo, Seção, título) no texto do chunk"
+T06,Chunking estrutural e contexto,A52-e03,A52,Acadêmica,S1/S4,Estruturação prévia da fonte (JSON com seções) como pré-requisito
+T06,Chunking estrutural e contexto,A55-e01,A55,Acadêmica,S4,Chunking estrutural guiado pela árvore sintática (split-then-merge)
+T06,Chunking estrutural e contexto,A55-e03,A55,Acadêmica,S4,"Preservar metadados estruturais (arquivo, classe, função) nos chunks"
+T06,Chunking estrutural e contexto,A59-e01,A59,Acadêmica,S4,Enriquecer o chunk com contexto do documento (contextual retrieval) × embedar o documento antes de dividir (late chunking)
+T06,Chunking estrutural e contexto,A60-e01,A60,Acadêmica,S4/S5,"Metadados estruturados (empresa, ano, seção, tipo de formulário) como sinal de recuperação embutido, não só como filtro"
+T06,Chunking estrutural e contexto,A60-e03,A60,Acadêmica,S4,Escolher campos de metadados por poder de desambiguação (global: empresa/ano; local: seção)
+T06,Chunking estrutural e contexto,C02-e03,C02,Cinzenta,S4,Chunking contextual (contexto do documento no chunk)
+T06,Chunking estrutural e contexto,C20-e01,C20,Cinzenta,S4,Associar legenda/contexto à tabela extraída
+T06,Chunking estrutural e contexto,C29-e02,C29,Cinzenta,S4,Enriquecimento de chunks com metadados
+T06,Chunking estrutural e contexto,C33-e01,C33,Cinzenta,S4,Chunking por página em documentos paginados
+T06,Chunking estrutural e contexto,C35-e02,C35,Cinzenta,S4,Chunking que preserva tabelas via metadados
+T07,Retenção por artefato e mascaramento de PII,A02-e04,A02,Acadêmica,S5/S6,Propagar proveniência e metadados com os trechos; mascaramento pós-geração; logs para monitoramento
+T07,Retenção por artefato e mascaramento de PII,A04-e04,A04,Acadêmica,S6,Trilhas de auditoria por resposta e mascaramento de dados pessoais (LGPD)
+T07,Retenção por artefato e mascaramento de PII,A43-e03,A43,Acadêmica,S6,Tratar o viés e a escassez do feedback e remover PII antes de reutilizar os dados
+T07,Retenção por artefato e mascaramento de PII,A45-e01,A45,Acadêmica,S2/S5/S8,"Minimização e mascaramento na escrita, TTL de retenção e consentimento por item, filtro por finalidade na leitura"
+T07,Retenção por artefato e mascaramento de PII,A45-e02,A45,Acadêmica,S3/S8,Armazenamento em camadas com política de retenção por camada e arquivo frio imutável para retenção legal
+T07,Retenção por artefato e mascaramento de PII,C10-e01,C10,Cinzenta,S8,Matriz de retenção por tipo de artefato RAG
+T07,Retenção por artefato e mascaramento de PII,C10-e03,C10,Cinzenta,S2,Redação de PII antes do chunking e separação dos originais
+T07,Retenção por artefato e mascaramento de PII,C14-e02,C14,Cinzenta,S6,Minimização e redação de PII na telemetria
+T08,"Índices ANN, WAL e latência filtrada",A24-e01,A24,Acadêmica,S3/S7,Atualização contínua do banco vetorial sob leitura concorrente
+T08,"Índices ANN, WAL e latência filtrada",A24-e03,A24,Acadêmica,S7,Reconstrução periódica do índice quando a distribuição dos dados muda
+T08,"Índices ANN, WAL e latência filtrada",A29-e01,A29,Acadêmica,S3,Decidir quando e como indexar cada dataset conforme o uso esperado
+T08,"Índices ANN, WAL e latência filtrada",A29-e02,A29,Acadêmica,S3/S5,"Escolher a estratégia de índice pelo volume de consultas (força bruta, índice pequeno, índice grande)"
+T08,"Índices ANN, WAL e latência filtrada",A29-e03,A29,Acadêmica,S7,Manutenção de índices ANN diante de mudanças na distribuição dos dados (split/merge locais)
+T08,"Índices ANN, WAL e latência filtrada",A32-e02,A32,Acadêmica,S7/S8,Inserção e exclusão de vetores em tempo real para manter o frescor
+T08,"Índices ANN, WAL e latência filtrada",A32-e03,A32,Acadêmica,S3/S7,Particionamento temporal de tabelas vetoriais com metadados de índice compartilhados
+T08,"Índices ANN, WAL e latência filtrada",A34-e01,A34,Acadêmica,S7,Reconhecer a degradação do índice com atualizações (centróides desatualizados)
+T08,"Índices ANN, WAL e latência filtrada",A34-e02,A34,Acadêmica,S7/S8,Delta-store para inserções/exclusões em tempo real e monitor de qualidade que dispara reindexação
+T08,"Índices ANN, WAL e latência filtrada",A35-e01,A35,Acadêmica,S3/S7,Considerar o custo de log/replicação das atualizações do índice vetorial em bancos relacionais
+T08,"Índices ANN, WAL e latência filtrada",A35-e02,A35,Acadêmica,S7,Desacoplar a visibilidade dos novos vetores da atualização da estrutura do índice
+T08,"Índices ANN, WAL e latência filtrada",A36-e01,A36,Acadêmica,S5/S7,"Avaliar o banco vetorial sob cargas realistas (filtros, churn, restart) em vez de benchmarks estáticos"
+T08,"Índices ANN, WAL e latência filtrada",A36-e03,A36,Acadêmica,S7/S8,Monitorar a cadência de compactação e dimensionar pelo pior caso transitório
+T08,"Índices ANN, WAL e latência filtrada",A36-e04,A36,Acadêmica,S6/S7,Checagem de prontidão no nível de consulta após restart
+T09,Métricas intrínsecas de chunk,A30-e02,A30,Acadêmica,S6,"Avaliar a camada de dados (validade de metadados, integridade e densidade dos chunks) separadamente da recuperação e da geração"
+T09,Métricas intrínsecas de chunk,A49-e01,A49,Acadêmica,S4,Métricas intrínsecas de qualidade de chunk e seleção da estratégia por documento
+T09,Métricas intrínsecas de chunk,A53-e01,A53,Acadêmica,S4/S6,"Métricas diretas de qualidade do chunking (clareza de fronteira, independência entre chunks)"
+T10,Orçamento formal de contexto,A15-e04,A15,Acadêmica,S5,"Empacotamento do contexto sob orçamento de tokens, com expansão por grafo e poda intermodal"
+T10,Orçamento formal de contexto,A42-e01,A42,Acadêmica,S5,Seleção de contexto como otimização sob orçamento de tokens (mochila/ILP) em vez de top-k
+T10,Orçamento formal de contexto,A47-e02,A47,Acadêmica,S4/S5,Ajustar o orçamento de contexto antes de ajustar a sobreposição
+T10,Orçamento formal de contexto,A48-e02,A48,Acadêmica,S5,Ajustar o orçamento de contexto ao objetivo da tarefa
+T11,"Defasagem de estado entre índices, fontes e permissões",A16-e01,A16,Acadêmica,S3/S7,"Tratar o estado do índice (atraso, divergência, frescor) como dimensão de qualidade monitorada"
+T11,"Defasagem de estado entre índices, fontes e permissões",A16-e02,A16,Acadêmica,S5/S7,"Ações de recuperação automáticas guiadas pelo estado do índice (refresh de shard, renormalização, busca mais ampla)"
+T11,"Defasagem de estado entre índices, fontes e permissões",A16-e04,A16,Acadêmica,S3,Dependência de metadados operacionais do índice (timestamps de replicação)
+T11,"Defasagem de estado entre índices, fontes e permissões",A22-e04,A22,Acadêmica,S5/S7,Desempate por atualidade e manutenção da qualidade dos metadados de permissão
+T11,"Defasagem de estado entre índices, fontes e permissões",A25-e03,A25,Acadêmica,S3/S7,Separar o armazenamento de vetores (estáveis) do de metadados (voláteis)
+T11,"Defasagem de estado entre índices, fontes e permissões",C28-e01,C28,Cinzenta,S7,Sincronização de documentos entre múltiplos índices
+T11,"Defasagem de estado entre índices, fontes e permissões",C30-e01,C30,Cinzenta,S7,Autorização na consulta em vez de só metadados sincronizados
+T12,Exclusão em índices e derivados,A19-e03,A19,Acadêmica,S7/S8,Remoção de textos envenenados da base (descarte) com verificação da correção
+T12,Exclusão em índices e derivados,A24-e02,A24,Acadêmica,S8,Exclusão lógica (tombstone) seguida de remoção física por compactação
+T12,Exclusão em índices e derivados,A25-e02,A25,Acadêmica,S2/S8,"Identificador persistente por recurso ligando chunks à origem e ao IAM, para atualização e exclusão"
+T12,Exclusão em índices e derivados,A32-e02,A32,Acadêmica,S7/S8,Inserção e exclusão de vetores em tempo real para manter o frescor
+T12,Exclusão em índices e derivados,A34-e02,A34,Acadêmica,S7/S8,Delta-store para inserções/exclusões em tempo real e monitor de qualidade que dispara reindexação
+T12,Exclusão em índices e derivados,A35-e03,A35,Acadêmica,S8,"Exclusão por tombstone com reconstrução de partição acima de um limiar, respeitando MVCC"
+T12,Exclusão em índices e derivados,A58-e02,A58,Acadêmica,S5/S8,Planejamento de recuperação guiado por linhagem: seleção de snapshot válido e exclusão de partições expiradas ou sem acesso antes da busca vetorial
+T12,Exclusão em índices e derivados,C01-e01,C01,Cinzenta,S8,Crypto-shredding por titular para apagar dados indexados
+T12,Exclusão em índices e derivados,C01-e02,C01,Cinzenta,S8,Separar chaves dos backups do índice
+T12,Exclusão em índices e derivados,C10-e02,C10,Cinzenta,S8,Exclusão com tombstone e purge assíncrono
+T12,Exclusão em índices e derivados,C12-e02,C12,Cinzenta,S8,Limpeza de documentos removidos na sincronização
+T13,Ingestão idempotente e retomável,C06-e01,C06,Cinzenta,S2,Ingestão idempotente por hash de conteúdo
+T13,Ingestão idempotente e retomável,C12-e01,C12,Cinzenta,S7,Atualização incremental por hash de conteúdo
+T14,Migração de embedding e troca de versão,A08-e04,A08,Acadêmica,S6/S7,"Console administrativo para upload, reindexação e rollback; logs mínimos e amostragem semanal de respostas"
+T14,Migração de embedding e troca de versão,A22-e02,A22,Acadêmica,S3/S7,"Registrar, por passagem, postagem léxica, vetor e metadados/ACL, com versão e ID para rollback"
+T14,Migração de embedding e troca de versão,A40-e04,A40,Acadêmica,S7,"Gatilhos de reavaliação (mudança de distribuição, de prompt ou de embedding) e registro versionado de configuração"
+T14,Migração de embedding e troca de versão,A43-e04,A43,Acadêmica,S7,Implantação gradual (canário) com procedimento de rollback e monitoramento pós-deploy
+T14,Migração de embedding e troca de versão,C11-e01,C11,Cinzenta,S7,Recarga atômica completa do índice
+T14,Migração de embedding e troca de versão,C16-e01,C16,Cinzenta,S7,Re-embedding completo ao trocar o modelo
+T14,Migração de embedding e troca de versão,C16-e02,C16,Cinzenta,S7,Proveniência do modelo por vetor e versionamento do índice
