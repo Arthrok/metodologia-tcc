@@ -2,18 +2,21 @@
 
 Arquivo complementar ao manuscrito *Engenharia de Dados em Sistemas RAG: Práticas, Desafios e Adaptações*. O corpus final contém 88 fontes e 244 evidências. Os registros de seleção, extração e auditoria estão disponíveis nos arquivos abaixo.
 
-## Índice dos registros consolidados
+## Registros da revisão
 
-- [Decisões finais do corpus](consolidado/AUDITORIA_DECISOES_CORPUS.csv): uma linha por fonte acadêmica, candidata cinzenta avaliada no texto integral e candidato priorizado do *forward snowballing*, com avaliador atribuído e decisão final.
-- [Planilha de extração acadêmica](extracao/Extracao_preenchida_r009.xlsx) e [planilha da literatura cinzenta](cinzenta/Literatura_cinzenta_r009.xlsx): registro de consultas, triagem dos 210 candidatos, notas QA/QG, excertos e os 34 temas iniciais da QP3.
-- Rastreabilidade entre evidências e tabelas (gerada por `scripts/rastreabilidade/gerar_rastreabilidade.py`):
-  - [evidencias_244.csv](consolidado/rastreabilidade/evidencias_244.csv): as 244 evidências válidas com identificador estável (por exemplo, `C05-e02`), etapa, prática, localização e excerto;
-  - [evidencia_para_tabelas.csv](consolidado/rastreabilidade/evidencia_para_tabelas.csv): em que linhas das Tabelas QP1–QP3 cada evidência aparece;
-  - [qp1_vinculo_celula_evidencias.csv](consolidado/rastreabilidade/qp1_vinculo_celula_evidencias.csv), [qp2_vinculo_linha_evidencias.csv](consolidado/rastreabilidade/qp2_vinculo_linha_evidencias.csv) e [qp3_codificacao_evidencia_tema.csv](consolidado/rastreabilidade/qp3_codificacao_evidencia_tema.csv): vínculos por tabela;
-  - [qp3_tabela19_frequencias.csv](consolidado/rastreabilidade/qp3_tabela19_frequencias.csv) e [qp3_correspondencia_34_temas.csv](consolidado/rastreabilidade/qp3_correspondencia_34_temas.csv): frequências da Tabela 19 e correspondência com os 34 temas da planilha;
-  - [auditoria_humana_registro.csv](consolidado/rastreabilidade/auditoria_humana_registro.csv) e [auditoria_humana_itens.csv](consolidado/rastreabilidade/auditoria_humana_itens.csv): base documental das conferências declaradas na seção 3.3.7.
-- Execução da literatura cinzenta: [exclusões da pré-triagem](consolidado/auditoria_cinzenta/1_pretriagem_exclusoes.csv), [inventário das 61 candidatas](consolidado/auditoria_cinzenta/2_inventario_61.csv), notas QG das [incluídas](consolidado/auditoria_cinzenta/4_qg_incluidas.csv) e [excluídas](consolidado/auditoria_cinzenta/4_qg_excluidas.csv) e [verificação literal dos 65 excertos](consolidado/auditoria_cinzenta/5_evidencias_65.csv).
-- Documentos de trabalho anteriores à consolidação: [matriz de evidências](consolidado/MATRIZ_EVIDENCIAS_TCC.md), [auditoria e síntese transversal](consolidado/AUDITORIA_E_SINTESE_TRANSVERSAL.md) e [conferência da QP2 e dos casos próximos ao corte](consolidado/CONFERENCIA_QP2_E_CORTE.md). Quando divergirem dos arquivos de rastreabilidade, prevalecem estes.
+Todos os registros estão em uma única planilha, [Registros_MLR.xlsx](Registros_MLR.xlsx), com uma aba por registro:
+
+| Aba | Conteúdo |
+|---|---|
+| Fontes | Decisão final de cada fonte acadêmica, candidata cinzenta avaliada no texto integral e candidato priorizado do *forward snowballing*, com critério, pontuação e avaliador atribuído na auditoria |
+| Cinzenta_consultas | Consultas da DEV Community, do Hacker News e dos portais, com parâmetros, data e ocorrências |
+| Cinzenta_triagem | Os 210 candidatos cinzentos únicos, com pré-triagem, motivo e decisão final |
+| Qualidade_QA e Qualidade_QG | Notas QA1–QA6 das acadêmicas e QG1–QG6 das 61 candidatas cinzentas |
+| Evidencias | As 244 evidências válidas, com identificador estável (por exemplo, `C05-e02`), etapa, prática, localização, excerto e as linhas das Tabelas QP1–QP3 em que aparecem |
+| QP1, QP2, QP3_temas, QP3_codificacao | Vínculo entre as evidências e as Tabelas 17, 18 e 19 |
+| QP3_34_temas | Correspondência entre os 34 temas iniciais e as linhas da Tabela 19 |
+| Auditoria_registro e Auditoria_itens | Base documental da auditoria humana (seção 3.3.7) e lista nominal dos itens conferidos |
+| Forward | Pré-triagem dos 242 citantes novos do *forward snowballing* que mencionavam RAG (os outros 158 foram excluídos por I2) |
 
 ## Classificação das Tabelas 1–4 do manuscrito
 
@@ -30,7 +33,7 @@ As famílias acadêmicas S1–S8 e as cinzentas G1–G8 foram associadas às eta
 
 As questões de pesquisa e a matriz PICOC foram refinadas após o rascunho inicial do protocolo operacional registrado em [config/review_protocol.yaml](../config/review_protocol.yaml). Na formulação final do artigo, a QP1 focalizou as práticas por etapa S1–S8, a QP2 examinou adaptações e desafios documentados, e a QP3 comparou os achados entre literatura acadêmica e cinzenta. Na PICOC final, a dimensão Comparação passou a explicitar essa distribuição entre os dois tipos de literatura; o contraste com BI/Analytics e outros contextos de engenharia de dados foi mantido apenas quando sustentado pelas fontes. O arquivo YAML preservou a formulação usada na triagem histórica e não substituiu as questões e a PICOC finais do manuscrito.
 
-O *backward snowballing* recuperou 905 registros: 845 novos, 58 coincidentes com buscas diretas e 2 duplicatas internas ou registros sem metadados mínimos, descartados antes da deduplicação. O *forward snowballing* recuperou 426 citantes: 26 já no corpus e 400 novos. Dos novos, 95 foram priorizados e 305 não priorizados; nenhum foi incorporado nesta execução por corte temporal e de escopo. Consulte [citantes.json](data/snowball_forward/citantes.json) e [pretriagem_forward.csv](data/snowball_forward/pretriagem_forward.csv).
+O *backward snowballing* recuperou 905 registros: 845 novos, 58 coincidentes com buscas diretas e 2 duplicatas internas ou registros sem metadados mínimos, descartados antes da deduplicação. O *forward snowballing* recuperou 426 citantes: 26 já no corpus e 400 novos. Dos novos, 95 foram priorizados e 305 não priorizados; nenhum foi incorporado nesta execução por corte temporal e de escopo. Consulte a aba Forward da planilha.
 
 ### Strings acadêmicas S1–S8
 
@@ -106,25 +109,25 @@ Cada critério recebeu 0, 0,5 ou 1 ponto, com máximo de 6,0. Uma fonte acadêmi
 | QG5 — Transparência | a fonte descreve o contexto de aplicação, restrições ou configurações de forma transparente? |
 | QG6 — Verificabilidade | as afirmações técnicas relevantes podem ser verificadas por dados, referências, exemplos, documentação ou descrição suficiente da experiência relatada? |
 
-O registro complementar de objetividade indicou quando uma fonte cinzenta promovia produto ou serviço do próprio autor ou organização, sem alterar a pontuação. As notas finais e restrições de uso constam na [auditoria do corpus](consolidado/AUDITORIA_DECISOES_CORPUS.csv).
+O registro complementar de objetividade indicou quando uma fonte cinzenta promovia produto ou serviço do próprio autor ou organização, sem alterar a pontuação. As notas finais e restrições de uso constam na aba Fontes da planilha.
 
 ## Decisões da auditoria final
 
-A57 foi rebaixada para QA abaixo de 4,0 e excluída do corpus. A01, A11, A27, A28, A38, A41, A50 e A54 também ficaram fora da síntese. C09, C16, C17 e C21 foram incluídas com restrição de uso numérico: seus valores ilustrativos, promocionais ou não comparáveis não sustentam resultados empíricos. As decisões individuais constam em [AUDITORIA_DECISOES_CORPUS.csv](consolidado/AUDITORIA_DECISOES_CORPUS.csv).
+A57 foi rebaixada para QA abaixo de 4,0 e excluída do corpus. A01, A11, A27, A28, A38, A41, A50 e A54 também ficaram fora da síntese. C09, C16, C17 e C21 foram incluídas com restrição de uso numérico: seus valores ilustrativos, promocionais ou não comparáveis não sustentam resultados empíricos. As decisões individuais constam em aba Fontes da planilha.
 
 ## Execução da seleção da literatura cinzenta
 
 As três frentes (DEV Community, Hacker News e portais institucionais) resultaram em 210 candidatos únicos após a consolidação pela URL. Os 198 candidatos das APIs passaram por pré-triagem conduzida com apoio de inteligência artificial, que sugeriu classificações de elegibilidade a partir do título e da descrição; as 12 páginas dos portais, escolhidas nas buscas dirigidas, seguiram diretamente para a avaliação do texto integral. Foram excluídos 149 registros por E3 ou E4, e 61 candidatas foram encaminhadas à avaliação do texto integral. As sugestões automatizadas foram posteriormente examinadas por Eric, com apoio de uma segunda ferramenta de IA; ele foi responsável pela revisão da filtragem e pelas decisões finais de seleção. Das 61 candidatas, 37 foram incluídas e 24 excluídas (QG < 4: 9; E4: 6; E5: 3; I1: 3; QG1 = 0: 2; QG6 = 0: 1). Duas páginas inacessíveis no endereço original foram avaliadas a partir de cópias do Internet Archive.
 
-A revisão humana foi realizada durante o processo de pesquisa, sem a produção de um registro individualizado das concordâncias e divergências em relação às sugestões automatizadas. Essa característica limita a reconstrução retrospectiva de cada decisão, embora os registros de candidatos, critérios, classificações e resultados finais tenham sido preservados. As notas QG da planilha mantêm a marcação de sugestão do modelo. Os 65 excertos cinzentos foram verificados automaticamente contra os textos arquivados: todos constam literalmente deles. Essa verificação atesta a correspondência textual, não a adequação da etapa, da prática ou da adaptação atribuídas.
+A revisão humana foi realizada durante o processo de pesquisa, sem a produção de um registro individualizado das concordâncias e divergências em relação às sugestões automatizadas. Essa característica limita a reconstrução retrospectiva de cada decisão, embora os registros de candidatos, critérios, classificações e resultados finais tenham sido preservados. Os 65 excertos cinzentos foram verificados automaticamente contra os textos arquivados: todos constam literalmente deles. Essa verificação atesta a correspondência textual, não a adequação da etapa, da prática ou da adaptação atribuídas.
 
 ## Base documental da auditoria humana (seção 3.3.7)
 
-A [divisão nominal](consolidado/AUDITORIA_DECISOES_CORPUS.csv) atribuiu 115 registros a Eric (41 cinzentos, 20 acadêmicos e 54 do *forward snowballing*) e 101 a Arthur (20 cinzentos, 40 acadêmicos e 41 do *forward snowballing*). Os 20 casos próximos dos cortes QA=4,0/4,5 e QG=4,0/4,5 (seis acadêmicos e 14 cinzentos) e as fontes de cada adaptação da Tabela 18 estão listados em [auditoria_humana_itens.csv](consolidado/rastreabilidade/auditoria_humana_itens.csv), com avaliador atribuído, decisão final e evidências. O [registro de base documental](consolidado/rastreabilidade/auditoria_humana_registro.csv) indica, para cada afirmação da seção 3.3.7, o arquivo que a documenta e o que ele não documenta. Os efeitos da conferência estão registrados no arquivo de decisões: o rebaixamento de A57 e a restrição de uso numérico de C09, C16, C17 e C21. A conferência não produziu registro individualizado do que foi confirmado ou alterado em cada nota, excerto ou adaptação.
+A divisão nominal (aba Fontes) atribuiu 115 registros a Eric (41 cinzentos, 20 acadêmicos e 54 do *forward snowballing*) e 101 a Arthur (20 cinzentos, 40 acadêmicos e 41 do *forward snowballing*). Os 20 casos próximos dos cortes QA=4,0/4,5 e QG=4,0/4,5 (seis acadêmicos e 14 cinzentos) e as fontes de cada adaptação da Tabela 18 estão listados na aba Auditoria_itens, com avaliador atribuído, decisão final e evidências. A aba Auditoria_registro indica, para cada afirmação da seção 3.3.7, o arquivo que a documenta e o que ele não documenta. Os efeitos da conferência estão registrados no arquivo de decisões: o rebaixamento de A57 e a restrição de uso numérico de C09, C16, C17 e C21. A conferência não produziu registro individualizado do que foi confirmado ou alterado em cada nota, excerto ou adaptação.
 
 ## Rastreabilidade entre evidências e Tabelas QP1–QP3
 
-Cada evidência válida recebeu o identificador `<fonte>-e<NN>`, na ordem da ficha de extração. Na QP1 (Tabela 17), cada ID de uma célula remete às evidências da fonte codificadas na etapa da linha; o gerador recusa célula sem essa evidência. Na QP2 (Tabela 18), cada linha remete às evidências que sustentam a adaptação. Na QP3 (Tabela 19), cada tema remete às evidências codificadas nele, segundo a definição operacional abaixo; uma evidência pode integrar mais de um tema. A codificação final foi consolidada com apoio do modelo de linguagem a partir das fichas de extração e pode ser conferida pelo identificador de cada evidência.
+Cada evidência válida recebeu o identificador `<fonte>-e<NN>`, na ordem da ficha de extração. Na QP1 (Tabela 17), cada ID de uma célula remete às evidências da fonte codificadas na etapa da linha; nenhuma célula cita fonte sem evidência na etapa. Na QP2 (Tabela 18), cada linha remete às evidências que sustentam a adaptação. Na QP3 (Tabela 19), cada tema remete às evidências codificadas nele, segundo a definição operacional abaixo; uma evidência pode integrar mais de um tema. A codificação final foi consolidada com apoio do modelo de linguagem a partir das fichas de extração e pode ser conferida pelo identificador de cada evidência.
 
 ### Tabela 19: temas, definições e frequências
 
@@ -293,428 +296,4 @@ O cronograma abaixo registra o planejamento histórico do semestre 2026.2.
 | Novembro | Avaliação, busca cinzenta e extração | Obtenção dos textos integrais, aplicação de E5 e avaliação de qualidade das fontes acadêmicas; recuperação e seleção da literatura cinzenta (13/11) e avaliação de qualidade; extração das evidências e conferência das sugestões do modelo pelos pesquisadores. |
 | Dezembro | Síntese, discussão e redação | Organização das práticas por etapa, análise das adaptações e desafios e comparação entre literatura acadêmica e cinzenta para responder à QP3; discussão das convergências, divergências, lacunas e limites da revisão e revisão final da monografia. |
 
-As fichas e localizações dos excertos constam na [matriz de evidências](consolidado/MATRIZ_EVIDENCIAS_TCC.md) e na [conferência da QP2 e dos casos próximos ao corte](consolidado/CONFERENCIA_QP2_E_CORTE.md).
-
-## Tabela integral QP1 anterior à compactação editorial
-
-Versão histórica, gerada antes da codificação final das evidências. Para o vínculo entre evidências e a tabela publicada, consulte a seção de rastreabilidade acima.
-
-```latex
-\begin{longtable}{p{3.1cm}p{3.1cm}lp{2.1cm}lp{1.8cm}}
-\caption{QP1: práticas e menções por etapa; fichas e localizações na matriz de evidências.}\label{tab:qp1-sintese}\\
-\toprule
-\textbf{Prática} & \textbf{Finalidade} & \textbf{Etapa} & \textbf{IDs validados} & \textbf{Tipo} & \textbf{Localização} \\
-\midrule
-\endfirsthead
-\toprule
-\textbf{Prática} & \textbf{Finalidade} & \textbf{Etapa} & \textbf{IDs validados} & \textbf{Tipo} & \textbf{Localização} \\
-\midrule
-\endhead
-Propriedade e armazenamento locais de documentos e índices por domínio (federação) & Arquitetura em três camadas: nós locais, gateways regionais, roteamento/inferência na nuvem & S3 & A02 & Acadêmica & p.1 (Resumo/Introdução) \\
-Catálogo de metadados dos índices (domínio, modelo de embedding, latência) e aplicação local de políticas & Roteador com escore custo-sensível (relevância − latência) treinado em logs & S3 & A02 & Acadêmica & p.3 (Gateways) \\
-Catálogo de metadados dos índices (domínio, modelo de embedding, latência) e aplicação local de políticas & Roteador com escore custo-sensível (relevância − latência) treinado em logs & S5 & A02 & Acadêmica & p.3 (Gateways) \\
-Compressão (PQ) e ruído de privacidade diferencial em embeddings trocados entre fronteiras & σ de ruído DP configurável (0,3–0,5) & S4 & A02 & Acadêmica & p.4–5 \\
-Compressão (PQ) e ruído de privacidade diferencial em embeddings trocados entre fronteiras & σ de ruído DP configurável (0,3–0,5) & S5 & A02 & Acadêmica & p.4–5 \\
-Propagar proveniência e metadados com os trechos; mascaramento pós-geração; logs para monitoramento & Logs usados também para treinar o roteador & S5 & A02 & Acadêmica & p.4 \\
-Propagar proveniência e metadados com os trechos; mascaramento pós-geração; logs para monitoramento & Logs usados também para treinar o roteador & S6 & A02 & Acadêmica & p.4 \\
-Reconhecer a obsolescência da base de conhecimento quando o sistema-fonte muda & Base de conhecimento dinâmica que cresce durante a operação & S7 & A03 & Acadêmica & p.1 (Introdução) \\
-Semente pequena e verificada manualmente da base de conhecimento & Iniciar com 10 exemplos verificados em vez de seleção não supervisionada (aleatória/cluster) & S1 & A03 & Acadêmica & p.3 (Active Learning) \\
-Atualização incremental da base guiada pela incerteza do LLM, com rotulação humana seletiva (humano no laço) & Limiares de seleção (st) e de rotulação (lt) sobre a incerteza & S6 & A03 & Acadêmica & p.3 \\
-Atualização incremental da base guiada pela incerteza do LLM, com rotulação humana seletiva (humano no laço) & Limiares de seleção (st) e de rotulação (lt) sobre a incerteza & S7 & A03 & Acadêmica & p.3 \\
-Ponderação por campo (resumo > texto integral) e filtragem por metadados na recuperação & BM25 por campo + filtros de metadados + embeddings de domínio + reranking com limiar & S4 & A04 & Acadêmica & p.2 (Seção 3.1) \\
-Ponderação por campo (resumo > texto integral) e filtragem por metadados na recuperação & BM25 por campo + filtros de metadados + embeddings de domínio + reranking com limiar & S5 & A04 & Acadêmica & p.2 (Seção 3.1) \\
-Armazenamento estruturado por fragmento com metadados temporais, separado do índice vetorial & Separar legislação (banco relacional) de jurisprudência/editorial (índice vetorial/léxico) & S3 & A04 & Acadêmica & p.2–3 (Seção 3.1 e Etapa 3) \\
-Normalização canônica e validação das citações da resposta contra fontes oficiais (auditoria pós-geração) & Status por referência + reescrita limitada a 2 iterações para controlar latência & S6 & A04 & Acadêmica & p.3 (Etapas 2–3) \\
-Trilhas de auditoria por resposta e mascaramento de dados pessoais (LGPD) & Transformar alucinação silenciosa em aviso explícito por referência & S6 & A04 & Acadêmica & p.4 \\
-Pré-seleção do corpus antes da indexação (pre-targeting) em vez de indexação integral & Filtragem positiva (perguntas simples) ou negativa (multi-hop) conforme o tipo de pergunta & S1 & A05 & Acadêmica & p.1 (Introdução) e p.3 \\
-Pré-seleção do corpus antes da indexação (pre-targeting) em vez de indexação integral & Filtragem positiva (perguntas simples) ou negativa (multi-hop) conforme o tipo de pergunta & S3 & A05 & Acadêmica & p.1 (Introdução) e p.3 \\
-Estimar a qualidade do OCR por heurística antes de indexar & Heurística de palavras suspeitas (longas, dígitos misturados, caracteres não franceses) & S2 & A05 & Acadêmica & p.4 \\
-Remoção de documentos de baixa densidade informacional antes da indexação & Limiar de proporção de stopwords; exclusão de documentos sempre mal ranqueados & S1 & A05 & Acadêmica & p.5 \\
-Remoção de documentos de baixa densidade informacional antes da indexação & Limiar de proporção de stopwords; exclusão de documentos sempre mal ranqueados & S4 & A05 & Acadêmica & p.5 \\
-Calibração de limiares de filtragem por coleção & — & S1 & A05 & Acadêmica & p.6 (Discussão) \\
-Chunking multivisão (página, seção, tamanho fixo) + elementos paratextuais & Manter várias granularidades em paralelo & S4 & A06 & Acadêmica & p.1 (Introdução) \\
-Pipeline de parsing orientado a esquema relacional fixo, com enriquecimento de metadados por APIs externas & Banco relacional (DuckDB) como representação canônica do documento & S2 & A06 & Acadêmica & p.2 (Seção 2.2) \\
-Ligação 1:1 entre vetor e registro de origem e metadados de filtragem por documento/página & Coleções separadas por modelo de codificação e modalidade & S3 & A06 & Acadêmica & p.3 (Seção 2.3) \\
-Ligação 1:1 entre vetor e registro de origem e metadados de filtragem por documento/página & Coleções separadas por modelo de codificação e modalidade & S5 & A06 & Acadêmica & p.3 (Seção 2.3) \\
-Índice vetorial autenticado (Merkle + assinaturas) com versionamento do corpus à prova de adulteração & Cada chunk assinado e incluído em árvore de Merkle comprometida por versão & S3 & A07 & Acadêmica & p.1–2 (Contribuições) \\
-Índice vetorial autenticado (Merkle + assinaturas) com versionamento do corpus à prova de adulteração & Cada chunk assinado e incluído em árvore de Merkle comprometida por versão & S7 & A07 & Acadêmica & p.1–2 (Contribuições) \\
-Contrato de admissibilidade: só liberar resposta com evidência verificada; caso contrário, abster-se & Política de verificação parcial (descarta chunks não verificados, responde com os verificados) & S5 & A07 & Acadêmica & p.1 e p.6 (Tabela III) \\
-Contrato de admissibilidade: só liberar resposta com evidência verificada; caso contrário, abster-se & Política de verificação parcial (descarta chunks não verificados, responde com os verificados) & S6 & A07 & Acadêmica & p.1 e p.6 (Tabela III) \\
-Validação semântica do conteúdo na ingestão, antes do commit do corpus & Combinar proveniência criptográfica com verificação semântica (trabalho futuro) & S2 & A07 & Acadêmica & p.4 e p.9 \\
-Inventário de dados, responsáveis pela atualização, cadência de atualização e procedimentos de rollback & Equipe designada para curar fontes, acompanhar métricas e confirmar respostas & S1 & A08 & Acadêmica & p.3 (Segurança e governança) \\
-Inventário de dados, responsáveis pela atualização, cadência de atualização e procedimentos de rollback & Equipe designada para curar fontes, acompanhar métricas e confirmar respostas & S7 & A08 & Acadêmica & p.3 (Segurança e governança) \\
-Chunking semântico (não por contagem de caracteres) para listas e tabelas & Chunking semântico + reranking para páginas longas & S4 & A08 & Acadêmica & p.4 (Lições) e p.5 \\
-Curadoria de fontes canônicas para fechar lacunas de cobertura & Nomear fontes canônicas; páginas sem PDF exigem extração manual (p.3) & S1 & A08 & Acadêmica & p.5 \\
-Curadoria de fontes canônicas para fechar lacunas de cobertura & Nomear fontes canônicas; páginas sem PDF exigem extração manual (p.3) & S7 & A08 & Acadêmica & p.5 \\
-Console administrativo para upload, reindexação e rollback; logs mínimos e amostragem semanal de respostas & Observabilidade básica (tempos + logs mínimos) basta para detectar regressões (p.4) & S6 & A08 & Acadêmica & p.5 (Passos de escala) \\
-Console administrativo para upload, reindexação e rollback; logs mínimos e amostragem semanal de respostas & Observabilidade básica (tempos + logs mínimos) basta para detectar regressões (p.4) & S7 & A08 & Acadêmica & p.5 (Passos de escala) \\
-Diagnosticar o gargalo pela métrica de recuperação (gap Recall@10 × Recall@50) antes de mexer no gerador & Priorizar melhorias de recuperação/reranking & S5 & A09 & Acadêmica & p.1 e p.6 (Resultados) \\
-Diagnosticar o gargalo pela métrica de recuperação (gap Recall@10 × Recall@50) antes de mexer no gerador & Priorizar melhorias de recuperação/reranking & S6 & A09 & Acadêmica & p.1 e p.6 (Resultados) \\
-Chunking com consciência de layout e escolha de tamanho de chunk por experimento & Chunks de 2048 tokens; parser com consciência de layout & S2 & A09 & Acadêmica & p.3 (Datasets) e p.4 (Seção 4.3) \\
-Chunking com consciência de layout e escolha de tamanho de chunk por experimento & Chunks de 2048 tokens; parser com consciência de layout & S4 & A09 & Acadêmica & p.3 (Datasets) e p.4 (Seção 4.3) \\
-Fusão de rankings (RRF) entre modelos de embedding; teste de reranking por cross-encoder × LLM & Combinar dois embeddings densos; reranking por LLM sobre top-50 & S5 & A09 & Acadêmica & p.5 (Tabelas 3–4) \\
-Usar falhas de reranking como casos de avaliação para ajustar o prompt (ciclo de feedback) & Meta-prompting com exemplos difíceis do conjunto de treino & S6 & A09 & Acadêmica & p.6 \\
-Filtro de chunks ruidosos e deduplicação por identificador da regra antes da vetorização & Chunking recursivo com sobreposição; regra mínima de 10 palavras; chave (rule\_id, texto) & S4 & A10 & Acadêmica & p.3 (Pré-processamento) \\
-Preservar a hierarquia do documento e converter tabelas para Markdown & Pipeline de pré-processamento orientado à estrutura & S2 & A10 & Acadêmica & p.1 (Resumo) \\
-Preservar a hierarquia do documento e converter tabelas para Markdown & Pipeline de pré-processamento orientado à estrutura & S4 & A10 & Acadêmica & p.1 (Resumo) \\
-Avaliação separada de recuperação e geração com métricas RAGAS & — & S6 & A10 & Acadêmica & p.1 e Conclusão \\
-Normalização de codificação, chunking com sobreposição e resumo por documento com metadados indexado junto aos chunks & Dois níveis de representação (chunk fino + resumo do documento) & S2 & A12 & Acadêmica & p.4 (Texto simples) \\
-Normalização de codificação, chunking com sobreposição e resumo por documento com metadados indexado junto aos chunks & Dois níveis de representação (chunk fino + resumo do documento) & S4 & A12 & Acadêmica & p.4 (Texto simples) \\
-Extração de imagens e tabelas por prompts de domínio com saída em esquema estruturado & Processadores específicos por tipo de artefato & S2 & A12 & Acadêmica & p.6 e p.9 (Resultados) \\
-Extração de imagens e tabelas por prompts de domínio com saída em esquema estruturado & Processadores específicos por tipo de artefato & S4 & A12 & Acadêmica & p.6 e p.9 (Resultados) \\
-Filtragem por etiquetas de proveniência (seção, página) após a busca top-k & k=10 e similaridade mínima & S5 & A12 & Acadêmica & p.8 (Política de recuperação) \\
-Busca sistemática em grade da configuração da cadeia (embedding, chunk, sobreposição, busca, reranking) & Padrão recomendado: Gemini Embeddings + MMR + cross-encoder; sobreposição de 10–15\% & S4 & A12 & Acadêmica & p.10–11 e p.28 (Apêndice) \\
-Busca sistemática em grade da configuração da cadeia (embedding, chunk, sobreposição, busca, reranking) & Padrão recomendado: Gemini Embeddings + MMR + cross-encoder; sobreposição de 10–15\% & S5 & A12 & Acadêmica & p.10–11 e p.28 (Apêndice) \\
-— & Automação do pipeline de preparação & S2 & A12 & Acadêmica & p.1–2 (Introdução) \\
-Avaliar parser e chunker em conjunto como parte da qualidade do pipeline & Experimento fatorial completo parser × chunker & S2 & A13 & Acadêmica & p.1–2 (Introdução) \\
-Avaliar parser e chunker em conjunto como parte da qualidade do pipeline & Experimento fatorial completo parser × chunker & S4 & A13 & Acadêmica & p.1–2 (Introdução) \\
-Considerar custo de parsing (tempo por página) na escolha do parser & Parsers leves frequentemente equivalem aos complexos & S2 & A13 & Acadêmica & p.7 (RQ2c) \\
-Sobreposição moderada de chunks (25\%) e evitar granularidade excessiva & 512 tokens com 25\% de sobreposição & S4 & A13 & Acadêmica & p.8 (Tabela 9) e p.9 (RQ3b) \\
-Escolher o recuperador conforme o tipo de conteúdo/consulta (texto × tabela) & E5 para texto; ColBERT para tabelas; SPLADE como compromisso & S5 & A13 & Acadêmica & p.6–7 (Tabela 6) \\
-Limpeza de ruído de OCR e deduplicação na origem & Tesseract/easyOCR + limpeza por regex & S2 & A14 & Acadêmica & p.12 (6.1–6.2) \\
-Limpeza de ruído de OCR e deduplicação na origem & Tesseract/easyOCR + limpeza por regex & S4 & A14 & Acadêmica & p.12 (6.1–6.2) \\
-Calibrar tamanho de chunk e usar filtro por metadados (tipo de documento) para reduzir o espaço de busca & Chunks de 200–500 tokens; filtro por tipo de documento & S3 & A14 & Acadêmica & p.12 (6.1) \\
-Calibrar tamanho de chunk e usar filtro por metadados (tipo de documento) para reduzir o espaço de busca & Chunks de 200–500 tokens; filtro por tipo de documento & S4 & A14 & Acadêmica & p.12 (6.1) \\
-Calibrar tamanho de chunk e usar filtro por metadados (tipo de documento) para reduzir o espaço de busca & Chunks de 200–500 tokens; filtro por tipo de documento & S5 & A14 & Acadêmica & p.12 (6.1) \\
-Manutenção contínua de conectores/scrapers de ingestão & Feeds semiestruturados e manutenção regular de scripts & S2 & A14 & Acadêmica & p.12 (6.2) \\
-Manutenção contínua de conectores/scrapers de ingestão & Feeds semiestruturados e manutenção regular de scripts & S7 & A14 & Acadêmica & p.12 (6.2) \\
-Registrar perguntas, respostas e avaliações dos usuários e usá-las para ajustar a recuperação e o chunking & Armazenamento leve (SQLite) de interações & S6 & A14 & Acadêmica & p.12 (6.2) \\
-Hospedagem própria por conformidade; citar a fonte (arquivo e link) na resposta; tratar desbalanceamento de fontes & Reranking para diversidade; ocultar fontes em domínios sensíveis & S1 & A14 & Acadêmica & p.12 (6.2–6.3) \\
-Hospedagem própria por conformidade; citar a fonte (arquivo e link) na resposta; tratar desbalanceamento de fontes & Reranking para diversidade; ocultar fontes em domínios sensíveis & S3 & A14 & Acadêmica & p.12 (6.2–6.3) \\
-Hospedagem própria por conformidade; citar a fonte (arquivo e link) na resposta; tratar desbalanceamento de fontes & Reranking para diversidade; ocultar fontes em domínios sensíveis & S5 & A14 & Acadêmica & p.12 (6.2–6.3) \\
-Metadados estruturais por unidade de evidência (documento, página, modalidade, título pai, tabela, parte) & Esquema de metadados que permite reconstruir objetos multipartes & S3 & A15 & Acadêmica & p.3 (Ingestão) \\
-Metadados estruturais por unidade de evidência (documento, página, modalidade, título pai, tabela, parte) & Esquema de metadados que permite reconstruir objetos multipartes & S4 & A15 & Acadêmica & p.3 (Ingestão) \\
-Chunking de tabelas por linha com ID estável, faixa de linhas e contexto (título e texto anterior) & Fallback para chunking por tokens mantendo o tipo 'tabela' & S4 & A15 & Acadêmica & p.4 (Tabelas) \\
-Filtrar segmentos de baixa informação e normalizar texto antes de indexar & Regras heurísticas de filtragem & S4 & A15 & Acadêmica & p.4 \\
-Empacotamento do contexto sob orçamento de tokens, com expansão por grafo e poda intermodal & Seleção de segmentos com penalidade para chunks irrelevantes & S5 & A15 & Acadêmica & p.1 (Resumo) e p.6 \\
-Tratar o estado do índice (atraso, divergência, frescor) como dimensão de qualidade monitorada & Middleware ISUQ com escore de confiança do índice (ICS) & S3 & A16 & Acadêmica & p.1 (Introdução) \\
-Tratar o estado do índice (atraso, divergência, frescor) como dimensão de qualidade monitorada & Middleware ISUQ com escore de confiança do índice (ICS) & S7 & A16 & Acadêmica & p.1 (Introdução) \\
-Ações de recuperação automáticas guiadas pelo estado do índice (refresh de shard, renormalização, busca mais ampla) & Limiar θ=0,40 (23\% das consultas roteadas para recuperação) & S5 & A16 & Acadêmica & p.4 \\
-Ações de recuperação automáticas guiadas pelo estado do índice (refresh de shard, renormalização, busca mais ampla) & Limiar θ=0,40 (23\% das consultas roteadas para recuperação) & S7 & A16 & Acadêmica & p.4 \\
-Propagar o sinal de confiança da fonte/índice até a geração & Token de confiança no prompt do sistema & S5 & A16 & Acadêmica & p.4 \\
-Propagar o sinal de confiança da fonte/índice até a geração & Token de confiança no prompt do sistema & S6 & A16 & Acadêmica & p.4 \\
-Dependência de metadados operacionais do índice (timestamps de replicação) & — & S3 & A16 & Acadêmica & p.5–6 (Limitações) \\
-Representar a estrutura e as dependências entre páginas na ingestão (grafo do documento) & Grafo simbólico + índice neural lado a lado & S2 & A17 & Acadêmica & p.1 (Introdução) \\
-Representar a estrutura e as dependências entre páginas na ingestão (grafo do documento) & Grafo simbólico + índice neural lado a lado & S4 & A17 & Acadêmica & p.1 (Introdução) \\
-Deslocar o custo de estruturação para a ingestão offline & Pré-computar o grafo; recuperação dinâmica sem top-k fixo & S3 & A17 & Acadêmica & p.7 (Latência) \\
-Deslocar o custo de estruturação para a ingestão offline & Pré-computar o grafo; recuperação dinâmica sem top-k fixo & S5 & A17 & Acadêmica & p.7 (Latência) \\
-Extração de elementos (texto, tabelas, figuras) por modelo multimodal & OCR tradicional ou modelos menores podem baratear o parsing inicial & S2 & A17 & Acadêmica & p.10 (Limitações) \\
-Medir a falha de recuperação do documento errado (DRM) como métrica de qualidade & Métrica DRM + precisão/recall por caractere & S4 & A18 & Acadêmica & p.3 \\
-Enriquecer cada chunk com resumo do documento de origem (metadado sintético) & Chunking recursivo + prefixo de resumo; só recuperação densa & S4 & A18 & Acadêmica & p.5 (Pipeline) \\
-Avaliar busca híbrida (BM25 + densa) contra as métricas de falha & Manter apenas a recuperação densa & S5 & A18 & Acadêmica & p.6 e p.12 (Apêndice B) \\
-Preferir resumos genéricos a resumos especializados para guiar o recuperador & Resumo genérico & S4 & A18 & Acadêmica & p.9 (Conclusão) \\
-Forense de dados: rastrear até a fonte e o pipeline de coleta comprometidos & Priorizar rastreamento a defesas cada vez mais complexas & S1 & A19 & Acadêmica & p.2 (Introdução) \\
-Forense de dados: rastrear até a fonte e o pipeline de coleta comprometidos & Priorizar rastreamento a defesas cada vez mais complexas & S2 & A19 & Acadêmica & p.2 (Introdução) \\
-Feedback do usuário como gatilho de investigação da base & Recuperação iterativa + LLM juiz com prompt específico & S6 & A19 & Acadêmica & p.3 (Cenário) \\
-Remoção de textos envenenados da base (descarte) com verificação da correção & Remover, reenviar a consulta e comparar; inserir textos benignos quando o erro é do modelo & S7 & A19 & Acadêmica & p.8 e p.10 \\
-Remoção de textos envenenados da base (descarte) com verificação da correção & Remover, reenviar a consulta e comparar; inserir textos benignos quando o erro é do modelo & S8 & A19 & Acadêmica & p.8 e p.10 \\
-Pipeline de ingestão com metadados, OCR de fallback e proveniência por chunk (arquivo, página, id) & Chroma + SQLite em paralelo & S2 & A20 & Acadêmica & p.1 (Resumo) e p.3 \\
-Pipeline de ingestão com metadados, OCR de fallback e proveniência por chunk (arquivo, página, id) & Chroma + SQLite em paralelo & S3 & A20 & Acadêmica & p.1 (Resumo) e p.3 \\
-Roteamento por tipo de pergunta entre dados estruturados (SQL) e não estruturados (vetorial) & Rota SQL / híbrida + validador LLM + checagem de fatos & S5 & A20 & Acadêmica & p.1 (Resumo) \\
-Registrar feedback com rota, evidência e resposta aceita como dataset de melhoria & Corpus de fine-tuning supervisionado crescente & S6 & A20 & Acadêmica & Conclusão (p.6–7) \\
-— & — & S4 & A20 & Acadêmica & p.7 (Limitações) \\
-Chunking semântico por limiar de similaridade em vez de divisão fixa por caracteres & Chunks de tamanho variável (até 2.187 caracteres) conforme a densidade semântica & S4 & A21 & Acadêmica & p.3–4 (Tabela III, Fig. 3) \\
-Fronteira de privacidade por arquitetura: processar documentos localmente e enviar à nuvem só metadados de esquema & Especialização de modelos por tipo de dado & S3 & A21 & Acadêmica & p.1 e p.5 \\
-Fronteira de privacidade por arquitetura: processar documentos localmente e enviar à nuvem só metadados de esquema & Especialização de modelos por tipo de dado & S5 & A21 & Acadêmica & p.1 e p.5 \\
-Validação de segurança das consultas geradas antes de tocar no banco & Lista de bloqueio + autocorreção limitada a 2 chamadas & S5 & A21 & Acadêmica & p.3 \\
-Controle de acesso antes da recuperação (policy-first) e refiltragem após a fusão & Filtro compilado de papel, inquilino, região e contexto; RBAC/ABAC; zero trust & S5 & A22 & Acadêmica & p.1 e p.4 (Algoritmo 1) \\
-Registrar, por passagem, postagem léxica, vetor e metadados/ACL, com versão e ID para rollback & Três artefatos derivados por passagem & S3 & A22 & Acadêmica & p.3 (Ingestão) \\
-Registrar, por passagem, postagem léxica, vetor e metadados/ACL, com versão e ID para rollback & Três artefatos derivados por passagem & S7 & A22 & Acadêmica & p.3 (Ingestão) \\
-Trace imutável por requisição ligando política, evidências, versões e saída & Registro append-only com hashes & S6 & A22 & Acadêmica & p.3–4 \\
-Desempate por atualidade e manutenção da qualidade dos metadados de permissão & Freshness no ranking; red team e monitoramento contínuo & S5 & A22 & Acadêmica & p.3 e p.5 \\
-Desempate por atualidade e manutenção da qualidade dos metadados de permissão & Freshness no ranking; red team e monitoramento contínuo & S7 & A22 & Acadêmica & p.3 e p.5 \\
-Avaliar ferramentas de conversão pela acurácia final do RAG, não por métricas de fidelidade de parsing & Benchmark ponta a ponta com 21 configurações & S2 & A23 & Acadêmica & p.1 (Resumo) e p.21 (4.1) \\
-Avaliar ferramentas de conversão pela acurácia final do RAG, não por métricas de fidelidade de parsing & Benchmark ponta a ponta com 21 configurações & S4 & A23 & Acadêmica & p.1 (Resumo) e p.21 (4.1) \\
-Divisão hierárquica com caminho da seção (breadcrumb) prefixado ao chunk & Docling + divisão hierárquica + descrição de imagens & S4 & A23 & Acadêmica & p.18 \\
-Arquitetura em camadas Bronze/Silver/Gold para artefatos do pipeline RAG & Separação de ingestão, transformação e indexação; troca por um parâmetro de configuração & S2 & A23 & Acadêmica & p.4 \\
-Arquitetura em camadas Bronze/Silver/Gold para artefatos do pipeline RAG & Separação de ingestão, transformação e indexação; troca por um parâmetro de configuração & S3 & A23 & Acadêmica & p.4 \\
-Restrição de privacidade como critério de escolha de ferramenta de ingestão & Apenas ferramentas locais & S2 & A23 & Acadêmica & p.3 e p.20–21 \\
-Atualização contínua do banco vetorial sob leitura concorrente & Índice IVF de dois estágios com parâmetros de inserção separados & S3 & A24 & Acadêmica & p.1 (Introdução) \\
-Atualização contínua do banco vetorial sob leitura concorrente & Índice IVF de dois estágios com parâmetros de inserção separados & S7 & A24 & Acadêmica & p.1 (Introdução) \\
-Exclusão lógica (tombstone) seguida de remoção física por compactação & Checagem de tombstone no filtro; difusão da exclusão a todos os IndexWorkers & S8 & A24 & Acadêmica & p.4 e p.7 \\
-Reconstrução periódica do índice quando a distribuição dos dados muda & Rebuild recomendado após mudanças significativas & S7 & A24 & Acadêmica & p.4 e p.17 \\
-Delegar a autorização ao IAM nativo de cada fonte, validando cada documento em tempo real & Sem fusão de políticas; verificação por documento contra o provedor & S5 & A25 & Acadêmica & p.1–3 (Introdução) \\
-Identificador persistente por recurso ligando chunks à origem e ao IAM, para atualização e exclusão & UUID global + ID local de origem & S2 & A25 & Acadêmica & p.4–5 (Ingestão) \\
-Identificador persistente por recurso ligando chunks à origem e ao IAM, para atualização e exclusão & UUID global + ID local de origem & S8 & A25 & Acadêmica & p.4–5 (Ingestão) \\
-Separar o armazenamento de vetores (estáveis) do de metadados (voláteis) & Vector store + metadata store ligados pelo resourceID & S3 & A25 & Acadêmica & p.6 \\
-Separar o armazenamento de vetores (estáveis) do de metadados (voláteis) & Vector store + metadata store ligados pelo resourceID & S7 & A25 & Acadêmica & p.6 \\
-Evitar índices separados por papel (filtragem estática) & Filtragem dinâmica com cache TTL (futuro) para reduzir latência & S3 & A25 & Acadêmica & p.14 (Discussão) \\
-Evitar índices separados por papel (filtragem estática) & Filtragem dinâmica com cache TTL (futuro) para reduzir latência & S7 & A25 & Acadêmica & p.14 (Discussão) \\
-Medir o impacto do nível de permissão na qualidade da resposta & — & S6 & A25 & Acadêmica & p.11 (Tabela 5) \\
-Seleção e coleta de dados, chunking e escolha de embedding como trabalho central & Chunk nem pequeno demais (fragmenta) nem grande demais (sobrecarrega o gerador) (p.9) & S1 & A26 & Acadêmica & p.1 (Resumo) e p.8 \\
-Seleção e coleta de dados, chunking e escolha de embedding como trabalho central & Chunk nem pequeno demais (fragmenta) nem grande demais (sobrecarrega o gerador) (p.9) & S2 & A26 & Acadêmica & p.1 (Resumo) e p.8 \\
-Seleção e coleta de dados, chunking e escolha de embedding como trabalho central & Chunk nem pequeno demais (fragmenta) nem grande demais (sobrecarrega o gerador) (p.9) & S4 & A26 & Acadêmica & p.1 (Resumo) e p.8 \\
-Qualidade dos dados como requisito explícito do sistema RAG & — & S1 & A26 & Acadêmica & p.6 \\
-Ontologia/grafo para desambiguar entidades e abreviações & Grafo de conhecimento com ontologia em vez de banco vetorial & S4 & A26 & Acadêmica & p.8 \\
-Rodar benchmark de novo após mudanças nos dados ou componentes (teste de regressão) & — & S6 & A26 & Acadêmica & p.7 \\
-Rodar benchmark de novo após mudanças nos dados ou componentes (teste de regressão) & — & S7 & A26 & Acadêmica & p.7 \\
-Avaliação manual predominante & — & S6 & A26 & Acadêmica & p.1 e p.9 \\
-Avaliação manual predominante & — & S7 & A26 & Acadêmica & p.1 e p.9 \\
-Decidir quando e como indexar cada dataset conforme o uso esperado & Índice adaptativo (cracking) que cresce com as consultas & S3 & A29 & Acadêmica & p.1 (Introdução) \\
-Escolher a estratégia de índice pelo volume de consultas (força bruta, índice pequeno, índice grande) & CrackIVF com custo quase mínimo em todas as escalas & S3 & A29 & Acadêmica & p.9 \\
-Escolher a estratégia de índice pelo volume de consultas (força bruta, índice pequeno, índice grande) & CrackIVF com custo quase mínimo em todas as escalas & S5 & A29 & Acadêmica & p.9 \\
-Manutenção de índices ANN diante de mudanças na distribuição dos dados (split/merge locais) & — & S7 & A29 & Acadêmica & p.12 (Trabalhos relacionados) \\
-Metadados temporais e de proveniência para distinguir versões coexistentes de um dado & Enriquecimento de metadados; critério de validade temporal na avaliação & S4 & A30 & Acadêmica & p.3–4 \\
-Metadados temporais e de proveniência para distinguir versões coexistentes de um dado & Enriquecimento de metadados; critério de validade temporal na avaliação & S7 & A30 & Acadêmica & p.3–4 \\
-Avaliar a camada de dados (validade de metadados, integridade e densidade dos chunks) separadamente da recuperação e da geração & Avaliação em dois níveis (triagem barata + juiz LLM fino) & S6 & A30 & Acadêmica & p.1 (Resumo) e p.7 \\
-Mapear cada falha diagnosticada para uma ação de otimização na camada correspondente & Busca híbrida BM25+densa; reranking; chunking semântico & S4 & A30 & Acadêmica & p.1 e p.13–14 (Tabela 3) \\
-Mapear cada falha diagnosticada para uma ação de otimização na camada correspondente & Busca híbrida BM25+densa; reranking; chunking semântico & S5 & A30 & Acadêmica & p.1 e p.13–14 (Tabela 3) \\
-Ingestão automatizada com limpeza inteligente e vetorização dinâmica em ciclo fechado & — & S2 & A30 & Acadêmica & p.3–4 e p.11 \\
-Filtrar documentos recuperados conforme as permissões do usuário antes da geração & Níveis de acesso por perfil (AL1/AL2) & S5 & A31 & Acadêmica & p.1 (Resumo/Introdução) \\
-Resposta orientada quando a informação é restrita (encaminhar a quem tem permissão) & — & S6 & A31 & Acadêmica & p.3 (Discussão) \\
-Armazenamento vetorial integrado ao banco operacional (multimodelo) em vez de banco vetorial isolado & Arquitetura de armazenamento compartilhado (LindormDFS) & S3 & A32 & Acadêmica & p.1 e p.4 (3.1) \\
-Inserção e exclusão de vetores em tempo real para manter o frescor & Busca de centróide otimizada no caminho de escrita & S7 & A32 & Acadêmica & p.8 e p.12 (5.5.1) \\
-Inserção e exclusão de vetores em tempo real para manter o frescor & Busca de centróide otimizada no caminho de escrita & S8 & A32 & Acadêmica & p.8 e p.12 (5.5.1) \\
-Particionamento temporal de tabelas vetoriais com metadados de índice compartilhados & Reuso de centróides e codebooks & S3 & A32 & Acadêmica & p.9 (4.6.1) \\
-Particionamento temporal de tabelas vetoriais com metadados de índice compartilhados & Reuso de centróides e codebooks & S7 & A32 & Acadêmica & p.9 (4.6.1) \\
-Busca vetorial filtrada por atributos (pré/pós-filtro, pushdown) & Pushdown de atributos & S5 & A32 & Acadêmica & p.12 (5.5.2) \\
-Particionar índices de modo a refletir a proveniência (instituição, departamento) em recuperação federada & Árvore hierárquica de recuperadores & S3 & A33 & Acadêmica & p.4 \\
-Controle de acesso por políticas (PBAC) em cada recuperador, com sobre-busca para compensar documentos negados & Ponto de decisão de política por folha & S5 & A33 & Acadêmica & p.5 \\
-Escolher armazenamento vetorial com CRUD por causa de dados que mudam com frequência & Qdrant; filtros por paciente via NER & S3 & A33 & Acadêmica & p.4 \\
-Escolher armazenamento vetorial com CRUD por causa de dados que mudam com frequência & Qdrant; filtros por paciente via NER & S7 & A33 & Acadêmica & p.4 \\
-Reconhecer a degradação do índice com atualizações (centróides desatualizados) & Manutenção incremental do índice & S7 & A34 & Acadêmica & p.3 \\
-Delta-store para inserções/exclusões em tempo real e monitor de qualidade que dispara reindexação & Armazenamento relacional com ACID; reindexação por gatilho & S7 & A34 & Acadêmica & p.4 \\
-Delta-store para inserções/exclusões em tempo real e monitor de qualidade que dispara reindexação & Armazenamento relacional com ACID; reindexação por gatilho & S8 & A34 & Acadêmica & p.4 \\
-Otimizador de consulta híbrida que escolhe pré ou pós-filtro pela seletividade estimada & Estimativa de seletividade de atributos & S5 & A34 & Acadêmica & p.7 e p.10 \\
-Considerar o custo de log/replicação das atualizações do índice vetorial em bancos relacionais & Buffer de inserção + merge em lote por partição & S3 & A35 & Acadêmica & p.1 (Introdução) \\
-Considerar o custo de log/replicação das atualizações do índice vetorial em bancos relacionais & Buffer de inserção + merge em lote por partição & S7 & A35 & Acadêmica & p.1 (Introdução) \\
-Desacoplar a visibilidade dos novos vetores da atualização da estrutura do índice & Merge a cada 1.000 inserções & S7 & A35 & Acadêmica & p.3 \\
-Exclusão por tombstone com reconstrução de partição acima de um limiar, respeitando MVCC & Proposta (não avaliada) & S8 & A35 & Acadêmica & p.9 (Limitações) \\
-Avaliar o banco vetorial sob cargas realistas (filtros, churn, restart) em vez de benchmarks estáticos & Oráculo de verdade com filtros (bitmap + FAISS flat adaptativo) & S5 & A36 & Acadêmica & p.1 (Introdução) \\
-Avaliar o banco vetorial sob cargas realistas (filtros, churn, restart) em vez de benchmarks estáticos & Oráculo de verdade com filtros (bitmap + FAISS flat adaptativo) & S7 & A36 & Acadêmica & p.1 (Introdução) \\
-Monitorar a seletividade dos filtros de metadados e permissão & Controles de operador para trocar acurácia por latência & S5 & A36 & Acadêmica & p.1 e p.5 \\
-Monitorar a cadência de compactação e dimensionar pelo pior caso transitório & Provisionamento pelo pior caso & S7 & A36 & Acadêmica & p.5 \\
-Monitorar a cadência de compactação e dimensionar pelo pior caso transitório & Provisionamento pelo pior caso & S8 & A36 & Acadêmica & p.5 \\
-Checagem de prontidão no nível de consulta após restart & — & S6 & A36 & Acadêmica & p.1 (Takeaways) e p.6 \\
-Checagem de prontidão no nível de consulta após restart & — & S7 & A36 & Acadêmica & p.1 (Takeaways) e p.6 \\
-Avaliação por camada (recuperação separada de geração) e verificação fina de evidência & — & S6 & A37 & Acadêmica & Resumo (Resultados) \\
-Reportar a unidade e a granularidade de recuperação (chunk/documento) junto da avaliação & — & S4 & A37 & Acadêmica & Discussão \\
-Reportar a unidade e a granularidade de recuperação (chunk/documento) junto da avaliação & — & S6 & A37 & Acadêmica & Discussão \\
-Avaliar a construção do grafo e os artefatos intermediários (nós, caminhos, subgrafos) & — & S4 & A37 & Acadêmica & Resumo (Resultados) \\
-Avaliar a construção do grafo e os artefatos intermediários (nós, caminhos, subgrafos) & — & S6 & A37 & Acadêmica & Resumo (Resultados) \\
-Salvaguardas de avaliação (concordância entre avaliadores; controle de viés do juiz LLM) & — & S6 & A37 & Acadêmica & Resumo (Resultados) \\
-Extração contínua de triplas com normalização, deduplicação e proveniência até a seção de origem & Índice vetorial unificado (tripla + texto de origem + metadados) & S2 & A39 & Acadêmica & p.1 (Resumo) e p.1–2 (2.1) \\
-Extração contínua de triplas com normalização, deduplicação e proveniência até a seção de origem & Índice vetorial unificado (tripla + texto de origem + metadados) & S4 & A39 & Acadêmica & p.1 (Resumo) e p.1–2 (2.1) \\
-Esquema mínimo com canonicalização de entidades em vez de ontologia rígida & Canonicalização e ligação de entidades & S4 & A39 & Acadêmica & p.2 (2.4) \\
-Atualização incremental do grafo e do índice & Curadoria iterativa e supervisão fraca & S7 & A39 & Acadêmica & p.3 \\
-Sequência de otimização: análise do corpus → chunking → índice → busca híbrida → calibração & Processo de implantação repetível & S4 & A40 & Acadêmica & p.1 (Resumo/Introdução) \\
-Sequência de otimização: análise do corpus → chunking → índice → busca híbrida → calibração & Processo de implantação repetível & S5 & A40 & Acadêmica & p.1 (Resumo/Introdução) \\
-Chunking por estrutura (títulos, tabelas, itens numerados) com lógica por tipo de elemento & Chunking por estrutura em corpora técnicos e regulatórios & S4 & A40 & Acadêmica & p.3 \\
-Escolher o índice pela frequência de atualização; pré-filtro por metadados como isolamento entre inquilinos & HNSW para ingestão contínua; pré-filtro obrigatório & S3 & A40 & Acadêmica & p.4–5 \\
-Escolher o índice pela frequência de atualização; pré-filtro por metadados como isolamento entre inquilinos & HNSW para ingestão contínua; pré-filtro obrigatório & S5 & A40 & Acadêmica & p.4–5 \\
-Gatilhos de reavaliação (mudança de distribuição, de prompt ou de embedding) e registro versionado de configuração & Calibração por campo após 3–5 lotes de correções & S7 & A40 & Acadêmica & p.6–7 \\
-Seleção de contexto como otimização sob orçamento de tokens (mochila/ILP) em vez de top-k & ILP binário (relevância × custo em tokens) & S5 & A42 & Acadêmica & p.1 (Resumo) e p.3 \\
-Extração com preservação de estrutura (Markdown) + chunking por estrutura & Extração com Azure Document Intelligence & S2 & A42 & Acadêmica & p.3 \\
-Extração com preservação de estrutura (Markdown) + chunking por estrutura & Extração com Azure Document Intelligence & S4 & A42 & Acadêmica & p.3 \\
-Restrições de diversidade por documento-fonte na montagem do contexto & Diversidade adaptativa (futuro): não impor sempre & S5 & A42 & Acadêmica & p.4 (Trabalhos futuros) \\
-Trace por resposta com fonte, rota, latências, consulta reescrita, resultados de recuperação, prompts e guardrails & Arquitetura de captura de respostas e feedback & S6 & A43 & Acadêmica & p.10–11 (Apêndice, Fig. 3) \\
-Pipeline batch agendado (cron + PySpark + data lake) para dados de feedback e traces & Janela de 4 h & S6 & A43 & Acadêmica & p.11 \\
-Pipeline batch agendado (cron + PySpark + data lake) para dados de feedback e traces & Janela de 4 h & S7 & A43 & Acadêmica & p.11 \\
-Tratar o viés e a escassez do feedback e remover PII antes de reutilizar os dados & Dados sintéticos (5 mil exemplos) para complementar & S6 & A43 & Acadêmica & p.3 \\
-Implantação gradual (canário) com procedimento de rollback e monitoramento pós-deploy & Promoção e reversão de configuração com KPIs (acurácia, latência, feedback) & S7 & A43 & Acadêmica & p.5 (Learnings) \\
-Limpeza estrutural de PDFs normativos e metadados por cláusula para rastreabilidade & Segmentação por cláusula/parágrafo & S2 & A44 & Acadêmica & p.6 \\
-Limpeza estrutural de PDFs normativos e metadados por cláusula para rastreabilidade & Segmentação por cláusula/parágrafo & S4 & A44 & Acadêmica & p.6 \\
-Grafo com relações tipadas (referência cruzada, hierarquia, similaridade) ligado aos chunks de origem, com deduplicação & Recuperação híbrida local+global no grafo & S4 & A44 & Acadêmica & p.4 \\
-Priorizar o modelo de embedding e calibrar o tamanho do chunk com a janela de contexto & Chunks pequenos/médios + janela grande & S4 & A44 & Acadêmica & p.11 \\
-Priorizar o modelo de embedding e calibrar o tamanho do chunk com a janela de contexto & Chunks pequenos/médios + janela grande & S5 & A44 & Acadêmica & p.11 \\
-— & Futuro: atualização incremental do grafo & S7 & A44 & Acadêmica & p.13 \\
-Minimização e mascaramento na escrita, TTL de retenção e consentimento por item, filtro por finalidade na leitura & Motor de políticas com regras GDPR / EU AI Act / NIST / ISO 42001 executáveis & S2 & A45 & Acadêmica & p.3 (Plano de governança) \\
-Minimização e mascaramento na escrita, TTL de retenção e consentimento por item, filtro por finalidade na leitura & Motor de políticas com regras GDPR / EU AI Act / NIST / ISO 42001 executáveis & S5 & A45 & Acadêmica & p.3 (Plano de governança) \\
-Minimização e mascaramento na escrita, TTL de retenção e consentimento por item, filtro por finalidade na leitura & Motor de políticas com regras GDPR / EU AI Act / NIST / ISO 42001 executáveis & S8 & A45 & Acadêmica & p.3 (Plano de governança) \\
-Armazenamento em camadas com política de retenção por camada e arquivo frio imutável para retenção legal & Promoção e expiração entre camadas & S3 & A45 & Acadêmica & p.3 (Camadas) \\
-Armazenamento em camadas com política de retenção por camada e arquivo frio imutável para retenção legal & Promoção e expiração entre camadas & S8 & A45 & Acadêmica & p.3 (Camadas) \\
-Linhagem padronizada (W3C PROV) por operação e pacote de evidências assinado por resposta & Log assíncrono para não pesar na latência & S6 & A45 & Acadêmica & p.3 e p.5 \\
-— & — & S8 & A45 & Acadêmica & p.5 (Limitações) \\
-Avaliar o custo-benefício do chunking semântico frente ao fixo antes de adotá-lo & Chunking fixo com sobreposição como baseline competitivo & S4 & A46 & Acadêmica & p.1 (Resumo) \\
-Priorizar a escolha do modelo de embedding sobre a sofisticação do chunking & — & S4 & A46 & Acadêmica & p.4 \\
-Balancear tamanho do chunk entre recall e precisão (F1) & Métrica F1 para escolher o tamanho & S4 & A46 & Acadêmica & p.9 (Apêndice D) \\
-Escolher a granularidade do chunk pela completude da evidência recuperada & Chunks de 256 tokens com busca híbrida & S4 & A47 & Acadêmica & p.1 (Resumo) e p.11 \\
-Ajustar o orçamento de contexto antes de ajustar a sobreposição & Sem sobreposição & S4 & A47 & Acadêmica & p.12 e p.15 (Discussão) \\
-Ajustar o orçamento de contexto antes de ajustar a sobreposição & Sem sobreposição & S5 & A47 & Acadêmica & p.12 e p.15 (Discussão) \\
-Pré-computar e amortizar embeddings; avaliar se o reranking compensa o custo por consulta & — & S3 & A47 & Acadêmica & p.15 \\
-Pré-computar e amortizar embeddings; avaliar se o reranking compensa o custo por consulta & — & S5 & A47 & Acadêmica & p.15 \\
-Avaliar separadamente recuperação (completude da evidência) e geração, com condições-oráculo & Comparar com contexto-ouro e fatos-ouro & S6 & A47 & Acadêmica & p.3 e p.17 \\
-Padrões de produção: sem sobreposição; chunking por sentença & Estudo ponta a ponta para padronizar defaults & S4 & A48 & Acadêmica & p.1 (Resumo) e p.2 \\
-Ajustar o orçamento de contexto ao objetivo da tarefa & Política de preencher até o orçamento (sem k fixo) & S5 & A48 & Acadêmica & p.1–2 \\
-Medir a taxa de abstenção como indicador de confiabilidade & — & S6 & A48 & Acadêmica & p.1 (Setup) e Conclusão \\
-Métricas intrínsecas de qualidade de chunk e seleção da estratégia por documento & Seleção guiada por métricas + chunkers novos (regex por LLM; split-then-merge) & S4 & A49 & Acadêmica & p.1 (Resumo) \\
-Pós-processamento de chunks: dividir os grandes e fundir os minúsculos & Limites de 100–1.100 tokens & S4 & A49 & Acadêmica & p.6 e p.17 (Tabela 7) \\
-— & Custo amortizado na indexação & S4 & A49 & Acadêmica & p.9 (Limitações) \\
-— & Custo amortizado na indexação & S7 & A49 & Acadêmica & p.9 (Limitações) \\
-Casos de avaliação com evidência densa para avaliar decisões de chunking & HiCBench com cortes hierárquicos anotados & S6 & A51 & Acadêmica & p.1 (Introdução, Fig. 1) \\
-Estruturação hierárquica do documento + recuperação que funde filhos no pai (Auto-Merge) & HC200 + Auto-Merge & S4 & A51 & Acadêmica & p.4 \\
-Estruturação hierárquica do documento + recuperação que funde filhos no pai (Auto-Merge) & HC200 + Auto-Merge & S5 & A51 & Acadêmica & p.4 \\
-Comparar configurações de chunking sob o mesmo orçamento de tokens & Orçamento de 4.096 tokens & S6 & A51 & Acadêmica & p.6–7 \\
-Chunking por delimitadores do domínio com injeção de metadados hierárquicos (Lei, Capítulo, Seção, título) no texto do chunk & Carimbo semântico determinístico & S4 & A52 & Acadêmica & p.3 (Ingestão) \\
-Recuperação pai-filho e busca ampla seguida de reranking & k=60 + cross-encoder (FlashRank) & S5 & A52 & Acadêmica & p.1 (Resumo) e p.3 \\
-Estruturação prévia da fonte (JSON com seções) como pré-requisito & Futuro: extração automática de hierarquia & S1 & A52 & Acadêmica & p.5 (Discussão) \\
-Estruturação prévia da fonte (JSON com seções) como pré-requisito & Futuro: extração automática de hierarquia & S4 & A52 & Acadêmica & p.5 (Discussão) \\
-Métricas diretas de qualidade do chunking (clareza de fronteira, independência entre chunks) & BC e CS correlacionadas com o desempenho do QA & S4 & A53 & Acadêmica & p.1 (Resumo) e p.3 \\
-Métricas diretas de qualidade do chunking (clareza de fronteira, independência entre chunks) & BC e CS correlacionadas com o desempenho do QA & S6 & A53 & Acadêmica & p.1 (Resumo) e p.3 \\
-— & Chunking guiado por LLM & S4 & A53 & Acadêmica & p.8 \\
-Gerar regras de corte (regex) com modelos pequenos roteados por granularidade, em vez de reescrever o texto & Mistura de chunkers com ativação esparsa & S4 & A53 & Acadêmica & p.5 e p.14–15 \\
-Chunking estrutural guiado pela árvore sintática (split-then-merge) & max\_chunk\_size 2.000 caracteres & S4 & A55 & Acadêmica & p.1 (Resumo/Introdução) \\
-Fundir unidades pequenas para não inflar o índice & Etapa de merge obrigatória & S3 & A55 & Acadêmica & p.4 (Ablações) \\
-Fundir unidades pequenas para não inflar o índice & Etapa de merge obrigatória & S4 & A55 & Acadêmica & p.4 (Ablações) \\
-Preservar metadados estruturais (arquivo, classe, função) nos chunks & — & S4 & A55 & Acadêmica & p.1–2 (Vantagem 3) \\
-Indexar várias granularidades contíguas por sentença e escolher a granularidade na consulta & Embeddings multigranulares em uma passada (máscara de padrões de chunk) & S4 & A56 & Acadêmica & p.1 (Resumo/Introdução) \\
-Indexar várias granularidades contíguas por sentença e escolher a granularidade na consulta & Embeddings multigranulares em uma passada (máscara de padrões de chunk) & S5 & A56 & Acadêmica & p.1 (Resumo/Introdução) \\
-Integrar o RAG ao lakehouse governado (tabelas Iceberg, catálogo, contratos de dados, evolução de esquema) & Embeddings no nível da partição Iceberg; metadados no Glue & S3 & A58 & Acadêmica & p.1 (Resumo/Introdução) \\
-Planejamento de recuperação guiado por linhagem: seleção de snapshot válido e exclusão de partições expiradas ou sem acesso antes da busca vetorial & Política prevalece sobre a versão mais recente (ex.: partição Retention:Expired é excluída) & S5 & A58 & Acadêmica & p.3 (Planejador) \\
-Planejamento de recuperação guiado por linhagem: seleção de snapshot válido e exclusão de partições expiradas ou sem acesso antes da busca vetorial & Política prevalece sobre a versão mais recente (ex.: partição Retention:Expired é excluída) & S8 & A58 & Acadêmica & p.3 (Planejador) \\
-Metadados de linhagem por chunk (tabela, partição, versão do esquema, política) propagados até a resposta & Reprodução por manifests de snapshot do Iceberg & S4 & A58 & Acadêmica & p.3 e p.6 \\
-Metadados de linhagem por chunk (tabela, partição, versão do esquema, política) propagados até a resposta & Reprodução por manifests de snapshot do Iceberg & S6 & A58 & Acadêmica & p.3 e p.6 \\
-Usar metadados de governança como sinal ativo de recuperação (remove versões obsoletas e duplicadas) & — & S7 & A58 & Acadêmica & p.6 (Discussão) \\
-Enriquecer o chunk com contexto do documento (contextual retrieval) × embedar o documento antes de dividir (late chunking) & Escolha conforme o orçamento computacional & S4 & A59 & Acadêmica & p.1 (Resumo) e p.4–6 \\
-— & — & S4 & A59 & Acadêmica & p.12 (Conclusão) \\
-Metadados estruturados (empresa, ano, seção, tipo de formulário) como sinal de recuperação embutido, não só como filtro & Prefixo de metadados ou embedding unificado & S4 & A60 & Acadêmica & p.1 (Resumo/Introdução) \\
-Metadados estruturados (empresa, ano, seção, tipo de formulário) como sinal de recuperação embutido, não só como filtro & Prefixo de metadados ou embedding unificado & S5 & A60 & Acadêmica & p.1 (Resumo/Introdução) \\
-Embeddings de metadados separados e fundidos (unified) para evitar reindexação quando os metadados mudam & Dual encoder com soma de vetores num índice único & S7 & A60 & Acadêmica & p.3 e p.5 \\
-Escolher campos de metadados por poder de desambiguação (global: empresa/ano; local: seção) & — & S4 & A60 & Acadêmica & p.12–13 (Ablação) \\
-Práticas registradas nas fichas da matriz de evidências & Excertos e localizações nas fichas da matriz de evidências & S1 & C04, C17*, C29 & Cinzenta & Matriz de evidências; * = uso numérico restrito \\
-Práticas registradas nas fichas da matriz de evidências & Excertos e localizações nas fichas da matriz de evidências & S2 & C06, C10, C12, C31, C34, C35 & Cinzenta & Matriz de evidências; * = uso numérico restrito \\
-Práticas registradas nas fichas da matriz de evidências & Excertos e localizações nas fichas da matriz de evidências & S3 & C03, C05, C11, C22 & Cinzenta & Matriz de evidências; * = uso numérico restrito \\
-Práticas registradas nas fichas da matriz de evidências & Excertos e localizações nas fichas da matriz de evidências & S4 & C02, C08, C29, C32, C33, C35, C36 & Cinzenta & Matriz de evidências; * = uso numérico restrito \\
-Práticas registradas nas fichas da matriz de evidências & Excertos e localizações nas fichas da matriz de evidências & S5 & C04, C05, C08, C15, C18, C19, C28, C30 & Cinzenta & Matriz de evidências; * = uso numérico restrito \\
-Práticas registradas nas fichas da matriz de evidências & Excertos e localizações nas fichas da matriz de evidências & S6 & C02, C03, C13, C14, C23 & Cinzenta & Matriz de evidências; * = uso numérico restrito \\
-Práticas registradas nas fichas da matriz de evidências & Excertos e localizações nas fichas da matriz de evidências & S7 & C06, C11, C12, C16*, C28 & Cinzenta & Matriz de evidências; * = uso numérico restrito \\
-Práticas registradas nas fichas da matriz de evidências & Excertos e localizações nas fichas da matriz de evidências & S8 & C01, C05, C10, C12 & Cinzenta & Matriz de evidências; * = uso numérico restrito \\
-\bottomrule
-\end{longtable}
-
-```
-
-## Tabela integral QP2 anterior à compactação editorial
-
-Versão histórica, gerada antes da codificação final das evidências. Para o vínculo entre evidências e a tabela publicada, consulte a seção de rastreabilidade acima.
-
-```latex
-\begin{longtable}{p{3cm}p{2.5cm}p{3cm}p{2.5cm}p{1.7cm}}
-\caption{QP2: adaptações candidatas; base comparativa e excertos cinzentos requerem conferência.}\label{tab:qp2-sintese}\\
-\toprule
-\textbf{Adaptação} & \textbf{Base BI/ED/ML} & \textbf{Mudança para RAG} & \textbf{Requisito/desafio} & \textbf{IDs} \\
-\midrule
-\endfirsthead
-\toprule
-\textbf{Adaptação} & \textbf{Base BI/ED/ML} & \textbf{Mudança para RAG} & \textbf{Requisito/desafio} & \textbf{IDs} \\
-\midrule
-\endhead
-Propriedade e armazenamento locais de documentos e índices por domínio (federação) & Base de comparação nas fichas da matriz de evidências & Arquitetura em três camadas: nós locais, gateways regionais, roteamento/inferência na nuvem & Centralização em um único índice vetorial complica residência de dados, isolamento e conformidade (GDPR/CCPA) e aumenta o raio de impacto de vazamentos & A02 \\
-Catálogo de metadados dos índices (domínio, modelo de embedding, latência) e aplicação local de políticas & Base de comparação nas fichas da matriz de evidências & Roteador com escore custo-sensível (relevância − latência) treinado em logs & Encaminhar consultas a muitos índices heterogêneos sem difundir tudo & A02 \\
-Semente pequena e verificada manualmente da base de conhecimento & Base de comparação nas fichas da matriz de evidências & Iniciar com 10 exemplos verificados em vez de seleção não supervisionada (aleatória/cluster) & Ruído na base contamina a recuperação & A03 \\
-Atualização incremental da base guiada pela incerteza do LLM, com rotulação humana seletiva (humano no laço) & Base de comparação nas fichas da matriz de evidências & Limiares de seleção (st) e de rotulação (lt) sobre a incerteza & Custo de rotulação humana × atualidade da base & A03 \\
-Armazenamento estruturado por fragmento com metadados temporais, separado do índice vetorial & Base de comparação nas fichas da matriz de evidências & Separar legislação (banco relacional) de jurisprudência/editorial (índice vetorial/léxico) & Citações exigem precisão em nível de fragmento & A04 \\
-Trilhas de auditoria por resposta e mascaramento de dados pessoais (LGPD) & Base de comparação nas fichas da matriz de evidências & Transformar alucinação silenciosa em aviso explícito por referência & Conformidade legal e confiança do profissional & A04 \\
-Remoção de documentos de baixa densidade informacional antes da indexação & Base de comparação nas fichas da matriz de evidências & Limiar de proporção de stopwords; exclusão de documentos sempre mal ranqueados & Textos repetitivos ou procedimentais diluem a recuperação & A05 \\
-Chunking multivisão (página, seção, tamanho fixo) + elementos paratextuais & Base de comparação nas fichas da matriz de evidências & Manter várias granularidades em paralelo & Chunking de tamanho fixo perde estrutura e tabelas espalhadas & A06 \\
-Pipeline de parsing orientado a esquema relacional fixo, com enriquecimento de metadados por APIs externas & Base de comparação nas fichas da matriz de evidências & Banco relacional (DuckDB) como representação canônica do documento & PDF semiestruturado com layout rico & A06 \\
-Índice vetorial autenticado (Merkle + assinaturas) com versionamento do corpus à prova de adulteração & Base de comparação nas fichas da matriz de evidências & Cada chunk assinado e incluído em árvore de Merkle comprometida por versão & Envenenamento do corpus por documentos maliciosos & A07 \\
-Chunking semântico (não por contagem de caracteres) para listas e tabelas & Base de comparação nas fichas da matriz de evidências & Chunking semântico + reranking para páginas longas & Tabelas e listas partidas entre chunks & A08 \\
-Console administrativo para upload, reindexação e rollback; logs mínimos e amostragem semanal de respostas & Base de comparação nas fichas da matriz de evidências & Observabilidade básica (tempos + logs mínimos) basta para detectar regressões (p.4) & Sem console administrativo, a manutenção da base depende de engenheiros & A08 \\
-Chunking com consciência de layout e escolha de tamanho de chunk por experimento & Base de comparação nas fichas da matriz de evidências & Chunks de 2048 tokens; parser com consciência de layout & Documentos longos e tabelas em PDFs & A09 \\
-Preservar a hierarquia do documento e converter tabelas para Markdown & Base de comparação nas fichas da matriz de evidências & Pipeline de pré-processamento orientado à estrutura & Tabelas e numeração hierárquica de regras & A10 \\
-Normalização de codificação, chunking com sobreposição e resumo por documento com metadados indexado junto aos chunks & Base de comparação nas fichas da matriz de evidências & Dois níveis de representação (chunk fino + resumo do documento) & Passagens longas excedem o contexto do modelo de embedding; codificações ruidosas distorcem a tokenização & A12 \\
-Busca sistemática em grade da configuração da cadeia (embedding, chunk, sobreposição, busca, reranking) & Base de comparação nas fichas da matriz de evidências & Padrão recomendado: Gemini Embeddings + MMR + cross-encoder; sobreposição de 10–15\% & Trade-off recall × acurácia × latência × tamanho do índice & A12 \\
-Avaliar parser e chunker em conjunto como parte da qualidade do pipeline & Base de comparação nas fichas da matriz de evidências & Experimento fatorial completo parser × chunker & PDF é feito para leitura humana: tabelas desalinhadas, colunas fundidas, legendas separadas & A13 \\
-Sobreposição moderada de chunks (25\%) e evitar granularidade excessiva & Base de comparação nas fichas da matriz de evidências & 512 tokens com 25\% de sobreposição & Chunking granular aumenta armazenamento e custo de indexação sem ganho consistente & A13 \\
-Calibrar tamanho de chunk e usar filtro por metadados (tipo de documento) para reduzir o espaço de busca & Base de comparação nas fichas da matriz de evidências & Chunks de 200–500 tokens; filtro por tipo de documento & Escalabilidade do índice e latência & A14 \\
-Registrar perguntas, respostas e avaliações dos usuários e usá-las para ajustar a recuperação e o chunking & Base de comparação nas fichas da matriz de evidências & Armazenamento leve (SQLite) de interações & Identificar falhas em produção & A14 \\
-Hospedagem própria por conformidade; citar a fonte (arquivo e link) na resposta; tratar desbalanceamento de fontes & Base de comparação nas fichas da matriz de evidências & Reranking para diversidade; ocultar fontes em domínios sensíveis & GDPR; confiança; viés por tipo de documento & A14 \\
-Metadados estruturais por unidade de evidência (documento, página, modalidade, título pai, tabela, parte) & Base de comparação nas fichas da matriz de evidências & Esquema de metadados que permite reconstruir objetos multipartes & Evidência multimodal e tabelas fragmentadas & A15 \\
-Deslocar o custo de estruturação para a ingestão offline & Base de comparação nas fichas da matriz de evidências & Pré-computar o grafo; recuperação dinâmica sem top-k fixo & Métodos que varrem páginas na consulta são caros & A17 \\
-Enriquecer cada chunk com resumo do documento de origem (metadado sintético) & Base de comparação nas fichas da matriz de evidências & Chunking recursivo + prefixo de resumo; só recuperação densa & Contexto global perdido no chunking & A18 \\
-Forense de dados: rastrear até a fonte e o pipeline de coleta comprometidos & Base de comparação nas fichas da matriz de evidências & Priorizar rastreamento a defesas cada vez mais complexas & Defesas na inferência são contornadas por ataques adaptativos & A19 \\
-Remoção de textos envenenados da base (descarte) com verificação da correção & Base de comparação nas fichas da matriz de evidências & Remover, reenviar a consulta e comparar; inserir textos benignos quando o erro é do modelo & Risco de remover texto benigno; erros que não vêm da base & A19 \\
-Roteamento por tipo de pergunta entre dados estruturados (SQL) e não estruturados (vetorial) & Base de comparação nas fichas da matriz de evidências & Rota SQL / híbrida + validador LLM + checagem de fatos & RAG vetorial falha em perguntas numéricas e agregadas & A20 \\
-Registrar feedback com rota, evidência e resposta aceita como dataset de melhoria & Base de comparação nas fichas da matriz de evidências & Corpus de fine-tuning supervisionado crescente & Feedback ainda não integrado a um ciclo ativo (declarado) & A20 \\
-Chunking semântico por limiar de similaridade em vez de divisão fixa por caracteres & Base de comparação nas fichas da matriz de evidências & Chunks de tamanho variável (até 2.187 caracteres) conforme a densidade semântica & Divisão fixa separa unidades lógicas (fórmula e derivação) & A21 \\
-Fronteira de privacidade por arquitetura: processar documentos localmente e enviar à nuvem só metadados de esquema & Base de comparação nas fichas da matriz de evidências & Especialização de modelos por tipo de dado & Residência de dados institucionais × qualidade de modelos em nuvem & A21 \\
-Controle de acesso antes da recuperação (policy-first) e refiltragem após a fusão & Base de comparação nas fichas da matriz de evidências & Filtro compilado de papel, inquilino, região e contexto; RBAC/ABAC; zero trust & Vazamento de conteúdo restrito para o prompt & A22 \\
-Registrar, por passagem, postagem léxica, vetor e metadados/ACL, com versão e ID para rollback & Base de comparação nas fichas da matriz de evidências & Três artefatos derivados por passagem & Manter coerência entre índices léxico e vetorial e permissões & A22 \\
-Desempate por atualidade e manutenção da qualidade dos metadados de permissão & Base de comparação nas fichas da matriz de evidências & Freshness no ranking; red team e monitoramento contínuo & Política antiga semanticamente próxima mas inválida; ACLs desatualizadas causam bloqueios indevidos & A22 \\
-Avaliar ferramentas de conversão pela acurácia final do RAG, não por métricas de fidelidade de parsing & Base de comparação nas fichas da matriz de evidências & Benchmark ponta a ponta com 21 configurações & Métricas de parsing não preveem desempenho no RAG & A23 \\
-Divisão hierárquica com caminho da seção (breadcrumb) prefixado ao chunk & Base de comparação nas fichas da matriz de evidências & Docling + divisão hierárquica + descrição de imagens & Tabelas e estrutura perdidas no chunking básico & A23 \\
-Arquitetura em camadas Bronze/Silver/Gold para artefatos do pipeline RAG & Base de comparação nas fichas da matriz de evidências & Separação de ingestão, transformação e indexação; troca por um parâmetro de configuração & Reprodutibilidade e troca de ferramentas & A23 \\
-Atualização contínua do banco vetorial sob leitura concorrente & Base de comparação nas fichas da matriz de evidências & Índice IVF de dois estágios com parâmetros de inserção separados & Índices de grafo têm construção cara e contenção em escrita & A24 \\
-Delegar a autorização ao IAM nativo de cada fonte, validando cada documento em tempo real & Base de comparação nas fichas da matriz de evidências & Sem fusão de políticas; verificação por documento contra o provedor & Fontes com modelos de autorização heterogêneos (RBAC, ABAC, custom) & A25 \\
-Identificador persistente por recurso ligando chunks à origem e ao IAM, para atualização e exclusão & Base de comparação nas fichas da matriz de evidências & UUID global + ID local de origem & Recursos mudam (nome, local, permissão) ao longo do tempo & A25 \\
-Ontologia/grafo para desambiguar entidades e abreviações & Base de comparação nas fichas da matriz de evidências & Grafo de conhecimento com ontologia em vez de banco vetorial & Abreviações ambíguas e documentos quase idênticos & A26 \\
-Rodar benchmark de novo após mudanças nos dados ou componentes (teste de regressão) & Base de comparação nas fichas da matriz de evidências & — & Prioridade moderada; ofuscada por 'aprendizado contínuo' & A26 \\
-Decidir quando e como indexar cada dataset conforme o uso esperado & Base de comparação nas fichas da matriz de evidências & Índice adaptativo (cracking) que cresce com as consultas & Custo inicial de indexação não compensa para dados raramente consultados & A29 \\
-Metadados temporais e de proveniência para distinguir versões coexistentes de um dado & Base de comparação nas fichas da matriz de evidências & Enriquecimento de metadados; critério de validade temporal na avaliação & Várias versões do mesmo dado no corpus geram respostas obsoletas & A30 \\
-Ingestão automatizada com limpeza inteligente e vetorização dinâmica em ciclo fechado & Base de comparação nas fichas da matriz de evidências & — & PDFs com layouts complexos, tabelas multipágina; semântica em imagens técnicas (sísmica, P\&ID) que o OCR não captura & A30 \\
-Filtrar documentos recuperados conforme as permissões do usuário antes da geração & Base de comparação nas fichas da matriz de evidências & Níveis de acesso por perfil (AL1/AL2) & LLMs não têm controle de acesso nativo; risco de vazamento de dados de pacientes & A31 \\
-Armazenamento vetorial integrado ao banco operacional (multimodelo) em vez de banco vetorial isolado & Base de comparação nas fichas da matriz de evidências & Arquitetura de armazenamento compartilhado (LindormDFS) & Trade-off desempenho × integração/consistência & A32 \\
-Particionamento temporal de tabelas vetoriais com metadados de índice compartilhados & Base de comparação nas fichas da matriz de evidências & Reuso de centróides e codebooks & Custo de treinar índices para cada nova partição & A32 \\
-Particionar índices de modo a refletir a proveniência (instituição, departamento) em recuperação federada & Base de comparação nas fichas da matriz de evidências & Árvore hierárquica de recuperadores & Prontuários distribuídos entre instituições e regulação (HIPAA) que restringe o compartilhamento & A33 \\
-Controle de acesso por políticas (PBAC) em cada recuperador, com sobre-busca para compensar documentos negados & Base de comparação nas fichas da matriz de evidências & Ponto de decisão de política por folha & Políticas dependem de atributos variáveis do usuário, não só do documento & A33 \\
-Delta-store para inserções/exclusões em tempo real e monitor de qualidade que dispara reindexação & Base de comparação nas fichas da matriz de evidências & Armazenamento relacional com ACID; reindexação por gatilho & Manter consistência e recall com escrita contínua & A34 \\
-Considerar o custo de log/replicação das atualizações do índice vetorial em bancos relacionais & Base de comparação nas fichas da matriz de evidências & Buffer de inserção + merge em lote por partição & Atualização fina do índice gera WAL alto e atraso de replicação & A35 \\
-Desacoplar a visibilidade dos novos vetores da atualização da estrutura do índice & Base de comparação nas fichas da matriz de evidências & Merge a cada 1.000 inserções & Buffer grande aumenta o custo de busca; inserções concentradas sobrecarregam partições & A35 \\
-Avaliar o banco vetorial sob cargas realistas (filtros, churn, restart) em vez de benchmarks estáticos & Base de comparação nas fichas da matriz de evidências & Oráculo de verdade com filtros (bitmap + FAISS flat adaptativo) & Benchmarks sem filtro e estáticos escondem degradações de produção & A36 \\
-Monitorar a cadência de compactação e dimensionar pelo pior caso transitório & Base de comparação nas fichas da matriz de evidências & Provisionamento pelo pior caso & Manutenção em segundo plano compete com as consultas & A36 \\
-Avaliação por camada (recuperação separada de geração) e verificação fina de evidência & Base de comparação nas fichas da matriz de evidências & — & Avaliação ponta a ponta esconde de onde vem a falha & A37 \\
-Extração contínua de triplas com normalização, deduplicação e proveniência até a seção de origem & Base de comparação nas fichas da matriz de evidências & Índice vetorial unificado (tripla + texto de origem + metadados) & Jargão e referências cruzadas geram triplas ausentes ou ruidosas & A39 \\
-Esquema mínimo com canonicalização de entidades em vez de ontologia rígida & Base de comparação nas fichas da matriz de evidências & Canonicalização e ligação de entidades & Vocabulário fragmentado & A39 \\
-Sequência de otimização: análise do corpus → chunking → índice → busca híbrida → calibração & Base de comparação nas fichas da matriz de evidências & Processo de implantação repetível & Configurações padrão degradam com o crescimento do corpus & A40 \\
-Chunking por estrutura (títulos, tabelas, itens numerados) com lógica por tipo de elemento & Base de comparação nas fichas da matriz de evidências & Chunking por estrutura em corpora técnicos e regulatórios & Chunk fixo corta obrigações; semântico falha em tabelas & A40 \\
-Escolher o índice pela frequência de atualização; pré-filtro por metadados como isolamento entre inquilinos & Base de comparação nas fichas da matriz de evidências & HNSW para ingestão contínua; pré-filtro obrigatório & IVF exige retreino com adições; pós-filtro arrisca vazamento entre inquilinos & A40 \\
-Extração com preservação de estrutura (Markdown) + chunking por estrutura & Base de comparação nas fichas da matriz de evidências & Extração com Azure Document Intelligence & — & A42 \\
-Trace por resposta com fonte, rota, latências, consulta reescrita, resultados de recuperação, prompts e guardrails & Base de comparação nas fichas da matriz de evidências & Arquitetura de captura de respostas e feedback & Diagnosticar falhas por componente do pipeline & A43 \\
-Tratar o viés e a escassez do feedback e remover PII antes de reutilizar os dados & Base de comparação nas fichas da matriz de evidências & Dados sintéticos (5 mil exemplos) para complementar & Feedback escasso, enviesado e com dados pessoais & A43 \\
-Grafo com relações tipadas (referência cruzada, hierarquia, similaridade) ligado aos chunks de origem, com deduplicação & Base de comparação nas fichas da matriz de evidências & Recuperação híbrida local+global no grafo & Chunks independentes fragmentam relações entre cláusulas & A44 \\
-Priorizar o modelo de embedding e calibrar o tamanho do chunk com a janela de contexto & Base de comparação nas fichas da matriz de evidências & Chunks pequenos/médios + janela grande & Trade-off precisão semântica × capacidade de síntese & A44 \\
-Minimização e mascaramento na escrita, TTL de retenção e consentimento por item, filtro por finalidade na leitura & Base de comparação nas fichas da matriz de evidências & Motor de políticas com regras GDPR / EU AI Act / NIST / ISO 42001 executáveis & Pipelines RAG raramente codificam limitação de finalidade, retenção ou linhagem verificável & A45 \\
-Armazenamento em camadas com política de retenção por camada e arquivo frio imutável para retenção legal & Base de comparação nas fichas da matriz de evidências & Promoção e expiração entre camadas & Diferentes tempos de vida e obrigações para dados de memória & A45 \\
-Escolher a granularidade do chunk pela completude da evidência recuperada & Base de comparação nas fichas da matriz de evidências & Chunks de 256 tokens com busca híbrida & Unidades muito finas perdem evidência; muito grandes trazem distratores & A47 \\
-Padrões de produção: sem sobreposição; chunking por sentença & Base de comparação nas fichas da matriz de evidências & Estudo ponta a ponta para padronizar defaults & Chunking decidido por regra de bolso & A48 \\
-Pós-processamento de chunks: dividir os grandes e fundir os minúsculos & Base de comparação nas fichas da matriz de evidências & Limites de 100–1.100 tokens & Fragmentos quase vazios (0–4 tokens) ocupam vagas do top-k & A49 \\
-Estruturação hierárquica do documento + recuperação que funde filhos no pai (Auto-Merge) & Base de comparação nas fichas da matriz de evidências & HC200 + Auto-Merge & Chunks semânticos têm granularidade irregular & A51 \\
-Chunking por delimitadores do domínio com injeção de metadados hierárquicos (Lei, Capítulo, Seção, título) no texto do chunk & Base de comparação nas fichas da matriz de evidências & Carimbo semântico determinístico & Chunking por janela separa provisos e exceções da seção que os governa & A52 \\
-Recuperação pai-filho e busca ampla seguida de reranking & Base de comparação nas fichas da matriz de evidências & k=60 + cross-encoder (FlashRank) & Top-k padrão 'enterra' a seção correta & A52 \\
-Chunking estrutural guiado pela árvore sintática (split-then-merge) & Base de comparação nas fichas da matriz de evidências & max\_chunk\_size 2.000 caracteres & Chunking por linhas quebra funções e classes & A55 \\
-Preservar metadados estruturais (arquivo, classe, função) nos chunks & Base de comparação nas fichas da matriz de evidências & — & — & A55 \\
-Integrar o RAG ao lakehouse governado (tabelas Iceberg, catálogo, contratos de dados, evolução de esquema) & Base de comparação nas fichas da matriz de evidências & Embeddings no nível da partição Iceberg; metadados no Glue & RAG como silo sem governança: alucinação, baixa reprodutibilidade, custo com embeddings redundantes & A58 \\
-Metadados de linhagem por chunk (tabela, partição, versão do esquema, política) propagados até a resposta & Base de comparação nas fichas da matriz de evidências & Reprodução por manifests de snapshot do Iceberg & Reproduzir e auditar respostas & A58 \\
-Enriquecer o chunk com contexto do documento (contextual retrieval) × embedar o documento antes de dividir (late chunking) & Base de comparação nas fichas da matriz de evidências & Escolha conforme o orçamento computacional & Chunks isolados perdem contexto global & A59 \\
-Metadados estruturados (empresa, ano, seção, tipo de formulário) como sinal de recuperação embutido, não só como filtro & Base de comparação nas fichas da matriz de evidências & Prefixo de metadados ou embedding unificado & Documentos repetitivos com linguagem idêntica entre empresas e anos & A60 \\
-Otimizador de consultas SQL para escolha pré vs. pós-filtro em busca vetorial híbrida & Base de comparação nas fichas da matriz de evidências & Adapta estimativa de seletividade (F\_filters < F\_IVF) para decidir entre filtragem prévia ou varredura vetorial. & Excertos cinzentos nas fichas da matriz de evidências & A34, C05 \\
-Controle de acesso (RBAC/ABAC/IAM) deslocado para pré-recuperação, sobre-busca (fetch\_k > k) ou verificação de escopos na fonte (C30) & Base de comparação nas fichas da matriz de evidências & Adapta autorização de linha/tabela para impedir que o LLM receba chunks restritos no contexto. & Excertos cinzentos nas fichas da matriz de evidências & A22, A25, A33, C30 \\
-Linhagem W3C PROV e OpenTelemetry para traces de recuperação (5 fases) e Evidence Packs & Base de comparação nas fichas da matriz de evidências & Adapta proveniência de workflows e tracing de microsserviços para registrar chunks, escores, filtros, versão de índice e prompts. & Excertos cinzentos nas fichas da matriz de evidências & A43, A45, C14 \\
-Chunking estrutural/hierárquico/AST e enriquecimento contextual (SAC, Semantic Stamp, breadcrumb) & Base de comparação nas fichas da matriz de evidências & Adapta pré-processamento textual para preservar hierarquia (tabelas, seções, AST) dentro da janela de embedding/contexto. & Excertos cinzentos nas fichas da matriz de evidências & A18, A23, A51, A52, A55, A59, A60, C20, C33 \\
-Mascaramento de PII na ingestão preservando tokens (PERSON\_1) e matriz de retenção de 10 artefatos & Base de comparação nas fichas da matriz de evidências & Adapta redação de PII para não destruir coesão referencial no chunk e diferencia TTL entre vault, vetor, prompt e audit log. & Excertos cinzentos nas fichas da matriz de evidências & A04, A45, C10 \\
-\bottomrule
-\end{longtable}
-
-```
-
-## Tabela integral QP3 anterior à compactação editorial
-
-Versão histórica, gerada antes da codificação final das evidências. Para o vínculo entre evidências e a tabela publicada, consulte a seção de rastreabilidade acima.
-
-```latex
-\begin{longtable}{p{4.2cm}lrrp{4cm}}
-\caption{QP3: frequência de fontes por tema (não mede eficácia); força indicada por tipo de evidência.}\label{tab:qp3-sintese}\\
-\toprule
-\textbf{Tema} & \textbf{Presença} & \textbf{N acad.} & \textbf{N cinz.} & \textbf{Tipo de evidência} \\
-\midrule
-\endfirsthead
-\toprule
-\textbf{Tema} & \textbf{Presença} & \textbf{N acad.} & \textbf{N cinz.} & \textbf{Tipo de evidência} \\
-\midrule
-\endhead
-Arquitetura Medallion (Bronze/Silver/Gold) para conversão PDF → Markdown estruturado & Acadêmica & 1 & 0 & EE:1 \\
-Lakehouse (Iceberg + snapshots + time-travel) como filtro pré-recuperação de versão e retenção & Acadêmica & 1 & 0 & EE:1 \\
-Data Mesh / propriedade por domínio em índices vetoriais federados & Acadêmica & 2 & 0 & EE:3 \\
-Particionamento temporal (DW) em tabelas vetoriais com metadados de índice compartilhados & Acadêmica & 1 & 0 & EP:2 \\
-Otimizador de consultas SQL para escolha pré vs. pós-filtro em busca vetorial híbrida & Ambas & 1 & 1 & EE:1, EP:2 \\
-Controle de acesso (RBAC/ABAC/IAM) deslocado para pré-recuperação ou sobre-busca (fetch\_k > k) & Ambas & 3 & 1 & EE:4, GP:1 \\
-Aprendizado ativo (ML) para curadoria incremental da base RAG guiada por incerteza do LLM & Acadêmica & 1 & 0 & EE:1 \\
-Linhagem W3C PROV e OpenTelemetry para traces de recuperação (5 fases) e Evidence Packs & Ambas & 2 & 1 & EP:2, GP:1, PC:2 \\
-Testes de qualidade de dados como métricas intrínsecas de chunk (Boundary Clarity, Stickiness, RC/ICC/DCC) & Acadêmica & 2 & 0 & EE:2 \\
-Chunking estrutural/hierárquico/AST e enriquecimento contextual (SAC, Semantic Stamp, breadcrumb) & Ambas & 7 & 2 & EE:2 \\
-Mascaramento de PII na ingestão preservando tokens (PERSON\_1) e matriz de retenção de 10 artefatos & Ambas & 2 & 1 & EP:2, GP:1, PC:2 \\
-\bottomrule
-\end{longtable}
-
-```
+As localizações e os excertos de cada evidência constam da aba Evidencias.
