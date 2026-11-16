@@ -1,9 +1,9 @@
 /* Material complementar: MLR sobre engenharia de dados em sistemas RAG.
    Tokens em :root; o escuro troca só os tokens (media query + alternância manual). */
 :root{
-  --bg:#F5F6F8; --paper:#FFFFFF; --sunk:#EEF0F3; --ink:#0F172A; --text:#334155; --muted:#64748B;
-  --line:#E2E8F0; --line-2:#CBD5E1;
-  --accent:#1F5FB4; --accent-ink:#FFFFFF; --accent-soft:rgba(31,95,180,.08); --accent-soft-2:rgba(31,95,180,.16);
+  --bg:#F2F1F6; --paper:#FFFFFF; --sunk:#ECEAF4; --ink:#0A005A; --text:#2D3748; --muted:#666666;
+  --line:#E9DFFF; --line-2:#D6CCF5;
+  --accent:#613EFF; --accent-ink:#FFFFFF; --accent-soft:rgba(97,62,255,.06); --accent-soft-2:rgba(97,62,255,.12);
   /* papéis no diagrama */
   --det:#475569; --det-soft:rgba(71,85,105,.10);
   --ia:#B4531C; --ia-soft:rgba(180,83,28,.10);
@@ -12,15 +12,15 @@
   --s1:#2a78d6; --s2:#eb6834; --s-neutral:#B8C0CC;
   --shadow:0 1px 2px rgba(15,23,42,.06),0 4px 14px rgba(15,23,42,.06);
   --shadow-lg:0 10px 34px rgba(15,23,42,.16);
-  --font:'IBM Plex Sans',-apple-system,'Segoe UI',Roboto,sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  --font:'Reddit Sans','Open Sans',-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
   --radius:12px;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0E1116; --paper:#161A21; --sunk:#1C212A; --ink:#F1F5F9; --text:#CBD5E1; --muted:#94A3B8;
+  --bg:#121217; --paper:#1B1B22; --sunk:#23232C; --ink:#F3F3F7; --text:#D4D4DD; --muted:#9696A6;
   --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
-  --accent:#7FB0F0; --accent-ink:#0E1116; --accent-soft:rgba(127,176,240,.08); --accent-soft-2:rgba(127,176,240,.18);
+  --accent:#9A88FF; --accent-ink:#0E1116; --accent-soft:rgba(154,136,255,.06); --accent-soft-2:rgba(154,136,255,.16);
   --det:#94A3B8; --det-soft:rgba(148,163,184,.12);
   --ia:#F0915A; --ia-soft:rgba(240,145,90,.12);
   --hum:#4CC792; --hum-soft:rgba(76,199,146,.12);
@@ -29,9 +29,9 @@
   --shadow-lg:0 14px 40px rgba(0,0,0,.55);
   color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0E1116; --paper:#161A21; --sunk:#1C212A; --ink:#F1F5F9; --text:#CBD5E1; --muted:#94A3B8;
+  --bg:#121217; --paper:#1B1B22; --sunk:#23232C; --ink:#F3F3F7; --text:#D4D4DD; --muted:#9696A6;
   --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
-  --accent:#7FB0F0; --accent-ink:#0E1116; --accent-soft:rgba(127,176,240,.08); --accent-soft-2:rgba(127,176,240,.18);
+  --accent:#9A88FF; --accent-ink:#0E1116; --accent-soft:rgba(154,136,255,.06); --accent-soft-2:rgba(154,136,255,.16);
   --det:#94A3B8; --det-soft:rgba(148,163,184,.12);
   --ia:#F0915A; --ia-soft:rgba(240,145,90,.12);
   --hum:#4CC792; --hum-soft:rgba(76,199,146,.12);

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Material complementar · Engenharia de Dados em RAG</title>
+<meta name="description" content="Material complementar do artigo Engenharia de Dados em Sistemas RAG: Práticas, Desafios e Adaptações. Protocolo da revisão multivocal, arquitetura interativa, resultados, decisões da triagem e instruções de reprodução.">
+<meta property="og:title" content="Engenharia de Dados em Sistemas RAG · Material complementar">
+<meta property="og:description" content="Protocolo, arquitetura interativa, resultados e trilha de auditoria da revisão multivocal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem('mlr-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="index.html"><span class="mark">RAG</span><span>MLR <small>· material complementar</small></span></a>
+  <nav class="nav" aria-label="Seções">
+    <a href="#arquitetura">Arquitetura</a>
+    <a href="#protocolo">Protocolo</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#triagem">Triagem</a>
+    <a href="#ia">Uso de IA</a>
+    <a href="#reproducao">Reprodução</a>
+  </nav>
+  <div class="tools">
+    <a class="btn icon" href="https://github.com/Arthrok/metodologia-tcc" aria-label="Repositório no GitHub" title="Repositório no GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+    </a>
+    <button class="btn icon" id="bTheme" type="button" aria-label="Alternar tema claro ou escuro" title="Alternar tema">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap" id="topo">
+
+<section class="hero">
+  <span class="kicker">Material complementar · revisão multivocal da literatura</span>
+  <h1>Engenharia de Dados em Sistemas RAG: Práticas, Desafios e Adaptações</h1>
+  <div class="authors"><span>Arthur Alves Melo</span><span>Eric Silveira Gomes</span></div>
+  <div class="affil">Universidade de Brasília · Faculdade do Gama (FGA) · Gama, Distrito Federal, Brasil</div>
+  <div class="abstract">
+    <b>Resumo</b>
+    Sistemas de Geração Aumentada por Recuperação condicionam suas respostas aos documentos e artefatos recuperados, mas as práticas de engenharia de dados que sustentam esses sistemas ainda aparecem de forma dispersa entre literatura acadêmica e relatos de indústria. Investigamos a diversidade dessas práticas ao longo do ciclo de vida dos dados, as adaptações documentadas e os desafios associados à sua aplicação em sistemas RAG. Partimos da premissa de que documentos, <i>chunks</i>, metadados, <i>embeddings</i> e índices compõem uma cadeia que condiciona o comportamento observado do sistema. Por meio de uma revisão multivocal da literatura, identificamos práticas, finalidades e contextos de aplicação, relacionamos adaptações e desafios às evidências que os sustentam e descrevemos sua distribuição entre fontes acadêmicas e cinzentas.
+  </div>
+  <div class="cta">
+    <a class="btn solid" href="index.html">Explorar o mapa interativo →</a>
+    <a class="btn" href="https://github.com/Arthrok/metodologia-tcc">Código e trilha de auditoria</a>
+    <a class="btn" href="assets/data/triagem.json" download>Decisões da triagem (JSON)</a>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="h-num" style="padding-top:24px">
+  <h2 id="h-num" class="kicker" style="font-size:12px">Em números</h2>
+  <div class="stats">
+    <div class="stat"><div class="n">4.095</div><div class="l">registros acadêmicos consolidados (Scopus, ACL Anthology e <i>backward snowballing</i>)</div></div>
+    <div class="stat"><div class="n">2.232</div><div class="l">registros pré-triados por modelo de linguagem</div></div>
+    <div class="stat"><div class="n">80</div><div class="l">decisões humanas em 8 rodadas de dez candidatos</div></div>
+    <div class="stat"><div class="n">52</div><div class="l">fontes acadêmicas adequadas na avaliação QA1–QA6</div></div>
+    <div class="stat"><div class="n">37</div><div class="l">fontes cinzentas incluídas, de 210 candidatos em três frentes</div></div>
+    <div class="stat"><div class="n">246</div><div class="l">evidências extraídas (181 acadêmicas e 65 cinzentas)</div></div>
+  </div>
+</section>
+
+<section class="block" id="questoes" aria-labelledby="h-qp">
+  <span class="kicker">Planejamento</span>
+  <h2 id="h-qp">Questões de pesquisa e PICOC</h2>
+  <div class="grid g2">
+    <div class="card">
+      <div class="qp">
+        <b>QP1</b><p>Quais práticas de engenharia de dados são relatadas em sistemas RAG e como se distribuem ao longo do ciclo de vida dos dados?</p>
+        <b>QP2</b><p>Quais adaptações e desafios são relatados na aplicação dessas práticas em sistemas RAG?</p>
+        <b>QP3</b><p>Quais práticas, adaptações e desafios de engenharia de dados em sistemas RAG são relatados na literatura acadêmica, na literatura cinzenta ou em ambas?</p>
+      </div>
+      <p class="small muted" style="margin:6px 0 0">A unidade de análise é uma prática ou um desafio de engenharia de dados associado ao ciclo de vida de sistemas RAG.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Elemento</th><th>Definição</th></tr></thead>
+        <tbody>
+          <tr><td><b>População</b></td><td>Sistemas RAG.</td></tr>
+          <tr><td><b>Interesse</b></td><td>Práticas de engenharia de dados aplicadas à construção, operação, manutenção e governança de sistemas RAG.</td></tr>
+          <tr><td><b>Comparação</b></td><td>Distribuição dos achados entre literatura acadêmica e cinzenta; quando documentado, contraste com outros contextos de engenharia de dados.</td></tr>
+          <tr><td><b>Resultados</b></td><td>Práticas e sua distribuição no ciclo de vida, variações, adaptações documentadas e desafios associados.</td></tr>
+          <tr><td><b>Contexto</b></td><td>Desenvolvimento e operação de sistemas RAG em contextos acadêmicos e industriais.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="arquitetura" aria-labelledby="h-arq">
+  <span class="kicker">Arquitetura</span>
+  <h2 id="h-arq">Desenho do estudo e figuras</h2>
+  <p class="lede">O <a href="index.html">mapa interativo</a> detalha cada passo: quem age (script, IA ou pesquisadores), os números de cada etapa, o comando que a executa e os arquivos que a registram no repositório.</p>
+  <div class="grid g3" style="margin:18px 0 26px">
+    <a class="card" href="index.html" style="text-decoration:none"><h3>Visão geral →</h3><p class="small muted" style="margin:0">As cinco fases e os dois caminhos, acadêmico e cinzento.</p></a>
+    <a class="card" href="index.html#rag" style="text-decoration:none"><h3>Pipeline RAG →</h3><p class="small muted" style="margin:0">O objeto de estudo, com cada passo ligado às etapas S1–S8 e às fontes incluídas.</p></a>
+    <a class="card" href="index.html#acad" style="text-decoration:none"><h3>Seleção acadêmica →</h3><p class="small muted" style="margin:0">O ciclo de rodadas, com pré-triagem, ranqueamento, decisão humana e snowballing.</p></a>
+    <a class="card" href="index.html#gray" style="text-decoration:none"><h3>Literatura cinzenta →</h3><p class="small muted" style="margin:0">DEV Community, Hacker News e portais institucionais, até as 37 fontes incluídas.</p></a>
+    <a class="card" href="index.html#ext" style="text-decoration:none"><h3>Qualidade e extração →</h3><p class="small muted" style="margin:0">Texto integral, QA1–QA6, QG1–QG6 e a ficha de extração.</p></a>
+    <a class="card" href="index.html#repo" style="text-decoration:none"><h3>Implementação →</h3><p class="small muted" style="margin:0">Como o repositório implementa o loop e onde fica cada registro.</p></a>
+  </div>
+  <div class="grid g2">
+    <figure>
+      <div class="fig"><img src="figuras/figura1_pipeline_rag.png" alt="Pipeline RAG em fluxo offline (fontes, ingestão, parsing e limpeza, chunking e metadados, embeddings, índice) e fluxo online (pergunta, autorização e filtros, recuperação, reranking, montagem do contexto, geração da resposta)." loading="lazy"></div>
+      <div class="fig-meta"><figcaption>Figura 1. Pipeline RAG em fluxos offline e online</figcaption><span class="links"><a href="figuras/figura1_pipeline_rag.pdf">PDF</a><a href="figuras/figura1_pipeline_rag.png">PNG</a></span></div>
+    </figure>
+    <figure>
+      <div class="fig"><img src="figuras/figura2_desenho_estudo.png" alt="Desenho do estudo em cinco fases: planejamento, busca, seleção, extração e síntese, com caminhos separados para literatura acadêmica e cinzenta." loading="lazy"></div>
+      <div class="fig-meta"><figcaption>Figura 2. Desenho do estudo</figcaption><span class="links"><a href="figuras/figura2_desenho_estudo.pdf">PDF</a><a href="figuras/figura2_desenho_estudo.png">PNG</a></span></div>
+    </figure>
+    <figure>
+      <div class="fig"><img src="figuras/figura3_ciclo_selecao.png" alt="Ciclo de busca e seleção das fontes acadêmicas, com realimentação das fontes validadas para lista curta, ranqueamento, snowballing e refinamento das strings." loading="lazy"></div>
+      <div class="fig-meta"><figcaption>Figura 3. Ciclo de busca e seleção acadêmica</figcaption><span class="links"><a href="figuras/figura3_ciclo_selecao.pdf">PDF</a><a href="figuras/figura3_ciclo_selecao.png">PNG</a></span></div>
+    </figure>
+    <figure>
+      <div class="fig"><img src="figuras/figura4_decisoes_rodada.png" alt="Gráfico de barras com incluídas e excluídas nas rodadas r001 a r008." loading="lazy"></div>
+      <div class="fig-meta"><figcaption>Figura 4. Decisões por rodada</figcaption><span class="links"><a href="figuras/figura4_decisoes_rodada.pdf">PDF</a><a href="figuras/figura4_decisoes_rodada.png">PNG</a></span></div>
+    </figure>
+  </div>
+</section>
+
+<section class="block" id="protocolo" aria-labelledby="h-prot">
+  <span class="kicker">Protocolo</span>
+  <h2 id="h-prot">Strings de busca</h2>
+  <p class="lede">Uma família por etapa do ciclo de vida. Na busca acadêmica, cada família combina <code>BLOCO-RAG AND BLOCO-ETAPA</code>. Na cinzenta, as famílias G1–G8 acrescentam o <code>BLOCO-TIPOLOGIA</code>. Adaptações a cada mecanismo ficam registradas no protocolo.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>ID</th><th>Etapa</th><th>BLOCO-ETAPA (precedido de <code>BLOCO-RAG AND</code>)</th></tr></thead>
+      <tbody id="strings"></tbody>
+    </table>
+  </div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card"><h3>BLOCO-RAG</h3><pre style="margin:0;white-space:pre-wrap"><code>("retrieval augmented generation" OR "retrieval-augmented generation")</code></pre></div>
+    <div class="card"><h3>BLOCO-TIPOLOGIA (G1–G8)</h3><pre style="margin:0;white-space:pre-wrap"><code>("technical guide" OR "technical documentation" OR "engineering blog" OR "white paper" OR "technical report" OR "reference architecture" OR "case study" OR "best practices")</code></pre></div>
+  </div>
+  <p class="caption">Scopus: <code>TITLE-ABS-KEY</code>. ACL Anthology: título e resumo normalizados sobre o snapshot <code>e4d087a11bc0</code>. ACM Digital Library: só o campo <i>Abstract</i>, em consultas exploratórias. DEV Community e Hacker News: expressões aplicadas localmente ou decompostas termo a termo; o bloco de tipologia não pôde ser aplicado como filtro.</p>
+
+  <h2 style="margin-top:40px">Critérios de elegibilidade</h2>
+  <div class="grid g2">
+    <div class="card"><h3>Inclusão</h3><div class="crit">
+      <div><b>I1</b><span><b>Recorte temporal.</b> Publicada a partir de 2024. Fontes anteriores só entram com contribuição fundacional justificada (nenhuma entrou).</span></div>
+      <div><b>I2</b><span><b>Aderência ao escopo.</b> Aborda RAG de forma substantiva e se relaciona com engenharia de dados em ao menos uma etapa ou dimensão transversal.</span></div>
+      <div><b>I3</b><span><b>Contribuição analisável.</b> Apresenta ao menos uma prática, desafio, decisão técnica, arquitetura ou efeito, com conteúdo suficiente para extração.</span></div>
+    </div></div>
+    <div class="card"><h3>Exclusão</h3><div class="crit">
+      <div><b>E1</b><span>Duplicata ou versão redundante.</span></div>
+      <div><b>E2</b><span>Anterior a 2024 sem contribuição fundacional.</span></div>
+      <div><b>E3</b><span>Fora do escopo: RAG incidental ou sem relação substantiva com engenharia de dados.</span></div>
+      <div><b>E4</b><span>Conteúdo insuficiente: introdutório, genérico ou promocional.</span></div>
+      <div><b>E5</b><span>Conteúdo integral indisponível ou fonte derivada.</span></div>
+    </div></div>
+  </div>
+
+  <h2 style="margin-top:40px">Avaliação de qualidade</h2>
+  <p class="lede">Escala 0 / 0,5 / 1 por critério, máximo 6,0 e mínimo 4,0. Métricas bibliométricas não entram na avaliação.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Acadêmica (QA)</h3><div class="crit">
+      <div><b>QA1</b><span>Clareza do objetivo</span></div><div><b>QA2</b><span>Transparência metodológica <span class="tag">central</span></span></div>
+      <div><b>QA3</b><span>Fundamentação das evidências <span class="tag">central</span></span></div><div><b>QA4</b><span>Especificidade da contribuição</span></div>
+      <div><b>QA5</b><span>Limitações e contexto</span></div><div><b>QA6</b><span>Rastreabilidade técnica</span></div>
+    </div><p class="small muted" style="margin:12px 0 0">Zero em QA2 e QA3 ao mesmo tempo desclassifica a fonte, qualquer que seja a soma.</p></div>
+    <div class="card"><h3>Cinzenta (QG)</h3><div class="crit">
+      <div><b>QG1</b><span>Autoridade</span></div><div><b>QG2</b><span>Especificidade técnica</span></div>
+      <div><b>QG3</b><span>Evidência de uso</span></div><div><b>QG4</b><span>Atualidade</span></div>
+      <div><b>QG5</b><span>Transparência</span></div><div><b>QG6</b><span>Verificabilidade <span class="tag">precisa ser &gt; 0</span></span></div>
+    </div><p class="small muted" style="margin:12px 0 0">Adaptação das diretrizes de Garousi et al. (2019). A reputação da organização não substitui a avaliação.</p></div>
+  </div>
+</section>
+
+<section class="block" id="resultados" aria-labelledby="h-res">
+  <span class="kicker">Resultados da execução</span>
+  <h2 id="h-res">Busca, seleção e extração</h2>
+  <div class="grid g2">
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Família</th><th class="num">Scopus</th><th class="num">ACL</th><th class="num">DEV (cand.)</th><th class="num">HN (cand.)</th></tr></thead>
+        <tbody id="families"></tbody>
+        <tfoot><tr><td>Únicos</td><td class="num">3.142</td><td class="num">299</td><td class="num">104</td><td class="num">94</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Descoberta e seleção acadêmica</h3>
+      <div class="funnel" id="funnel"></div>
+      <p class="caption">Os 1.863 registros não pré-triados permanecem no conjunto como não revisados, sem decisão de exclusão.</p>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:16px">
+    <div class="viz" id="vizRounds">
+      <h3>Decisões humanas por rodada</h3>
+      <p class="small muted" style="margin:0">Dez candidatos por rodada, de 25 a 27/09/2026.</p>
+      <div class="legend"><span><i style="background:var(--s1)"></i>incluídas (60)</span><span><i style="background:var(--s-neutral)"></i>excluídas (20: 19 por E3, 1 por E4)</span></div>
+      <div class="cols"><div class="yaxis"><span>10</span><span>8</span><span>6</span><span>4</span><span>2</span><span>0</span></div><div class="plot" id="roundsPlot"></div><div class="xlabels" id="roundsX"></div></div>
+      <p class="small muted" style="margin:12px 0 0">As três últimas rodadas somaram 18 inclusões, então o indicador de baixa entrada não foi atendido. A descoberta foi encerrada por decisão humana com base em estabilidade das strings, saturação temática e cobertura.</p>
+    </div>
+    <div class="viz" id="vizStages">
+      <h3>Fontes com evidência por etapa e dimensão</h3>
+      <p class="small muted" style="margin:0">Extração sobre o texto integral de 52 fontes acadêmicas e 37 cinzentas.</p>
+      <div class="legend"><span><i style="background:var(--s1)"></i>acadêmicas</span><span><i style="background:var(--s2)"></i>cinzentas</span></div>
+      <div class="hbars" id="stageBars"></div>
+      <button class="btn toggle-table" type="button" id="bStageTable" aria-expanded="false">Ver como tabela</button>
+      <div class="tbl-wrap" id="stageTable" hidden style="margin-top:10px"></div>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:16px">
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Seleção da literatura cinzenta</th><th class="num">Quantidade</th></tr></thead>
+        <tbody>
+          <tr><td>Candidatos únicos das APIs (DEV Community e Hacker News)</td><td class="num">198</td></tr>
+          <tr><td>Candidatos dos portais institucionais</td><td class="num">12</td></tr>
+          <tr><td>Excluídos na pré-triagem por título e descrição (E3 ou E4)</td><td class="num">149</td></tr>
+          <tr><td>Fontes lidas na íntegra</td><td class="num">61</td></tr>
+          <tr><td>Excluídas por pontuação inferior a 4,0</td><td class="num">9</td></tr>
+          <tr><td>Excluídas por E4 após a leitura</td><td class="num">6</td></tr>
+          <tr><td>Excluídas por E5</td><td class="num">3</td></tr>
+          <tr><td>Excluídas por elegibilidade temporal indeterminada (I1)</td><td class="num">3</td></tr>
+          <tr><td>Excluídas por autoria não identificável (QG1 = 0)</td><td class="num">2</td></tr>
+          <tr><td>Excluída por QG6 = 0</td><td class="num">1</td></tr>
+        </tbody>
+        <tfoot><tr><td>Fontes incluídas</td><td class="num">37</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Snowballing</th><th class="num">Quantidade</th></tr></thead>
+        <tbody>
+          <tr><td>Backward (Scopus, visão REF): referências candidatas em 8 execuções</td><td class="num">905</td></tr>
+          <tr><td>… registros novos após consolidação</td><td class="num">845</td></tr>
+          <tr><td>Forward (OpenAlex, 14/11/2026): trabalhos ≥ 2024 que citam as 52 sementes</td><td class="num">426</td></tr>
+          <tr><td>… candidatos novos</td><td class="num">400</td></tr>
+          <tr><td>… sem RAG no título nem no resumo (sugestão de exclusão por I2)</td><td class="num">158</td></tr>
+          <tr><td>… pré-triagem por título: incluir / ambíguo / excluir</td><td class="num">71 / 24 / 147</td></tr>
+        </tbody>
+      </table>
+      <p class="caption" style="padding:0 12px 10px">Os candidatos do forward ainda dependem da decisão dos pesquisadores.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="triagem" aria-labelledby="h-tri">
+  <span class="kicker">Trilha de auditoria</span>
+  <h2 id="h-tri">As 80 decisões da triagem acadêmica</h2>
+  <p class="lede">Cada linha é um candidato apresentado aos pesquisadores, com a decisão, o critério de exclusão, a justificativa humana e a justificativa do ranqueamento por IA. As etapas vêm da pré-triagem e são conferidas na leitura integral. Clique em uma linha para ver as justificativas.</p>
+  <div class="filters">
+    <input id="fq" type="search" placeholder="Buscar por título, autor, veículo ou justificativa" aria-label="Buscar">
+    <select id="fr" aria-label="Rodada"><option value="">Todas as rodadas</option></select>
+    <select id="fd" aria-label="Decisão"><option value="">Incluídas e excluídas</option><option value="include">Incluídas</option><option value="exclude">Excluídas</option></select>
+    <select id="fs" aria-label="Etapa"><option value="">Todas as etapas</option></select>
+    <span class="count" id="fcount"></span>
+  </div>
+  <div class="tbl-wrap">
+    <table class="tri">
+      <thead><tr><th>Rodada</th><th>Fonte</th><th class="hide-sm">Etapas</th><th>Decisão</th></tr></thead>
+      <tbody id="triBody"></tbody>
+    </table>
+  </div>
+  <p class="caption">Dados: <a href="assets/data/triagem.json" download>triagem.json</a>, gerado por <code>scripts/build_pages_data.py</code> a partir de <code>data/review/decisions.jsonl</code>, dos rankings das rodadas e da pré-triagem. Resumos não são publicados, conforme os termos da API da Elsevier.</p>
+</section>
+
+<section class="block" id="ia" aria-labelledby="h-ia">
+  <span class="kicker">Apoio por modelo de linguagem</span>
+  <h2 id="h-ia">O que a IA fez e o que ficou com os pesquisadores</h2>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Passo</th><th>Modelo e instrução</th><th>Papel</th></tr></thead>
+      <tbody>
+        <tr><td>Pré-triagem acadêmica</td><td><code>claude-opus-5-5</code> (1.647 registros) e <code>codex-gpt-5</code> (585), instrução <code>mlr-screening-v2</code></td><td><span class="tag ia">sugere</span> sugestão, prioridade, etapas, dimensões, excerto literal</td></tr>
+        <tr><td>Ranqueamento das rodadas</td><td><code>codex-gpt-5</code>, instrução <code>mlr-ranking-v1</code></td><td><span class="tag ia">sugere</span> dez candidatos justificados por rodada</td></tr>
+        <tr><td>Refinamento das strings</td><td>skill <code>mlr-refinement</code></td><td><span class="tag ia">sugere</span> proposta q2, não aprovada</td></tr>
+        <tr><td>Pré-triagem cinzenta, notas QA e QG, extração</td><td><code>claude-opus-5-5</code></td><td><span class="tag ia">sugere</span> sujeito à conferência dos pesquisadores</td></tr>
+        <tr><td>Inclusão, exclusão, aprovação de strings, parada</td><td>—</td><td><span class="tag hum">decide</span> pesquisadores</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">Todos os 80 candidatos apresentados tinham sugestão de inclusão com prioridade alta; os pesquisadores divergiram em 20 casos (25%), que resultaram em exclusão.</p>
+</section>
+
+<section class="block" id="reproducao" aria-labelledby="h-rep">
+  <span class="kicker">Reprodução</span>
+  <h2 id="h-rep">Como reproduzir e onde está cada registro</h2>
+  <div class="grid g2">
+    <div>
+      <details class="box" open><summary>Instalação</summary>
+<pre><code>git clone https://github.com/Arthrok/metodologia-tcc.git
+cd metodologia-tcc
+python3.12 -m venv .venv &amp;&amp; source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env     # SCOPUS_API_KEY e, se houver, SCOPUS_INST_TOKEN
+pytest                   # 97 testes, nenhum acessa a rede</code></pre></details>
+      <details class="box"><summary>Refazer as coletas</summary>
+<pre><code>python scripts/collect_acl.py
+python scripts/collect_scopus.py
+python scripts/report.py</code></pre>
+<p class="small">Resumos e referências da Scopus exigem acesso institucional (rede da UnB ou túnel SOCKS com <code>HTTPS_PROXY</code>).</p></details>
+      <details class="box"><summary>Retomar o loop num clone novo</summary>
+<pre><code>python scripts/collect_acl.py &amp;&amp; python scripts/collect_scopus.py
+python scripts/review_loop.py snowball --direction backward
+python scripts/review_loop.py sync
+python scripts/review_loop.py status</code></pre>
+<p class="small">A pré-triagem e as decisões versionadas continuam válidas: os identificadores <code>P-xxxxxxxxxxxx</code> são hashes do DOI ou do título normalizado.</p></details>
+    </div>
+    <div class="card" style="padding:8px 16px">
+      <div class="files">
+        <a href="https://github.com/Arthrok/metodologia-tcc/blob/main/config/search_queries.yaml"><code>config/search_queries.yaml</code><span class="small">strings S1–S8, versão atual</span></a>
+        <a href="https://github.com/Arthrok/metodologia-tcc/blob/main/config/review_protocol.yaml"><code>config/review_protocol.yaml</code><span class="small">QPs, PICOC, critérios, parâmetros das rodadas e da parada</span></a>
+        <a href="https://github.com/Arthrok/metodologia-tcc/tree/main/data/manifests"><code>data/manifests/</code><span class="small">cada coleta e cada execução de snowballing</span></a>
+        <a href="https://github.com/Arthrok/metodologia-tcc/blob/main/data/review/decisions.jsonl"><code>data/review/decisions.jsonl</code><span class="small">as 80 decisões humanas</span></a>
+        <a href="https://github.com/Arthrok/metodologia-tcc/blob/main/data/review/pretriage/pretriage.jsonl"><code>data/review/pretriage/pretriage.jsonl</code><span class="small">sugestões da IA, com modelo e excerto</span></a>
+        <a href="https://github.com/Arthrok/metodologia-tcc/tree/main/data/review/rounds"><code>data/review/rounds/</code><span class="small">os dez escolhidos pela IA em cada rodada</span></a>
+        <a href="https://github.com/Arthrok/metodologia-tcc/blob/main/data/review/workspace.json"><code>data/review/workspace.json</code><span class="small">rodadas, versões das strings e do protocolo</span></a>
+        <a href="https://github.com/Arthrok/metodologia-tcc/tree/main/.claude/skills"><code>.claude/skills/</code><span class="small">instruções seguidas pelo modelo em cada passo</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="limitacoes" aria-labelledby="h-lim">
+  <span class="kicker">Ameaças à validade</span>
+  <h2 id="h-lim">Limitações que afetam a leitura dos resultados</h2>
+  <div class="grid g2">
+    <div class="card"><ul style="margin:0;padding-left:18px">
+      <li>A pré-triagem alcançou 2.232 dos 4.095 registros, e só registros sugeridos para inclusão com prioridade alta chegaram à revisão humana. As 80 decisões não equivalem à avaliação de todo o conjunto.</li>
+      <li>A descoberta acadêmica consolidada ocorreu na Scopus e na ACL Anthology; ACM e IEEE tiveram só consultas exploratórias.</li>
+      <li>O recorte a partir de 2024 pode deixar de fora práticas documentadas antes disso.</li>
+    </ul></div>
+    <div class="card"><ul style="margin:0;padding-left:18px">
+      <li>As APIs da DEV Community e do Hacker News não aplicam as expressões Booleanas originais; a cobertura não é equivalente à das strings.</li>
+      <li>Várias fontes cinzentas vêm de fornecedores que promovem os próprios produtos; isso foi registrado como possível viés comercial.</li>
+      <li>Notas de qualidade e extração foram atribuídas com apoio do modelo e dependem da conferência dos pesquisadores.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="block" id="citar" aria-labelledby="h-cit">
+  <span class="kicker">Como citar</span>
+  <h2 id="h-cit">Referência</h2>
+<pre><code>@misc{melo_gomes_rag_de,
+  author = {Melo, Arthur Alves and Gomes, Eric Silveira},
+  title  = {Engenharia de Dados em Sistemas {RAG}: Pr{\'a}ticas, Desafios e Adapta{\c{c}}{\~o}es},
+  note   = {Material complementar e trilha de auditoria},
+  institution = {Universidade de Bras{\'i}lia, Faculdade do Gama},
+  year   = {2026},
+  url    = {https://arthrok.github.io/metodologia-tcc/}
+}</code></pre>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  Arthur Alves Melo e Eric Silveira Gomes · Universidade de Brasília, Faculdade do Gama ·
+  <a href="https://github.com/Arthrok/metodologia-tcc">github.com/Arthrok/metodologia-tcc</a>
+</footer>
+
+<div class="tip" id="tip" hidden></div>
+<script src="assets/data/triagem.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
