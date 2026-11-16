@@ -12,7 +12,7 @@ Todos os registros estão em uma única planilha, [Registros_MLR.xlsx](Registros
 | Cinzenta_consultas | Consultas da DEV Community, do Hacker News e dos portais, com parâmetros, data e ocorrências |
 | Cinzenta_triagem | Os 210 candidatos cinzentos únicos, com pré-triagem, motivo e decisão final |
 | Qualidade_QA e Qualidade_QG | Notas QA1–QA6 das acadêmicas e QG1–QG6 das 61 candidatas cinzentas |
-| Evidencias | As 244 evidências válidas, com identificador estável (por exemplo, `C05-e02`), etapa, prática, localização, excerto e as linhas das Tabelas QP1–QP3 em que aparecem |
+| Evidencias | As 244 evidências válidas (179 acadêmicas e 65 cinzentas), com identificador estável (por exemplo, `C05-e02`), etapa, dimensão transversal (`31/8/7/10` nas cinzentas e `48/18/23/30` nas acadêmicas, conforme a Tabela 15 do artigo), prática, localização, excerto e as linhas das Tabelas QP1–QP3 em que aparecem |
 | QP1, QP2, QP3_temas, QP3_codificacao | Vínculo entre as evidências e as Tabelas 17, 18 e 19 |
 | QP3_34_temas | Correspondência entre os 34 temas iniciais e as linhas da Tabela 19 |
 | Auditoria_registro e Auditoria_itens | Base documental da auditoria humana (seção 3.3.7) e lista nominal dos itens conferidos |
