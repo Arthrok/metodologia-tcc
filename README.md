@@ -14,6 +14,10 @@ O repositório automatiza a parte acadêmica da revisão:
 
 O texto do TCC não fica aqui; ele está no repositório do Overleaf.
 
+**Material complementar do artigo:** <https://arthrok.github.io/metodologia-tcc/>, com protocolo,
+arquitetura interativa da revisão, resultados e as 80 decisões da triagem. O site fica em `docs/`
+(GitHub Pages) e os dados da triagem são gerados por `python scripts/build_pages_data.py`.
+
 ## Estado atual
 
 A descoberta acadêmica foi encerrada por decisão humana em 27/09/2026, após a rodada r008.
@@ -101,6 +105,7 @@ data/
   manifests/              manifestos de cada coleta e de cada execução de snowballing
   review/                 trilha de auditoria da revisão (ver "Dados versionados")
 outputs/                  diagrama da metodologia (SVG e PNG)
+docs/                     site de material complementar (GitHub Pages)
 ```
 
 ## Instalação
