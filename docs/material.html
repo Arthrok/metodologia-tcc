@@ -58,9 +58,10 @@
     <div class="stat"><div class="n">4.095</div><div class="l">registros acadêmicos consolidados (Scopus, ACL Anthology e <i>backward snowballing</i>)</div></div>
     <div class="stat"><div class="n">2.232</div><div class="l">registros pré-triados por modelo de linguagem</div></div>
     <div class="stat"><div class="n">80</div><div class="l">decisões humanas em 8 rodadas de dez candidatos</div></div>
-    <div class="stat"><div class="n">52</div><div class="l">fontes acadêmicas adequadas na avaliação QA1–QA6</div></div>
+    <div class="stat"><div class="n">88</div><div class="l">fontes no corpus final (51 acadêmicas e 37 cinzentas)</div></div>
+    <div class="stat"><div class="n">51</div><div class="l">fontes acadêmicas adequadas após auditoria dirigida</div></div>
     <div class="stat"><div class="n">37</div><div class="l">fontes cinzentas incluídas, de 210 candidatos em três frentes</div></div>
-    <div class="stat"><div class="n">246</div><div class="l">evidências extraídas (181 acadêmicas e 65 cinzentas)</div></div>
+    <div class="stat"><div class="n">244</div><div class="l">evidências válidas (179 acadêmicas e 65 cinzentas)</div></div>
   </div>
 </section>
 
@@ -198,8 +199,8 @@
       <p class="small muted" style="margin:12px 0 0">As três últimas rodadas somaram 18 inclusões, então o indicador de baixa entrada não foi atendido. A descoberta foi encerrada por decisão humana com base em estabilidade das strings, saturação temática e cobertura.</p>
     </div>
     <div class="viz" id="vizStages">
-      <h3>Fontes com evidência por etapa e dimensão</h3>
-      <p class="small muted" style="margin:0">Extração sobre o texto integral de 52 fontes acadêmicas e 37 cinzentas.</p>
+      <h3>Associações de evidências válidas por etapa</h3>
+      <p class="small muted" style="margin:0">Extração sobre 88 fontes finais: 51 acadêmicas e 37 cinzentas. As 244 evidências válidas puderam ser associadas a mais de uma etapa.</p>
       <div class="legend"><span><i style="background:var(--s1)"></i>acadêmicas</span><span><i style="background:var(--s2)"></i>cinzentas</span></div>
       <div class="hbars" id="stageBars"></div>
       <button class="btn toggle-table" type="button" id="bStageTable" aria-expanded="false">Ver como tabela</button>
@@ -232,7 +233,7 @@
         <tbody>
           <tr><td>Backward (Scopus, visão REF): referências candidatas em 8 execuções</td><td class="num">905</td></tr>
           <tr><td>… registros novos após consolidação</td><td class="num">845</td></tr>
-          <tr><td>Forward (OpenAlex, 14/11/2026): trabalhos ≥ 2024 que citam as 52 sementes</td><td class="num">426</td></tr>
+          <tr><td>Forward (OpenAlex, 14/11/2026): trabalhos ≥ 2024 que citam as 52 sementes então adequadas, antes do rebaixamento de A57</td><td class="num">426</td></tr>
           <tr><td>… candidatos novos</td><td class="num">400</td></tr>
           <tr><td>… sem RAG no título nem no resumo (sugestão de exclusão por I2)</td><td class="num">158</td></tr>
           <tr><td>… pré-triagem por título: incluir / ambíguo / excluir</td><td class="num">71 / 24 / 147</td></tr>

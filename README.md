@@ -20,7 +20,9 @@ arquitetura interativa da revisão, resultados e as 80 decisões da triagem. O s
 
 ## Estado atual
 
-A descoberta acadêmica foi encerrada por decisão humana em 27/09/2026, após a rodada r008.
+O corpus final reuniu **88 fontes (51 acadêmicas e 37 cinzentas)** e **244 evidências válidas (179 acadêmicas e 65 cinzentas)**. A auditoria dirigida das adaptações da QP2 e dos casos próximos ao corte foi concluída. A descoberta acadêmica havia sido encerrada por decisão humana em 27/09/2026, após a rodada r008.
+
+### Registro histórico da triagem acadêmica
 
 | Etapa | Quantidade |
 |---|---:|
@@ -33,8 +35,7 @@ A descoberta acadêmica foi encerrada por decisão humana em 27/09/2026, após a
 | Fontes preliminarmente incluídas | 60 |
 | Excluídas (19 por E3, 1 por E4) | 20 |
 
-Pendentes: leitura integral das 60 fontes, avaliação de qualidade (QA1–QA6), extração,
-*forward snowballing* e toda a literatura cinzenta.
+As 60 inclusões acima registram a triagem, antes da obtenção do texto integral, da avaliação QA e da auditoria final. O *forward snowballing* em OpenAlex encontrou 426 citantes (26 já no corpus e 400 novos); 95 novos foram priorizados e nenhum foi incorporado nesta execução por corte temporal e de escopo.
 
 ## Como funciona
 
@@ -286,9 +287,5 @@ identificadores.
 - **Literatura cinzenta:** as três frentes descritas no TCC (DEV Community, Hacker News via
   Algolia e portais institucionais) ainda não têm coletor neste repositório.
 - **IEEE Xplore e ACM Digital Library:** só tiveram consultas exploratórias, sem coletor.
-- ***Forward snowballing*:** está implementado (`--direction forward`, via `REFEID` na Scopus),
-  mas não foi executado.
-- **Questões de pesquisa no protocolo:** as QPs e a PICOC de `config/review_protocol.yaml` são as
-  da versão usada na triagem. O texto atual do TCC reformulou QP2 e QP3. Atualize
-  `config/review_protocol.yaml` e registre a nova versão com `protocol-update` antes de novas
-  rodadas.
+- ***Forward snowballing*:** a rotina local via Scopus permaneceu disponível; a execução usada no TCC ocorreu em OpenAlex, com os 400 candidatos novos documentados e não incorporados ao corpus.
+- **Questões de pesquisa no protocolo:** `config/review_protocol.yaml` preserva a formulação histórica usada na triagem. O artigo e o material suplementar registram a formulação final das QPs e da PICOC.

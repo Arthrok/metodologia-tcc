@@ -7,16 +7,15 @@ const TRI = window.TRIAGEM || [];
 const fmt = (n) => Number(n).toLocaleString('pt-BR');
 
 const ST = [
-  ['S1', 'Fontes', '"data source*" OR "knowledge source*" OR "source selection" OR "source curation" OR "corpus curation"', 542, 46, 6, 0, 7, 3],
-  ['S2', 'Ingestão', '"data ingestion" OR "document ingestion" OR "data extraction" OR "document parsing" OR OCR OR crawl*', 340, 18, 15, 13, 19, 7],
-  ['S3', 'Armazenamento', '"vector database*" OR "vector store*" OR "vector index*" OR "document store*" OR "embedding store*"', 724, 13, 15, 11, 25, 4],
-  ['S4', 'Preparação', 'chunk* OR "text segment*" OR "document split*" OR "text preprocessing" OR "document preprocessing" OR "text normalization" OR "embedding generation"', 712, 81, 15, 30, 36, 14],
-  ['S5', 'Disponibilização', '"retrieval strateg*" OR "hybrid search" OR rerank* OR "metadata filter*" OR "context compression"', 768, 113, 15, 24, 34, 14],
-  ['S6', 'Uso e feedback', '"RAG evaluation" OR "retrieval evaluation" OR observab* OR tracing OR "user feedback"', 290, 32, 15, 14, 25, 4],
-  ['S7', 'Manutenção', 'freshness OR reindex* OR "document update*" OR "corpus update*" OR "incremental update*" OR version*', 291, 19, 15, 4, 24, 7],
-  ['S8', 'Descarte', '"data deletion" OR "document deletion" OR deindex* OR erasure OR retention OR purge OR expiration', 99, 10, 10, 1, 9, 3],
+  ['S1', 'Fontes', '"data source*" OR "knowledge source*" OR "source selection" OR "source curation" OR "corpus curation"', 542, 46, 6, 0, 11, 3],
+  ['S2', 'Ingestão', '"data ingestion" OR "document ingestion" OR "data extraction" OR "document parsing" OR OCR OR crawl*', 340, 18, 15, 13, 26, 7],
+  ['S3', 'Armazenamento', '"vector database*" OR "vector store*" OR "vector index*" OR "document store*" OR "embedding store*"', 724, 13, 15, 11, 31, 4],
+  ['S4', 'Preparação', 'chunk* OR "text segment*" OR "document split*" OR "text preprocessing" OR "document preprocessing" OR "text normalization" OR "embedding generation"', 712, 81, 15, 30, 64, 18],
+  ['S5', 'Disponibilização', '"retrieval strateg*" OR "hybrid search" OR rerank* OR "metadata filter*" OR "context compression"', 768, 113, 15, 24, 46, 15],
+  ['S6', 'Uso e feedback', '"RAG evaluation" OR "retrieval evaluation" OR observab* OR tracing OR "user feedback"', 290, 32, 15, 14, 34, 5],
+  ['S7', 'Manutenção', 'freshness OR reindex* OR "document update*" OR "corpus update*" OR "incremental update*" OR version*', 291, 19, 15, 4, 38, 8],
+  ['S8', 'Descarte', '"data deletion" OR "document deletion" OR deindex* OR erasure OR retention OR purge OR expiration', 99, 10, 10, 1, 11, 5],
 ];
-const DIMS = [['Qualidade', 49, 31], ['Segurança', 18, 8], ['Governança', 23, 7], ['Rastreabilidade', 31, 10]];
 
 /* tema */
 $('#bTheme').addEventListener('click', () => {
@@ -31,7 +30,7 @@ $('#strings').innerHTML = ST.map(([id, n, t]) => `<tr><td><b>${id}</b> / G${id.s
 $('#families').innerHTML = ST.map(([id, n, , sc, acl, dev, hn]) => `<tr><td>${id} · ${n}</td><td class="num">${fmt(sc)}</td><td class="num">${acl}</td><td class="num">${dev}</td><td class="num">${hn}</td></tr>`).join('');
 
 /* funil */
-const F = [['Publicações únicas das buscas diretas', 3250], ['Conjunto consolidado (com backward snowballing)', 4095], ['Pré-triados pelo modelo de linguagem', 2232], ['Avaliados por humanos', 80], ['Inclusões preliminares', 60], ['Com texto integral', 55], ['Adequadas em QA1–QA6', 52]];
+const F = [['Publicações únicas das buscas diretas', 3250], ['Conjunto consolidado (com backward snowballing)', 4095], ['Pré-triados pelo modelo de linguagem', 2232], ['Avaliados por humanos', 80], ['Inclusões preliminares', 60], ['Com texto integral', 55], ['Adequadas após auditoria QA1–QA6', 51]];
 $('#funnel').innerHTML = F.map(([l, n]) => `<div style="--w:${Math.max(1.5, n / 4095 * 100)}%"><span>${l}</span><b>${fmt(n)}</b></div>`).join('');
 
 /* tooltip compartilhado */
@@ -72,12 +71,12 @@ rk.forEach((k) => {
 $('#roundsX').innerHTML = rk.map((k) => `<span>${k}</span>`).join('');
 
 /* etapas: barras horizontais agrupadas */
-const max = Math.max(...ST.map((s) => s[7]), ...DIMS.map((d) => d[1]));
-const bar = (cls, v, total, label) => `<div class="b ${cls}" style="width:calc(${v / max} * (100% - 34px))" data-tip="${label}: ${v} de ${total} fontes"><span>${v}</span></div>`;
-const rowsBars = [...ST.map((s) => [`<small>${s[0]}</small>${s[1]}`, s[1], s[7], s[8]]), null, ...DIMS.map((d) => [d[0], d[0], d[1], d[2]])];
-$('#stageBars').innerHTML = rowsBars.map((r) => r ? `<div class="lbl">${r[0]}</div><div class="pair">${bar('a', r[2], 52, `${r[1]} · acadêmicas`)}${bar('g', r[3], 37, `${r[1]} · cinzentas`)}</div>` : '<div class="sep"></div>').join('');
+const max = Math.max(...ST.map((s) => s[7]));
+const bar = (cls, v, label) => `<div class="b ${cls}" style="width:calc(${v / max} * (100% - 34px))" data-tip="${label}: ${v} associações de evidências válidas"><span>${v}</span></div>`;
+const rowsBars = ST.map((s) => [`<small>${s[0]}</small>${s[1]}`, s[1], s[7], s[8]]);
+$('#stageBars').innerHTML = rowsBars.map((r) => `<div class="lbl">${r[0]}</div><div class="pair">${bar('a', r[2], `${r[1]} · acadêmicas`)}${bar('g', r[3], `${r[1]} · cinzentas`)}</div>`).join('');
 document.querySelectorAll('#stageBars .b').forEach((b) => bindTip(b, esc(b.dataset.tip)));
-$('#stageTable').innerHTML = `<table><thead><tr><th>Etapa ou dimensão</th><th class="num">Acadêmicas (52)</th><th class="num">Cinzentas (37)</th></tr></thead><tbody>${ST.map((s) => `<tr><td>${s[0]} · ${s[1]}</td><td class="num">${s[7]}</td><td class="num">${s[8]}</td></tr>`).join('')}${DIMS.map((d) => `<tr><td>${d[0]}</td><td class="num">${d[1]}</td><td class="num">${d[2]}</td></tr>`).join('')}</tbody></table>`;
+$('#stageTable').innerHTML = `<table><thead><tr><th>Etapa</th><th class="num">Acadêmicas (179 evidências)</th><th class="num">Cinzentas (65 evidências)</th></tr></thead><tbody>${ST.map((s) => `<tr><td>${s[0]} · ${s[1]}</td><td class="num">${s[7]}</td><td class="num">${s[8]}</td></tr>`).join('')}</tbody></table>`;
 $('#bStageTable').addEventListener('click', (e) => {
   const t = $('#stageTable'); t.hidden = !t.hidden;
   e.currentTarget.setAttribute('aria-expanded', String(!t.hidden));
