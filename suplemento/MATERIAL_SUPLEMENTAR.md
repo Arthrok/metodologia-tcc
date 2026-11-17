@@ -16,7 +16,7 @@ Todos os registros estão em uma única planilha, [Registros_MLR.xlsx](Registros
 | QP1, QP2, QP3_temas, QP3_codificacao | Vínculo entre as evidências e as Tabelas 17, 18 e 19 |
 | QP3_34_temas | Correspondência entre os 34 temas iniciais e as linhas da Tabela 19 |
 | Auditoria_registro e Auditoria_itens | Base documental da auditoria humana (seção 3.3.7) e lista nominal dos itens conferidos |
-| Forward | Pré-triagem dos 242 citantes novos do *forward snowballing* que mencionavam RAG (os outros 158 foram excluídos por I2) |
+| Forward | Pré-triagem dos 242 citantes novos do *forward snowballing* que mencionavam RAG (os outros 158 receberam sugestão de exclusão por I2) |
 
 ## Classificação das Tabelas 1–4 do manuscrito
 
