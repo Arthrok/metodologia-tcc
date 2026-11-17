@@ -35,7 +35,7 @@ O corpus final reuniu **88 fontes (51 acadêmicas e 37 cinzentas)** e **244 evid
 | Fontes preliminarmente incluídas | 60 |
 | Excluídas (19 por E3, 1 por E4) | 20 |
 
-As 60 inclusões acima registram a triagem, antes da obtenção do texto integral, da avaliação QA e da auditoria final. O *forward snowballing* em OpenAlex encontrou 426 citantes (26 já no corpus e 400 novos); 95 novos foram priorizados e nenhum foi incorporado nesta execução por corte temporal e de escopo.
+As 60 inclusões acima registram a triagem, antes da obtenção do texto integral, da avaliação QA e da auditoria final. O *forward snowballing* em OpenAlex encontrou 426 citantes (26 já no corpus e 400 novos); 95 novos foram priorizados e nenhum foi incorporado nesta execução pelo limite de esforço de avaliação e pelo escopo definido para o estudo.
 
 ## Como funciona
 
