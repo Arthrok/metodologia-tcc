@@ -267,7 +267,7 @@ A planilha da literatura cinzenta (aba QP3) registrou 34 temas iniciais, com fon
 | C19 | Cinzenta | 2025 | LLM Rerankers for RAG: A Practical Guide | Incluída |
 | C20 | Cinzenta | 2025 | OCR and RAG for Tables | Incluída |
 | C21 | Cinzenta | 2025 | The Ceiling: How OCR Quality Limits RAG Performance | Incluída com restrição (sem uso de números ilustrativos/marketing) |
-| C22 | Cinzenta | 2025 | Roaming RAG – RAG without the vector DB | Incluída |
+| C22 | Cinzenta | 2024 | Roaming RAG – RAG without the vector DB | Incluída |
 | C23 | Cinzenta | 2025 | Evaluating the evaluators: know your RAG metrics | Incluída |
 | C24 | Cinzenta | 2024 | Exploring Semantic Chunking for RAG | Incluída |
 | C25 | Cinzenta | 2024 | Is your RAG Reranker not helping? This might be why | Incluída |
@@ -276,10 +276,10 @@ A planilha da literatura cinzenta (aba QP3) registrou 34 temas iniciais, com fon
 | C28 | Cinzenta | 2024 | Better RAG Results with Reciprocal Rank Fusion and Hybrid Search | Incluída |
 | C29 | Cinzenta | 2025/2026 | Design and develop a RAG solution (série: preparation / chunking / enrichment / embedding / information retrieval / LLM evaluation) | Incluída |
 | C30 | Cinzenta | 2025 | Authorizing access to data with RAG implementations | Incluída |
-| C31 | Cinzenta | 2025/2026 | RAG-capable generative AI application using Vertex AI | Incluída |
+| C31 | Cinzenta | 2026 | RAG-capable generative AI application using Vertex AI | Incluída |
 | C32 | Cinzenta | 2026 | RAG data pipeline (fundamentals + build an unstructured data pipeline) | Incluída |
 | C33 | Cinzenta | 2025 | Finding the Best Chunking Strategy for Accurate AI Responses | Incluída |
-| C34 | Cinzenta | 2024 | RAG Cookbook — chunking and data ingestion | Incluída |
+| C34 | Cinzenta | 2026 | RAG Cookbook — chunking and data ingestion | Incluída |
 | C35 | Cinzenta | 2025 | Enhanced Agentic-RAG: What If Chatbots Could Deliver Near-Human Precision? | Incluída |
 | C36 | Cinzenta | 2024 | Advanced RAG techniques part 1: data processing | Incluída |
 | C37 | Cinzenta | 2025 | Chunking Strategies for LLM Applications | Incluída |
@@ -297,3 +297,27 @@ O cronograma abaixo registra o planejamento histórico do semestre 2026.2.
 | Dezembro | Síntese, discussão e redação | Organização das práticas por etapa, análise das adaptações e desafios e comparação entre literatura acadêmica e cinzenta para responder à QP3; discussão das convergências, divergências, lacunas e limites da revisão e revisão final da monografia. |
 
 As localizações e os excertos de cada evidência constam da aba Evidencias.
+
+## Páginas componentes e auditoria bibliográfica de fontes cinzentas
+
+Na tabela `Fontes` da planilha `Registros_MLR.xlsx`, as fontes de portais institucionais e `C22` registravam inicialmente `None` (para `C29`–`C34`, `C36` e `C37`) ou `2025` (para `C22`). A conferência documental nos arquivos HTML arquivados em 13/11/2026 e nas URLs originais comprovou as seguintes datas e páginas componentes, mantidas em `corpus.bib` sem alterar os IDs das fontes nem os registros históricos da planilha:
+
+- **C22 (`CD133`):** publicação verificada em 21/11/2024 (`2024-11-21`). Valor anterior: `2025`.
+- **C29 (`PT01` — série de 6 páginas):** página principal (`rag-preparation-phase`, `ms.date` 2025-10-10) e páginas adicionais da série:
+  - `https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-preparation-phase` (`2025-10-10`)
+  - `https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-chunking-phase` (`2026-05-27`)
+  - `https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-enrichment-phase` (`2026-05-27`)
+  - `https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-generate-embeddings` (`2026-05-27`)
+  - `https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-information-retrieval` (`2026-06-22`)
+  - `https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-llm-evaluation-phase` (`2025-10-10`)
+- **C30 (`PT04`):** publicação e modificação verificadas em 18/09/2025 (`article:published_time = 2025-09-18`). Valor anterior: `None`.
+- **C31 (`PT06`):** última atualização verificada em 13/11/2026 (`dateModified = 2026-11-13 UTC`). Valor anterior: `None` (`2025/2026` neste documento).
+- **C32 (`PT07` — série de 2 páginas):** página principal (`quality-data-pipeline-rag`, origem de `C32-e01` e `C32-e02`, `dateModified` 2026-10-06) e página complementar (`fundamentals-data-pipeline-steps`, `dateModified` 2026-09-15 na cópia arquivada; 2026-11-15 online):
+  - `https://docs.databricks.com/aws/en/generative-ai/tutorials/ai-cookbook/quality-data-pipeline-rag`
+  - `https://docs.databricks.com/aws/en/generative-ai/tutorials/ai-cookbook/fundamentals-data-pipeline-steps`
+- **C33 (`PT08`):** publicação em 18/06/2025 e atualização em 26/06/2025 (`datePublished = 2025-06-18`). Valor anterior: `None`.
+- **C34 (`PT09` — série de 2 páginas):** página principal (`data-ingestion`, origem de `C34-e01`, `datePublished` 2026-01-23, `dateModified` 2026-03-05) e página complementar (`chunking`, `datePublished` 2026-01-27, `dateModified` 2026-03-05):
+  - `https://www.ibm.com/think/architectures/rag-cookbook/data-ingestion`
+  - `https://www.ibm.com/think/architectures/rag-cookbook/chunking`
+- **C36 (`PT11`):** publicação verificada em 14/08/2024 (`datePublished = 2024-08-14`). Valor anterior: `None`.
+- **C37 (`PT12`):** página original registrada no Wayback Machine desde abril de 2023; entretanto, a versão efetivamente consultada e arquivada em 13/11/2026 (`PT12.html` / `PT12.txt`) declara publicação/revisão em 28/06/2025 (`datePublished = 2025-06-28`) e atualização em 21/10/2026 (`dateModified = 2026-10-21`), referenciando inclusive técnicas de 2024 no texto. Portanto, atende ao recorte temporal `I1` (≥ 2024) e permanece elegível como `2025`.
