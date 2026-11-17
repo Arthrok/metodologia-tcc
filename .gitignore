@@ -19,6 +19,7 @@ __pycache__/
 6a32a5e76ab16dbe04e1696a/
 /metodologia.tex
 *.pdf
+!docs/figuras/*.pdf
 
 # --- Dados com conteúdo licenciado -----------------------------------------
 # Resumos e metadados completos obtidos pelas APIs da Elsevier/Scopus não
