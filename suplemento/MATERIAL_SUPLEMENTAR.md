@@ -33,7 +33,7 @@ As famílias acadêmicas S1–S8 e as cinzentas G1–G8 foram associadas às eta
 
 As questões de pesquisa e a matriz PICOC foram refinadas após o rascunho inicial do protocolo operacional registrado em [config/review_protocol.yaml](../config/review_protocol.yaml). Na formulação final do artigo, a QP1 focalizou as práticas por etapa S1–S8, a QP2 examinou adaptações e desafios documentados, e a QP3 comparou os achados entre literatura acadêmica e cinzenta. Na PICOC final, a dimensão Comparação passou a explicitar essa distribuição entre os dois tipos de literatura; o contraste com BI/Analytics e outros contextos de engenharia de dados foi mantido apenas quando sustentado pelas fontes. O arquivo YAML preservou a formulação usada na triagem histórica e não substituiu as questões e a PICOC finais do manuscrito.
 
-O *backward snowballing* recuperou 905 registros: 845 novos, 58 coincidentes com buscas diretas e 2 duplicatas internas ou registros sem metadados mínimos, descartados antes da deduplicação. O *forward snowballing* recuperou 426 citantes: 26 já no corpus e 400 novos. Dos novos, 95 foram priorizados e 305 não priorizados; nenhum foi incorporado nesta execução por corte temporal e de escopo. Consulte a aba Forward da planilha.
+O *backward snowballing* recuperou 905 registros: 845 novos, 58 coincidentes com buscas diretas e 2 duplicatas internas ou registros sem metadados mínimos, descartados antes da deduplicação. O *forward snowballing* recuperou 426 citantes: 26 já no corpus e 400 novos. Dos novos, 95 foram priorizados e 305 não priorizados; nenhum foi incorporado nesta execução pelo limite de esforço de avaliação e pelo escopo definido para o estudo. Consulte a aba Forward da planilha.
 
 ### Strings acadêmicas S1–S8
 
@@ -137,7 +137,7 @@ A frequência conta as fontes com ao menos uma evidência codificada no tema; n�
 |---|---|---|---|---|---|
 | T01 | Medallion para documentos RAG | Camadas Bronze/Silver/Gold aplicadas a artefatos documentais do pipeline RAG | Acadêmica | 1/0 | 1 |
 | T02 | Índices federados por domínio | Índices e documentos mantidos por domínio ou instituição, com roteamento federado | Acadêmica | 2/0 | 3 |
-| T03 | Pré/pós-filtro na busca vetorial | Decisão sobre onde e como aplicar filtros de atributos na busca vetorial (pré/pós-filtro, pushdown, varredura iterativa, seletividade) | Ambas | 6/1 | 7 |
+| T03 | Filtros seletivos e planejamento na busca vetorial | Decisão sobre onde e como aplicar filtros de atributos na busca vetorial (pré/pós-filtro, pushdown, varredura iterativa, seletividade) | Ambas | 6/1 | 7 |
 | T04 | Autorização antes da geração | Controle de acesso aplicado na recuperação ou antes do prompt (ACL, RBAC/ABAC/PBAC, IAM da fonte, finalidade) | Ambas | 7/4 | 14 |
 | T05 | Linhagem e traces por resposta | Registro de proveniência ou trace que liga fonte, trecho, rota e resposta | Ambas | 6/1 | 8 |
 | T06 | Chunking estrutural e contexto | Preservação de estrutura, tabelas e hierarquia ou inclusão de contexto e metadados do documento no chunk | Ambas | 15/5 | 25 |
@@ -206,7 +206,7 @@ A planilha da literatura cinzenta (aba QP3) registrou 34 temas iniciais, com fon
 | A10 | Acadêmica | 2026 | Structure-Aware Retrieval-Augmented Generation for Regulatory Compliance: A Chatbot for the DOLE OSHS Handbook | Adequada |
 | A12 | Acadêmica | 2026 | A RAG data pipeline transforming heterogeneous data into AI-ready format for autonomous building performance discovery | Adequada |
 | A13 | Acadêmica | 2026 | Empirical Evaluation of PDF Parsing and Chunking for Financial Question Answering with RAG | Adequada |
-| A14 | Acadêmica | 2026 | Engineering RAG Systems for Real-World Applications: Design, Development, and Evaluation | Adequada |
+| A14 | Acadêmica | 2025 | Engineering RAG Systems for Real-World Applications: Design, Development, and Evaluation | Adequada |
 | A15 | Acadêmica | 2026 | Hallucination in Retrieval-Augmented Generation is a Context Construction Problem: A Constraint-Driven Cross-Modal Framework | Adequada |
 | A16 | Acadêmica | 2026 | Index-State Uncertainty Quantification for Trustworthy Retrieval-Augmented Generation in Distributed Enterprise Search | Adequada |
 | A17 | Acadêmica | 2026 | LAD-RAG: Layout-aware Dynamic RAG for Visually-Rich Document Understanding | Adequada |
@@ -244,7 +244,7 @@ A planilha da literatura cinzenta (aba QP3) registrou 34 temas iniciais, com fon
 | A55 | Acadêmica | 2025 | cAST: Enhancing Code Retrieval-Augmented Generation with Structural Chunking via Abstract Syntax Tree | Adequada |
 | A56 | Acadêmica | 2026 | FreeChunker: A Cross-Granularity Chunking Framework | Adequada |
 | A58 | Acadêmica | 2026 | Policy-Aware RAG on the Lakehouse: Lineage-Driven Retrieval Over Apache Iceberg on S3 to Reduce Hallucination and Cost | Adequada |
-| A59 | Acadêmica | 2026 | Reconstructing Context: Evaluating Advanced Chunking Strategies for Retrieval-Augmented Generation | Adequada |
+| A59 | Acadêmica | 2025 | Reconstructing Context: Evaluating Advanced Chunking Strategies for Retrieval-Augmented Generation | Adequada |
 | A60 | Acadêmica | 2026 | Utilizing Metadata for Better Retrieval-Augmented Generation | Adequada |
 | C01 | Cinzenta | 2026 | Solving the Erasure / Receipt Trilemma in AI Memory and RAG | Incluída |
 | C02 | Cinzenta | 2026 | How to Make RAG Show Its Evidence: Claim Verification at 15M-Document Scale | Incluída |
